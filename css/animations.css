@@ -1,0 +1,347 @@
+/* Animation styles for AFCON Morocco 2025 */
+
+/* Subtle background pattern animation */
+@keyframes patternShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Shine effect for buttons and cards */
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reveal text animation */
+@keyframes revealText {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Moroccan pattern animation */
+.moroccan-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.moroccan-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: url('../assets/images/pattern-bg.png');
+  background-size: 200px;
+  opacity: 0.05;
+  animation: patternShift 40s linear infinite;
+  z-index: -1;
+}
+
+/* Button hover animations */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 70%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: var(--transition-fast);
+}
+
+.btn:hover::after {
+  animation: shine 1s forwards;
+}
+
+/* Card hover effects */
+.match-card,
+.news-card,
+.group-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.match-card::before,
+.news-card::before,
+.group-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: var(--transition-normal);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.match-card:hover::before,
+.news-card:hover::before,
+.group-card:hover::before {
+  left: 100%;
+  transition: all 0.8s ease;
+}
+
+/* Section title animations */
+.section-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light);
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 0.5s ease-out;
+  z-index: 1;
+}
+
+.section-title.animate::before {
+  transform: scaleX(0);
+}
+
+/* Page load animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.fade-in.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.fade-in.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.fade-in.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.fade-in.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Text reveal animation */
+.reveal-text {
+  position: relative;
+  clip-path: inset(0 100% 0 0);
+  animation: revealText 1s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+.reveal-text.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.reveal-text.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.reveal-text.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Hover effects for team flags */
+.team-flag,
+.team-flag-sm {
+  transition: transform 0.3s ease;
+}
+
+.team:hover .team-flag,
+.group-teams li:hover .team-flag-sm {
+  transform: scale(1.1);
+}
+
+/* Map point animations */
+.map-point {
+  transition: transform 0.3s ease;
+}
+
+.map-point:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Trophy animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* News card image hover */
+.news-card .news-image img {
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.1);
+}
+
+/* Navbar scroll animation */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 0.5rem 0;
+  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sponsor logo hover animation */
+.sponsor-item img {
+  transition: all 0.3s ease;
+}
+
+.sponsor-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Footer link hover animation */
+.footer-links a {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid var(--primary);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  left: -5px;
+}
+
+/* Social media icons animation */
+.social-link {
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+/* Countdown animation */
+.countdown-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.countdown-item:hover::after {
+  opacity: 1;
+}
+
+/* Newsletter form animation */
+.newsletter-form .form-control {
+  transition: all 0.3s ease;
+}
+
+.newsletter-form .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.2);
+}
+
+.newsletter-form .btn {
+  transition: all 0.3s ease;
+}
+
+/* Logo animation */
+.navbar-brand .logo {
+  position: relative;
+}
+
+.navbar-brand:hover .logo-text {
+  animation: pulse 1.5s ease infinite;
+}
+
+/* Hero button animation */
+.hero-buttons .btn {
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matches - Africa Cup of Nations - Morocco 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/matches.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="moroccan-loader">
+      <div class="loader-star"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <div class="logo">
+            <span class="logo-text">AFCON <span class="year">2025</span></span>
+            <span class="host">MOROCCO</span>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
+            <li class="nav-item"><a class="nav-link active" href="matches.html">Matches</a></li>
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          </ul>
+          <div class="language-selector">
+            <select class="form-select">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="ar">AR</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Banner -->
+  <section id="page-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-title">Match Schedule</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Matches</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matches Filter -->
+  <section id="matches-filter">
+    <div class="container">
+      <div class="filter-container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="search-box">
+              <input type="text" id="match-search" class="form-control" placeholder="Search matches...">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="filter-buttons">
+              <button class="btn btn-filter active" data-filter="all">All Matches</button>
+              <button class="btn btn-filter" data-filter="group-stage">Group Stage</button>
+              <button class="btn btn-filter" data-filter="knockout">Knockout</button>
+              <button class="btn btn-filter" data-filter="today">Today</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matches Schedule -->
+  <section id="matches-schedule">
+    <div class="container">
+      <div class="schedule-tabs">
+        <ul class="nav nav-tabs" id="matchesTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="group-stage-tab" data-bs-toggle="tab" data-bs-target="#group-stage" type="button" role="tab">Group Stage</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="round16-tab" data-bs-toggle="tab" data-bs-target="#round16" type="button" role="tab">Round of 16</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="quarterfinals-tab" data-bs-toggle="tab" data-bs-target="#quarterfinals" type="button" role="tab">Quarterfinals</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="semifinals-tab" data-bs-toggle="tab" data-bs-target="#semifinals" type="button" role="tab">Semifinals</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="final-tab" data-bs-toggle="tab" data-bs-target="#final" type="button" role="tab">Final</button>
+          </li>
+        </ul>
+        
+        <div class="tab-content" id="matchesTabContent">
+          <!-- Group Stage Tab -->
+          <div class="tab-pane fade show active" id="group-stage" role="tabpanel">
+            <div class="match-day">
+              <h3 class="day-title">Matchday 1 <span class="date">13-15 January 2025</span></h3>
+              <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Group A</span>
+                      <span class="match-date">13 Jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag">
+                        <span class="team-name">Morocco</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/tanzania.png" alt="Tanzania" class="team-flag">
+                        <span class="team-name">Tanzania</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Mohammed V Stadium, Casablanca</div>
+                    <div class="match-actions">
+                      <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                      <a href="tickets.html" class="btn btn-sm btn-primary">Tickets</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- More match cards for Matchday 1 -->
+              </div>
+            </div>
+            
+            <div class="match-day">
+              <h3 class="day-title">Matchday 2 <span class="date">16-18 January 2025</span></h3>
+              <div class="row">
+                <!-- Match cards for Matchday 2 -->
+              </div>
+            </div>
+            
+            <!-- More match days -->
+          </div>
+          
+          <!-- Round of 16 Tab -->
+          <div class="tab-pane fade" id="round16" role="tabpanel">
+            <div class="match-day">
+              <h3 class="day-title">Round of 16 <span class="date">27-30 January 2025</span></h3>
+              <div class="row">
+                <!-- Round of 16 match cards -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Quarterfinals Tab -->
+          <div class="tab-pane fade" id="quarterfinals" role="tabpanel">
+            <div class="match-day">
+              <h3 class="day-title">Quarterfinals <span class="date">2-3 February 2025</span></h3>
+              <div class="row">
+                <!-- Quarterfinal match cards -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Semifinals Tab -->
+          <div class="tab-pane fade" id="semifinals" role="tabpanel">
+            <div class="match-day">
+              <h3 class="day-title">Semifinals <span class="date">6-7 February 2025</span></h3>
+              <div class="row">
+                <!-- Semifinal match cards -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Final Tab -->
+          <div class="tab-pane fade" id="final" role="tabpanel">
+            <div class="match-day">
+              <h3 class="day-title">Final <span class="date">10 February 2025</span></h3>
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="match-card final-match">
+                    <div class="match-header">
+                      <span class="match-group">Final</span>
+                      <span class="match-date">10 Feb 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/tbd.png" alt="TBD" class="team-flag">
+                        <span class="team-name">Winner SF1</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/tbd.png" alt="TBD" class="team-flag">
+                        <span class="team-name">Winner SF2</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Grand Stade de Marrakech</div>
+                    <div class="match-actions">
+                      <a href="#" class="btn btn-sm btn-outline-light">Details</a>
+                      <a href="tickets.html" class="btn btn-sm btn-primary">Tickets</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standings Section -->
+  <section id="standings">
+    <div class="container">
+      <h2 class="section-title">Group Standings</h2>
+      <div class="standings-tabs">
+        <ul class="nav nav-tabs" id="standingsTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="group-a-tab" data-bs-toggle="tab" data-bs-target="#group-a" type="button" role="tab">Group A</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="group-b-tab" data-bs-toggle="tab" data-bs-target="#group-b" type="button" role="tab">Group B</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="group-c-tab" data-bs-toggle="tab" data-bs-target="#group-c" type="button" role="tab">Group C</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="group-d-tab" data-bs-toggle="tab" data-bs-target="#group-d" type="button" role="tab">Group D</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="group-e-tab" data-bs-toggle="tab" data-bs-target="#group-e" type="button" role="tab">Group E</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="group-f-tab" data-bs-toggle="tab" data-bs-target="#group-f" type="button" role="tab">Group F</button>
+          </li>
+        </ul>
+        
+        <div class="tab-content" id="standingsTabContent">
+          <!-- Group A Standings -->
+          <div class="tab-pane fade show active" id="group-a" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table standings-table">
+                <thead>
+                  <tr>
+                    <th>Team</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>Pts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag-sm">
+                      <span>Morocco</span>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <!-- More teams in Group A -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Other groups -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Your Email Address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <span class="logo-text">AFCON <span class="year">2025</span></span>
+            <span class="host">MOROCCO</span>
+          </div>
+          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Tournament</h4>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="matches.html">Matches</a></li>
+            <li><a href="#">Standings</a></li>
+            <li><a href="#">Statistics</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Venues</h4>
+          <ul class="footer-links">
+            <li><a href="stadiums.html">Stadiums</a></li>
+            <li><a href="#">Host Cities</a></li>
+            <li><a href="#">Training Centers</a></li>
+            <li><a href="#">Fan Zones</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Tickets</h4>
+          <ul class="footer-links">
+            <li><a href="tickets.html">Buy Tickets</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Hospitality</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">News</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Volunteers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+        <div class="footer-partners">
+          <span>In partnership with:</span>
+          <a href="https://www.cafonline.com/" target="_blank">CAF</a>
+          <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/matches.js"></script>
+</body>
+</html>

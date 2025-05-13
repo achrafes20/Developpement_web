@@ -1,0 +1,415 @@
+/* Responsive styles for AFCON Morocco 2025 */
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  /* Typography */
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .host-country {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+  
+  .countdown {
+    gap: 0.5rem;
+  }
+  
+  .countdown-item {
+    min-width: 60px;
+    padding: 0.5rem;
+  }
+  
+  .count {
+    font-size: 1.5rem;
+  }
+  
+  .label {
+    font-size: 0.7rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+  }
+  
+  /* Navbar */
+  .navbar-brand .logo-text {
+    font-size: 1.4rem;
+  }
+  
+  .navbar-brand .host {
+    font-size: 0.7rem;
+  }
+  
+  .ticket-btn .nav-link {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  /* Matches Section */
+  .match-cards {
+    flex-direction: column;
+  }
+  
+  .match-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* News Section */
+  .news-image {
+    height: 180px;
+  }
+  
+  /* Map */
+  .map-container {
+    height: 300px;
+  }
+  
+  .city-info {
+    width: 140px;
+    padding: 0.5rem;
+  }
+  
+  .city-info h4 {
+    font-size: 0.9rem;
+  }
+  
+  .city-info p {
+    font-size: 0.7rem;
+  }
+  
+  /* Newsletter */
+  .newsletter-container {
+    padding: 1rem;
+  }
+  
+  .newsletter-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .newsletter-form .form-control,
+  .newsletter-form .btn {
+    height: 45px;
+  }
+  
+  /* Footer */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-partners {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .host-country {
+    font-size: 3rem;
+  }
+  
+  /* Navbar */
+  .ticket-btn .nav-link {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  /* Map */
+  .map-container {
+    height: 350px;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .host-country {
+    font-size: 3.5rem;
+  }
+  
+  /* Navbar */
+  .nav-link {
+    margin: 0 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .ticket-btn .nav-link {
+    padding: 0.5rem 0.8rem !important;
+  }
+  
+  /* Map */
+  .map-container {
+    height: 400px;
+  }
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Navbar */
+  .nav-link {
+    margin: 0 0.4rem;
+  }
+}
+
+/* General responsive adjustments for all screen sizes */
+@media (max-width: 991px) {
+  /* Layout */
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  /* Navigation */
+  .navbar-collapse {
+    background-color: var(--white);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .nav-link {
+    padding: 0.75rem !important;
+  }
+  
+  .language-selector {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  /* Latest Matches */
+  .carousel-item .row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .carousel-item .col-md-4 {
+    min-width: 280px;
+  }
+  
+  /* Groups Section */
+  .group-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Host Cities */
+  .city-info {
+    bottom: auto;
+    top: calc(100% + 10px);
+  }
+  
+  .city-info::after {
+    bottom: auto;
+    top: -16px;
+    border-color: transparent transparent var(--white) transparent;
+  }
+}
+
+/* Vertical phone and small screens */
+@media (max-height: 600px) and (orientation: landscape) {
+  #hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 0 40px;
+  }
+  
+  .trophy-image {
+    max-height: 300px;
+  }
+  
+  .countdown {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* Specific navigation adjustments */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .nav-link {
+    font-size: 0.8rem;
+    margin: 0 0.3rem;
+  }
+}
+
+/* Fix for Safari overflow issues */
+@supports (-webkit-overflow-scrolling: touch) {
+  .carousel-item .row {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* High resolution screens */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  
+  .host-country {
+    font-size: 5rem;
+  }
+  
+  .map-container {
+    height: 600px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .video-container, 
+  .navbar, 
+  #newsletter,
+  .hero-buttons,
+  .social-links,
+  .scroll-indicator {
+    display: none !important;
+  }
+  
+  #hero {
+    height: auto;
+    color: var(--dark);
+  }
+  
+  .overlay {
+    background: none;
+  }
+  
+  .countdown-item {
+    border: 1px solid #ccc;
+  }
+  
+  .footer-links a {
+    color: var(--dark);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #ccc;
+  }
+}
+
+/* RTL Support for Arabic language */
+[dir="rtl"] {
+  /* Navigation */
+  .navbar-nav {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  
+  .language-selector {
+    margin-right: var(--spacing-md);
+    margin-left: 0;
+  }
+  
+  /* Section titles */
+  .section-title::after {
+    left: auto;
+    right: 0;
+  }
+  
+  /* Match cards */
+  .match-teams {
+    flex-direction: row-reverse;
+  }
+  
+  /* Group cards */
+  .group-title::after {
+    left: auto;
+    right: 0;
+  }
+  
+  .group-teams li {
+    flex-direction: row-reverse;
+  }
+  
+  .team-flag-sm {
+    margin-right: 0;
+    margin-left: var(--spacing-sm);
+  }
+  
+  /* News cards */
+  .news-category {
+    left: auto;
+    right: var(--spacing-sm);
+  }
+  
+  .read-more i {
+    margin-left: 0;
+    margin-right: 0.3rem;
+    transform: scaleX(-1);
+  }
+  
+  .read-more:hover i {
+    transform: translateX(-3px) scaleX(-1);
+  }
+  
+  /* Footer */
+  .footer-heading::after {
+    left: auto;
+    right: 0;
+  }
+  
+  .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 5px;
+  }
+  
+  .social-link {
+    margin-right: 0;
+    margin-left: var(--spacing-xs);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .point-dot::before {
+    animation: none;
+  }
+  
+  .chevron {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .trophy-image {
+    animation: none;
+  }
+}

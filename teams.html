@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teams - Africa Cup of Nations - Morocco 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/teams.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="moroccan-loader">
+      <div class="loader-star"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <div class="logo">
+            <span class="logo-text">AFCON <span class="year">2025</span></span>
+            <span class="host">MOROCCO</span>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="teams.html">Teams</a></li>
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          </ul>
+          <div class="language-selector">
+            <select class="form-select">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="ar">AR</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Banner -->
+  <section id="page-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-title">Participating Teams</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Teams</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teams Filter -->
+  <section id="teams-filter">
+    <div class="container">
+      <div class="filter-container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="search-box">
+              <input type="text" id="team-search" class="form-control" placeholder="Search teams...">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="filter-buttons">
+              <button class="btn btn-filter active" data-filter="all">All Teams</button>
+              <button class="btn btn-filter" data-filter="group-a">Group A</button>
+              <button class="btn btn-filter" data-filter="group-b">Group B</button>
+              <button class="btn btn-filter" data-filter="group-c">Group C</button>
+              <button class="btn btn-filter" data-filter="group-d">Group D</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teams Grid -->
+  <section id="teams-grid">
+    <div class="container">
+      <div class="row" id="teams-container">
+        <!-- Group A Teams -->
+        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-flag">
+                <img src="assets/images/flags/morocco.png" alt="Morocco">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Morocco</h3>
+                <span class="team-group">Group A</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-item">
+                <span class="stat-value">5</span>
+                <span class="stat-label">AFCON Appearances</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">1</span>
+                <span class="stat-label">Best Finish (1976)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">22</span>
+                <span class="stat-label">FIFA Ranking</span>
+              </div>
+            </div>
+            <div class="team-coach">
+              <span class="coach-label">Coach:</span>
+              <span class="coach-name">Walid Regragui</span>
+            </div>
+            <a href="team-details.html?team=morocco" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-flag">
+                <img src="assets/images/flags/senegal.png" alt="Senegal">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Senegal</h3>
+                <span class="team-group">Group A</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-item">
+                <span class="stat-value">16</span>
+                <span class="stat-label">AFCON Appearances</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">1</span>
+                <span class="stat-label">Best Finish (2021)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">20</span>
+                <span class="stat-label">FIFA Ranking</span>
+              </div>
+            </div>
+            <div class="team-coach">
+              <span class="coach-label">Coach:</span>
+              <span class="coach-name">Aliou Cissé</span>
+            </div>
+            <a href="team-details.html?team=senegal" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-flag">
+                <img src="assets/images/flags/cameroon.png" alt="Cameroon">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Cameroon</h3>
+                <span class="team-group">Group A</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-item">
+                <span class="stat-value">20</span>
+                <span class="stat-label">AFCON Appearances</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">5</span>
+                <span class="stat-label">Best Finish (2017)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">42</span>
+                <span class="stat-label">FIFA Ranking</span>
+              </div>
+            </div>
+            <div class="team-coach">
+              <span class="coach-label">Coach:</span>
+              <span class="coach-name">Marc Brys</span>
+            </div>
+            <a href="team-details.html?team=cameroon" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-flag">
+                <img src="assets/images/flags/tunisia.png" alt="Tunisia">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Tunisia</h3>
+                <span class="team-group">Group A</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-item">
+                <span class="stat-value">20</span>
+                <span class="stat-label">AFCON Appearances</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">1</span>
+                <span class="stat-label">Best Finish (2004)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">41</span>
+                <span class="stat-label">FIFA Ranking</span>
+              </div>
+            </div>
+            <div class="team-coach">
+              <span class="coach-label">Coach:</span>
+              <span class="coach-name">Faouzi Benzarti</span>
+            </div>
+            <a href="team-details.html?team=tunisia" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
+          </div>
+        </div>
+
+        <!-- Group B Teams -->
+        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-b">
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-flag">
+                <img src="assets/images/flags/nigeria.png" alt="Nigeria">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Nigeria</h3>
+                <span class="team-group">Group B</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-item">
+                <span class="stat-value">19</span>
+                <span class="stat-label">AFCON Appearances</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Best Finish (2013)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">30</span>
+                <span class="stat-label">FIFA Ranking</span>
+              </div>
+            </div>
+            <div class="team-coach">
+              <span class="coach-label">Coach:</span>
+              <span class="coach-name">Finidi George</span>
+            </div>
+            <a href="team-details.html?team=nigeria" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
+          </div>
+        </div>
+
+        <!-- Additional teams would be added here following the same pattern -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Statistics -->
+  <section id="team-statistics" class="moroccan-pattern">
+    <div class="container">
+      <h2 class="section-title">Tournament Statistics</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="stats-card">
+            <div class="stats-header">
+              <h3>AFCON 2025 Participating Teams by Region</h3>
+            </div>
+            <div class="stats-content">
+              <canvas id="regions-chart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="stats-card">
+            <div class="stats-header">
+              <h3>Tournament Facts</h3>
+            </div>
+            <div class="stats-content">
+              <ul class="stats-list">
+                <li>
+                  <span class="stat-icon"><i class="fas fa-trophy"></i></span>
+                  <div class="stat-info">
+                    <span class="stat-value">24</span>
+                    <span class="stat-label">Participating Teams</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="stat-icon"><i class="fas fa-medal"></i></span>
+                  <div class="stat-info">
+                    <span class="stat-value">7</span>
+                    <span class="stat-label">Previous Champions</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="stat-icon"><i class="fas fa-user-tie"></i></span>
+                  <div class="stat-info">
+                    <span class="stat-value">18</span>
+                    <span class="stat-label">African Coaches</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="stat-icon"><i class="fas fa-futbol"></i></span>
+                  <div class="stat-info">
+                    <span class="stat-value">52</span>
+                    <span class="stat-label">Total Matches</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="stat-icon"><i class="fas fa-star"></i></span>
+                  <div class="stat-info">
+                    <span class="stat-value">25</span>
+                    <span class="stat-label">FIFA Top 100 Players</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Your Email Address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <span class="logo-text">AFCON <span class="year">2025</span></span>
+            <span class="host">MOROCCO</span>
+          </div>
+          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Tournament</h4>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Teams</a></li>
+            <li><a href="#">Matches</a></li>
+            <li><a href="#">Standings</a></li>
+            <li><a href="#">Statistics</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Venues</h4>
+          <ul class="footer-links">
+            <li><a href="#">Stadiums</a></li>
+            <li><a href="#">Host Cities</a></li>
+            <li><a href="#">Training Centers</a></li>
+            <li><a href="#">Fan Zones</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Tickets</h4>
+          <ul class="footer-links">
+            <li><a href="#">Buy Tickets</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Hospitality</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Volunteers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+        <div class="footer-partners">
+          <span>In partnership with:</span>
+          <a href="https://www.cafonline.com/" target="_blank">CAF</a>
+          <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/teams.js"></script>
+</body>
+</html>

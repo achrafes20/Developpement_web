@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Africa Cup of Nations - Morocco 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="moroccan-loader">
+      <div class="loader-star"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <div class="logo">
+            <span class="logo-text">AFCON <span class="year">2025</span></span>
+            <span class="host">MOROCCO</span>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          </ul>
+          <div class="language-selector">
+            <select class="form-select">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="ar">AR</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="video-container">
+      <video autoplay muted loop id="hero-video">
+        <source src="assets/videos/hero-background.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold">AFRICA CUP OF NATIONS</h1>
+          <h2 class="host-country">MOROCCO 2025</h2>
+          <p class="lead">The continent's biggest football celebration comes to Morocco</p>
+          <div id="tournament-countdown" class="countdown">
+            <div class="countdown-item">
+              <span id="days" class="count">000</span>
+              <span class="label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span id="hours" class="count">00</span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span id="minutes" class="count">00</span>
+              <span class="label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span id="seconds" class="count">00</span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <a href="tickets.html" class="btn btn-primary btn-lg">Buy Tickets</a>
+            <a href="matches.html" class="btn btn-outline-light btn-lg">Match Schedule</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <img src="assets/images/trophy.png" alt="AFCON Trophy" class="trophy-image">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+    </div>
+  </section>
+
+  <!-- Latest Matches Section -->
+  <section id="latest-matches">
+    <div class="container">
+      <h2 class="section-title">Latest Matches</h2>
+      <div class="matches-slider">
+        <div id="matchesCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row match-cards">
+                <div class="col-md-4">
+                  <div class="match-card">
+                    <div class="match-date">15 JAN 2025 • 20:00</div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag">
+                        <span class="team-name">Morocco</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/senegal.png" alt="Senegal" class="team-flag">
+                        <span class="team-name">Senegal</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Mohammed V Stadium, Casablanca</div>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Match Details</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="match-card">
+                    <div class="match-date">16 JAN 2025 • 17:00</div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/nigeria.png" alt="Nigeria" class="team-flag">
+                        <span class="team-name">Nigeria</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/egypt.png" alt="Egypt" class="team-flag">
+                        <span class="team-name">Egypt</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Stade Adrar, Agadir</div>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Match Details</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="match-card">
+                    <div class="match-date">17 JAN 2025 • 20:00</div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/algeria.png" alt="Algeria" class="team-flag">
+                        <span class="team-name">Algeria</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/cameroon.png" alt="Cameroon" class="team-flag">
+                        <span class="team-name">Cameroon</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Grand Stade de Marrakech</div>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Match Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row match-cards">
+                <div class="col-md-4">
+                  <div class="match-card">
+                    <div class="match-date">18 JAN 2025 • 17:00</div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/ghana.png" alt="Ghana" class="team-flag">
+                        <span class="team-name">Ghana</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/mali.png" alt="Mali" class="team-flag">
+                        <span class="team-name">Mali</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Stade Ibn Battouta, Tangier</div>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Match Details</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="match-card">
+                    <div class="match-date">19 JAN 2025 • 20:00</div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/tunisia.png" alt="Tunisia" class="team-flag">
+                        <span class="team-name">Tunisia</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/south-africa.png" alt="South Africa" class="team-flag">
+                        <span class="team-name">South Africa</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Moulay Abdellah Stadium, Rabat</div>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Match Details</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="match-card">
+                    <div class="match-date">20 JAN 2025 • 17:00</div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img src="assets/images/flags/ivory-coast.png" alt="Ivory Coast" class="team-flag">
+                        <span class="team-name">Ivory Coast</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img src="assets/images/flags/dr-congo.png" alt="DR Congo" class="team-flag">
+                        <span class="team-name">DR Congo</span>
+                      </div>
+                    </div>
+                    <div class="match-venue">Stade de Fès, Fez</div>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Match Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#matchesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#matchesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="matches.html" class="btn btn-outline-primary">View All Matches</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Groups Section -->
+  <section id="groups">
+    <div class="container">
+      <h2 class="section-title">Tournament Groups</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="group-card">
+            <h3 class="group-title">Group A</h3>
+            <ul class="group-teams">
+              <li>
+                <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag-sm">
+                <span>Morocco</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/senegal.png" alt="Senegal" class="team-flag-sm">
+                <span>Senegal</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/cameroon.png" alt="Cameroon" class="team-flag-sm">
+                <span>Cameroon</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/tunisia.png" alt="Tunisia" class="team-flag-sm">
+                <span>Tunisia</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="group-card">
+            <h3 class="group-title">Group B</h3>
+            <ul class="group-teams">
+              <li>
+                <img src="assets/images/flags/nigeria.png" alt="Nigeria" class="team-flag-sm">
+                <span>Nigeria</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/egypt.png" alt="Egypt" class="team-flag-sm">
+                <span>Egypt</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/algeria.png" alt="Algeria" class="team-flag-sm">
+                <span>Algeria</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/ghana.png" alt="Ghana" class="team-flag-sm">
+                <span>Ghana</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="group-card">
+            <h3 class="group-title">Group C</h3>
+            <ul class="group-teams">
+              <li>
+                <img src="assets/images/flags/ivory-coast.png" alt="Ivory Coast" class="team-flag-sm">
+                <span>Ivory Coast</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/mali.png" alt="Mali" class="team-flag-sm">
+                <span>Mali</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/south-africa.png" alt="South Africa" class="team-flag-sm">
+                <span>South Africa</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/guinea.png" alt="Guinea" class="team-flag-sm">
+                <span>Guinea</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="group-card">
+            <h3 class="group-title">Group D</h3>
+            <ul class="group-teams">
+              <li>
+                <img src="assets/images/flags/dr-congo.png" alt="DR Congo" class="team-flag-sm">
+                <span>DR Congo</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/burkina-faso.png" alt="Burkina Faso" class="team-flag-sm">
+                <span>Burkina Faso</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/zambia.png" alt="Zambia" class="team-flag-sm">
+                <span>Zambia</span>
+              </li>
+              <li>
+                <img src="assets/images/flags/cape-verde.png" alt="Cape Verde" class="team-flag-sm">
+                <span>Cape Verde</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Host Cities Section -->
+  <section id="host-cities">
+    <div class="container">
+      <h2 class="section-title">Host Cities</h2>
+      <div class="host-cities-map">
+        <div class="map-container">
+          <img src="assets/images/morocco-map.png" alt="Morocco Map" class="morocco-map">
+          <div class="map-point" data-city="casablanca" style="top: 40%; left: 20%;">
+            <div class="point-dot"></div>
+            <div class="city-info">
+              <h4>Casablanca</h4>
+              <p>Mohammed V Stadium</p>
+              <a href="stadiums.html#casablanca" class="btn btn-sm btn-outline-light">View Details</a>
+            </div>
+          </div>
+          <div class="map-point" data-city="rabat" style="top: 35%; left: 28%;">
+            <div class="point-dot"></div>
+            <div class="city-info">
+              <h4>Rabat</h4>
+              <p>Moulay Abdellah Stadium</p>
+              <a href="stadiums.html#rabat" class="btn btn-sm btn-outline-light">View Details</a>
+            </div>
+          </div>
+          <div class="map-point" data-city="marrakech" style="top: 55%; left: 35%;">
+            <div class="point-dot"></div>
+            <div class="city-info">
+              <h4>Marrakech</h4>
+              <p>Grand Stade de Marrakech</p>
+              <a href="stadiums.html#marrakech" class="btn btn-sm btn-outline-light">View Details</a>
+            </div>
+          </div>
+          <div class="map-point" data-city="agadir" style="top: 65%; left: 15%;">
+            <div class="point-dot"></div>
+            <div class="city-info">
+              <h4>Agadir</h4>
+              <p>Stade Adrar</p>
+              <a href="stadiums.html#agadir" class="btn btn-sm btn-outline-light">View Details</a>
+            </div>
+          </div>
+          <div class="map-point" data-city="tangier" style="top: 15%; left: 22%;">
+            <div class="point-dot"></div>
+            <div class="city-info">
+              <h4>Tangier</h4>
+              <p>Stade Ibn Battouta</p>
+              <a href="stadiums.html#tangier" class="btn btn-sm btn-outline-light">View Details</a>
+            </div>
+          </div>
+          <div class="map-point" data-city="fez" style="top: 30%; left: 38%;">
+            <div class="point-dot"></div>
+            <div class="city-info">
+              <h4>Fez</h4>
+              <p>Stade de Fès</p>
+              <a href="stadiums.html#fez" class="btn btn-sm btn-outline-light">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News Section -->
+  <section id="latest-news">
+    <div class="container">
+      <h2 class="section-title">Latest News</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg" alt="News 1" class="img-fluid">
+              <span class="news-category">Tournament</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">May 10, 2024</div>
+              <h3 class="news-title">Morocco Unveils Official AFCON 2025 Logo</h3>
+              <p class="news-excerpt">The Royal Moroccan Football Federation (FRMF) has officially unveiled the logo for the 2025 Africa Cup of Nations...</p>
+              <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg" alt="News 2" class="img-fluid">
+              <span class="news-category">Teams</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">May 5, 2024</div>
+              <h3 class="news-title">Qualifying Rounds Set to Begin in September</h3>
+              <p class="news-excerpt">The Confederation of African Football (CAF) has announced that the qualifying rounds for AFCON 2025 will begin in September...</p>
+              <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="https://images.pexels.com/photos/47343/the-ball-stadion-football-the-pitch-47343.jpeg" alt="News 3" class="img-fluid">
+              <span class="news-category">Stadiums</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">April 28, 2024</div>
+              <h3 class="news-title">Casablanca Stadium Renovation On Track</h3>
+              <p class="news-excerpt">The renovation of Mohammed V Stadium in Casablanca is proceeding on schedule, with major upgrades to facilities...</p>
+              <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="news.html" class="btn btn-outline-primary">View All News</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section id="sponsors">
+    <div class="container">
+      <h2 class="section-title">Official Sponsors</h2>
+      <div class="sponsors-grid">
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/sponsor1.png" alt="Sponsor 1">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/sponsor2.png" alt="Sponsor 2">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/sponsor3.png" alt="Sponsor 3">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/sponsor4.png" alt="Sponsor 4">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/sponsor5.png" alt="Sponsor 5">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/sponsor6.png" alt="Sponsor 6">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Your Email Address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <span class="logo-text">AFCON <span class="year">2025</span></span>
+            <span class="host">MOROCCO</span>
+          </div>
+          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Tournament</h4>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Teams</a></li>
+            <li><a href="#">Matches</a></li>
+            <li><a href="#">Standings</a></li>
+            <li><a href="#">Statistics</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Venues</h4>
+          <ul class="footer-links">
+            <li><a href="#">Stadiums</a></li>
+            <li><a href="#">Host Cities</a></li>
+            <li><a href="#">Training Centers</a></li>
+            <li><a href="#">Fan Zones</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">Tickets</h4>
+          <ul class="footer-links">
+            <li><a href="#">Buy Tickets</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Hospitality</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Volunteers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+        <div class="footer-partners">
+          <span>In partnership with:</span>
+          <a href="https://www.cafonline.com/" target="_blank">CAF</a>
+          <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+/* tickets.css - Styles pour les tickets AFCON 2025 */
+
+.ticket-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: var(--spacing-lg);
+  justify-content: center;
+  background-color: var(--light);
+}
+
+.ticket-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 280px;
+  padding: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+/* Ticket header: match info */
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.ticket-date {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.ticket-time {
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+/* Teams and vs */
+.ticket-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.team-short {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--dark);
+}
+
+.team-flag-small {
+  width: 40px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  object-fit: cover;
+  margin: 0 0.5rem;
+}
+
+.vs {
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Stadium and seat info */
+.ticket-info {
+  font-size: 0.85rem;
+  color: var(--medium);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket-info div {
+  flex: 1;
+  text-align: center;
+}
+
+/* Price and buy button */
+.ticket-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-price {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.btn-buy-ticket {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.btn-buy-ticket:hover {
+  background-color: var(--secondary);
+}
+
+/* Decorative corner pattern (reused from team cards) */
+.ticket-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background-image: url('../assets/images/pattern-corner.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .ticket-card {
+    width: 100%;
+  }
+  
+  .ticket-info {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .ticket-info div {
+    text-align: center;
+  }
+}

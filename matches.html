@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matches - Africa Cup of Nations - Morocco 2025</title>
+  <title>Matchs - Coupe d'Afrique des Nations - Maroc 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/main.css">
@@ -12,387 +12,1708 @@
   <link rel="stylesheet" href="css/matches.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="moroccan-loader">
-      <div class="loader-star"></div>
+  <!-- 
+  Préchargeur de la page :
+  Ce bloc s'affiche pendant le chargement initial du site.
+  Il contient une animation personnalisée (style marocain) représentée par une étoile tournante.
+-->
+<div id="preloader">
+  <div class="moroccan-loader">
+    <div class="loader-star"></div>
+  </div>
+</div>
+  <!-- En-tête -->
+<header id="main-header"> <!-- Début de l'en-tête principal -->
+  <nav class="navbar navbar-expand-lg fixed-top"> <!-- Barre de navigation responsive, fixée en haut -->
+    <div class="container"> <!-- Conteneur Bootstrap pour centrer le contenu -->
+
+      <a class="navbar-brand" href="index.html"> <!-- Logo cliquable redirigeant vers la page d'accueil -->
+        <div class="logo">
+          <span class="logo-text">CAN <span class="year">2025</span></span> <!-- Texte principal du logo -->
+          <span class="host">MAROC</span> <!-- Nom du pays hôte -->
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <!-- Bouton pour afficher/cacher le menu sur petits écrans -->
+        <span class="navbar-toggler-icon"></span> <!-- Icône de menu hamburger -->
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav"> <!-- Menu de navigation collapsible -->
+        <ul class="navbar-nav ms-auto"> <!-- Liste des liens de navigation, alignée à droite -->
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li> <!-- Lien vers la page d'accueil -->
+          <li class="nav-item"><a class="nav-link" href="teams.html">Équipes</a></li> <!-- Lien vers la page des équipes -->
+          <li class="nav-item"><a class="nav-link active" href="matches.html">Matchs</a></li> <!-- Lien actif vers la page des matchs -->
+          <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li> <!-- Lien vers les stades -->
+          <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li> <!-- Lien vers les actualités -->
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li> <!-- Lien vers la galerie photo -->
+          <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li> <!-- Lien vers la billetterie -->
+        </ul>
+      </div> <!-- Fin du menu collapsible -->
+    </div> <!-- Fin du conteneur -->
+  </nav> <!-- Fin de la barre de navigation -->
+</header> <!-- Fin de l'en-tête -->
+
+
+  <!-- Bannière de page -->
+<section id="page-banner"> <!-- Début de la section bannière de page -->
+  <div class="container"> <!-- Conteneur Bootstrap pour centrer et aligner le contenu -->
+    <div class="row"> <!-- Ligne Bootstrap pour la mise en page -->
+      <div class="col-lg-12"> <!-- Colonne prenant toute la largeur sur grands écrans -->
+
+        <h1 class="page-title">Calendrier des Matchs</h1> <!-- Titre principal de la page -->
+
+        <nav aria-label="breadcrumb"> <!-- Navigation pour le fil d’Ariane, améliore l’accessibilité -->
+          <ol class="breadcrumb"> <!-- Liste ordonnée représentant le fil d’Ariane -->
+            <li class="breadcrumb-item"><a href="index.html">Accueil</a></li> <!-- Lien vers la page d'accueil -->
+            <li class="breadcrumb-item active" aria-current="page">Matchs</li> <!-- Page actuelle (active) -->
+          </ol>
+        </nav>
+
+      </div> <!-- Fin de la colonne -->
+    </div> <!-- Fin de la ligne -->
+  </div> <!-- Fin du conteneur -->
+</section> <!-- Fin de la section bannière -->
+
+
+  <!-- Matches Filter -->
+<section id="matches-filter"> <!-- Section contenant les filtres de recherche des matchs -->
+  <div class="container"> <!-- Conteneur Bootstrap pour centrer le contenu -->
+    <div class="filter-container"> <!-- Conteneur personnalisé pour les filtres -->
+      <div class="row align-items-center"> <!-- Ligne avec alignement vertical centré -->
+        <div class="col-md-6"> <!-- Colonne contenant la barre de recherche -->
+          <div class="search-box"> <!-- Boîte de recherche -->
+            <input type="text" id="match-search" class="form-control" placeholder="Rechercher des matchs..."> <!-- Champ de recherche -->
+            <i class="fas fa-search"></i> <!-- Icône de loupe (font awesome) -->
+          </div>
+        </div>
+        <div class="col-md-6"> <!-- Colonne contenant les boutons de filtre -->
+          <div class="filter-buttons"> <!-- Groupe de boutons de filtre -->
+            <button class="btn btn-filter active" data-filter="all">Tous les matchs</button> <!-- Filtre : tous les matchs -->
+            <button class="btn btn-filter" data-filter="group-stage">Phase de groupes</button> <!-- Filtre : phase de groupes -->
+            <button class="btn btn-filter" data-filter="knockout">Éliminatoires</button> <!-- Filtre : matchs à élimination directe -->
+            <button class="btn btn-filter" data-filter="today">Aujourd'hui</button> <!-- Filtre : matchs du jour -->
+          </div>
+        </div>
+      </div> <!-- Fin de la ligne -->
+    </div> <!-- Fin du conteneur des filtres -->
+  </div> <!-- Fin du conteneur principal -->
+</section> <!-- Fin de la section filtres -->
+
+
+  <!-- Calendrier des matchs -->
+<section id="matches-schedule"> <!-- Section du calendrier des matchs -->
+  <div class="container"> <!-- Conteneur Bootstrap -->
+    <div class="schedule-tabs"> <!-- Conteneur pour les onglets -->
+      <ul class="nav nav-tabs" id="matchesTab" role="tablist"> <!-- Liste des onglets de navigation -->
+        <li class="nav-item" role="presentation"> <!-- Élément d’onglet -->
+          <button class="nav-link active" id="group-stage-tab" data-bs-toggle="tab" data-bs-target="#group-stage" type="button" role="tab">Phase de groupes</button> <!-- Bouton : Phase de groupes -->
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="round16-tab" data-bs-toggle="tab" data-bs-target="#round16" type="button" role="tab">Huitièmes de finale</button> <!-- Bouton : Huitièmes de finale -->
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="quarterfinals-tab" data-bs-toggle="tab" data-bs-target="#quarterfinals" type="button" role="tab">Quarts de finale</button> <!-- Bouton : Quarts de finale -->
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="semifinals-tab" data-bs-toggle="tab" data-bs-target="#semifinals" type="button" role="tab">Demi-finales</button> <!-- Bouton : Demi-finales -->
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="final-tab" data-bs-toggle="tab" data-bs-target="#final" type="button" role="tab">Finale</button> <!-- Bouton : Finale -->
+        </li>
+      </ul>
+      
+      <div class="tab-content" id="matchesTabContent"> <!-- Contenu des onglets -->
+
+      <!-- GroupeStage Tab -->
+<div class="tab-pane fade show active" id="group-stage" role="tabpanel"> <!-- Contenu de l'onglet "Phase de groupes", actif par défaut -->
+
+  <!-- Journée 1 -->
+  <div class="match-day"> <!-- Bloc pour la première journée des matchs -->
+    <h3 class="day-title">Journée 1 <span class="date">26-28 Decembre 2025</span></h3> <!-- Titre de la journée avec les dates -->
+
+    <div class="row"> <!-- Ligne Bootstrap contenant les matchs -->
+
+      <!-- GroupeA -->
+      <div class="col-md-6 col-lg-4 mb-4"> <!-- Colonne responsive pour une carte de match -->
+        <div class="match-card"> <!-- Carte de match -->
+            <div class="match-header"> <!-- En-tête du match -->
+                 <span class="match-group">Group A</span> <!-- Nom du groupe -->
+                 <span class="match-date">26 DEC 2025 • 17:00</span> <!-- Date et heure du match -->
+            </div>
+            <div class="match-teams"> <!-- Section des équipes -->
+              <div class="team"> <!-- Équipe 1 -->
+                <img src="assets/images/flags/Morocco.png" alt="Maroc" class="team-flag"> <!-- Drapeau -->
+                <span class="team-name">Maroc</span> <!-- Nom -->
+              </div>
+              <div class="score">VS</div> <!-- Séparateur entre les deux équipes -->
+              <div class="team"> <!-- Équipe 2 -->
+                <img src="assets/images/flags/Comores.png" alt="Comores" class="team-flag">
+                <span class="team-name">Comores</span>
+              </div>
+            </div>
+            <div class="match-venue">Mohammed V Stade, Casablanca</div> <!-- Lieu du match -->
+            <div class="match-actions"> <!-- Boutons d'action -->
+              <a href="#" class="btn btn-sm btn-outline-primary">DETAILS</a> <!-- Détail du match -->
+              <a href="tickets.html" class="btn btn-sm btn-primary">BILLETS</a> <!-- Lien pour billets -->
+            </div>
+        </div>
+      </div>
+
+      <!-- Match 2 - Groupe A -->
+      <div class="col-md-6 col-lg-4 mb-4"> <!-- Deuxième match du groupe A -->
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe A</span>
+            <span class="match-date">26 DEC 2025 • 20:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/mali.png" alt="Mali" class="team-flag">
+              <span class="team-name">Mali</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/zambia.png" alt="Zambie" class="team-flag">
+              <span class="team-name">Zambie</span>
+            </div>
+          </div>
+          <div class="match-venue">Grand Stade de Marrakech</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeB -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe B</span>
+            <span class="match-date">27 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/egypt.png" alt="Égypte" class="team-flag">
+              <span class="team-name">Égypte</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/zimbabwe.png" alt="Zimbabwe" class="team-flag">
+              <span class="team-name">Zimbabwe</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Ibn Batouta, Tanger</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe B</span>
+            <span class="match-date">27 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/south-africa.png" alt="Afrique du Sud" class="team-flag">
+              <span class="team-name">Afrique du Sud</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/angola.png" alt="Angola" class="team-flag">
+              <span class="team-name">Angola</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Prince Moulay Abdellah, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeC -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe C</span>
+            <span class="match-date">28 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/nigeria.png" alt="Nigeria" class="team-flag">
+              <span class="team-name">Nigeria</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/tanzania.png" alt="Tanzanie" class="team-flag">
+              <span class="team-name">Tanzanie</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade de Fès, Fès</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe C</span>
+            <span class="match-date">28 DEC 2025 • 20:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/tunisia.png" alt="Tunisie" class="team-flag">
+              <span class="team-name">Tunisie</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/uganda.png" alt="Ouganda" class="team-flag">
+              <span class="team-name">Ouganda</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade d'Agadir, Agadir</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeD -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe D</span>
+            <span class="match-date">26 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/senegal.png" alt="Sénégal" class="team-flag">
+              <span class="team-name">Sénégal</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/botswana.png" alt="Botswana" class="team-flag">
+              <span class="team-name">Botswana</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Moulay Hassan, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe D</span>
+            <span class="match-date">26 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/dr-congo.png" alt="RD Congo" class="team-flag">
+              <span class="team-name">RD Congo</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/benin.png" alt="Bénin" class="team-flag">
+              <span class="team-name">Bénin</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Al Barid, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeE -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe E</span>
+            <span class="match-date">27 DEC 2025 • 20:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/algeria.png" alt="Algérie" class="team-flag">
+              <span class="team-name">Algérie</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/sudan.png" alt="Soudan" class="team-flag">
+              <span class="team-name">Soudan</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Ibn Batouta, Tanger</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe E</span>
+            <span class="match-date">27 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/burkina-faso.png" alt="Burkina Faso" class="team-flag">
+              <span class="team-name">Burkina Faso</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/equatorial-guinea.png" alt="Guinée Équatoriale" class="team-flag">
+              <span class="team-name">Guinée Éq.</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Prince Moulay Abdellah, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeF -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe F</span>
+            <span class="match-date">28 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/cote-divoire.png" alt="Côte d'Ivoire" class="team-flag">
+              <span class="team-name">Côte d'Ivoire</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/mozambique.png" alt="Mozambique" class="team-flag">
+              <span class="team-name">Mozambique</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Adrar, Agadir</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe F</span>
+            <span class="match-date">28 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/cameroon.png" alt="Cameroun" class="team-flag">
+              <span class="team-name">Cameroun</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/gabon.png" alt="Gabon" class="team-flag">
+              <span class="team-name">Gabon</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Mohammed V, Casablanca</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Journée 2 -->
+  <div class="match-day">
+    <h3 class="day-title">Journée 2 <span class="date">29-31 Decembre 2025</span></h3>
+    <div class="row">
+      <!-- GroupeA -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe A</span>
+            <span class="match-date">29 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/zambia.png" alt="Zambie" class="team-flag">
+              <span class="team-name">Zambie</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/comores.png" alt="Comores" class="team-flag">
+              <span class="team-name">Comores</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Mohammed V, Casablanca</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe A</span>
+            <span class="match-date">29 DEC 2025 • 20:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/Morocco.png" alt="Maroc" class="team-flag">
+              <span class="team-name">Maroc</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/mali.png" alt="Mali" class="team-flag">
+              <span class="team-name">Mali</span>
+            </div>
+          </div>
+          <div class="match-venue">Grand Stade de Marrakech</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeB -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe B</span>
+            <span class="match-date">30 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/zimbabwe.png" alt="Zimbabwe" class="team-flag">
+              <span class="team-name">Zimbabwe</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/angola.png" alt="Angola" class="team-flag">
+              <span class="team-name">Angola</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Ibn Batouta, Tanger</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe B</span>
+            <span class="match-date">30 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/egypt.png" alt="Égypte" class="team-flag">
+              <span class="team-name">Égypte</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/south-africa.png" alt="Afrique du Sud" class="team-flag">
+              <span class="team-name">Afrique du Sud</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Prince Moulay Abdellah, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeC -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe C</span>
+            <span class="match-date">31 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/tanzania.png" alt="Tanzanie" class="team-flag">
+              <span class="team-name">Tanzanie</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/uganda.png" alt="Ouganda" class="team-flag">
+              <span class="team-name">Ouganda</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade de Fès, Fès</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe C</span>
+            <span class="match-date">31 DEC 2025 • 20:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/nigeria.png" alt="Nigeria" class="team-flag">
+              <span class="team-name">Nigeria</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/tunisia.png" alt="Tunisie" class="team-flag">
+              <span class="team-name">Tunisie</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade d'Agadir, Agadir</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeD -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe D</span>
+            <span class="match-date">29 DEC 2025 • 14:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/senegal.png" alt="Sénégal" class="team-flag">
+              <span class="team-name">Sénégal</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/benin.png" alt="Bénin" class="team-flag">
+              <span class="team-name">Bénin</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade de Fès, Fès</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe D</span>
+            <span class="match-date">29 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/dr-congo.png" alt="RD Congo" class="team-flag">
+              <span class="team-name">RD Congo</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/botswana.png" alt="Botswana" class="team-flag">
+              <span class="team-name">Botswana</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade de Marrakech, Marrakech</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeE -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe E</span>
+            <span class="match-date">30 DEC 2025 • 20:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/algeria.png" alt="Algérie" class="team-flag">
+              <span class="team-name">Algérie</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/equatorial-guinea.png" alt="Guinée Équatoriale" class="team-flag">
+              <span class="team-name">Guinée Éq.</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Moulay Hassan, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-group">Groupe E</span>
+            <span class="match-date">30 DEC 2025 • 17:00</span>
+          </div>
+          <div class="match-teams">
+            <div class="team">
+              <img src="assets/images/flags/burkina-faso.png" alt="Burkina Faso" class="team-flag">
+              <span class="team-name">Burkina Faso</span>
+            </div>
+            <div class="score">VS</div>
+            <div class="team">
+              <img src="assets/images/flags/sudan.png" alt="Soudan" class="team-flag">
+              <span class="team-name">Soudan</span>
+            </div>
+          </div>
+          <div class="match-venue">Stade Al Barid, Rabat</div>
+          <div class="match-actions">
+            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GroupeF -->
+<div class="col-md-6 col-lg-4 mb-4">
+  <div class="match-card">
+    <div class="match-header">
+      <span class="match-group">Groupe F</span>
+      <span class="match-date">31 DEC 2025 • 17:00</span>
+    </div>
+    <div class="match-teams">
+      <div class="team">
+        <img src="assets/images/flags/cote-divoire.png" alt="Côte d'Ivoire" class="team-flag">
+        <span class="team-name">Côte d'Ivoire</span>
+      </div>
+      <div class="score">VS</div>
+      <div class="team">
+        <img src="assets/images/flags/gabon.png" alt="Gabon" class="team-flag">
+        <span class="team-name">Gabon</span>
+      </div>
+    </div>
+    <div class="match-venue">Stade Ibn Batouta, Tanger</div>
+    <div class="match-actions">
+      <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+      <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4 mb-4">
+  <div class="match-card">
+    <div class="match-header">
+      <span class="match-group">Groupe F</span>
+      <span class="match-date">31 DEC 2025 • 14:00</span>
+    </div>
+    <div class="match-teams">
+      <div class="team">
+        <img src="assets/images/flags/cameroon.png" alt="Cameroun" class="team-flag">
+        <span class="team-name">Cameroun</span>
+      </div>
+      <div class="score">VS</div>
+      <div class="team">
+        <img src="assets/images/flags/mozambique.png" alt="Mozambique" class="team-flag">
+        <span class="team-name">Mozambique</span>
+      </div>
+    </div>
+    <div class="match-venue">Stade Olympique Prince Moulay Abdellah, Rabat</div>
+    <div class="match-actions">
+      <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+      <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Journée 3 -->
+<div class="match-day">
+  <h3 class="day-title">Journée 3 <span class="date">2-4 Janvier 2025</span></h3>
+  <div class="row">
+    <!-- GroupeA -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe A</span>
+          <span class="match-date">2 JAN 2026 • 17:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/comores.png" alt="Comores" class="team-flag">
+            <span class="team-name">Comores</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/mali.png" alt="Mali" class="team-flag">
+            <span class="team-name">Mali</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Mohammed V, Casablanca</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe A</span>
+          <span class="match-date">2 JAN 2026 • 20:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/Morocco.png" alt="Maroc" class="team-flag">
+            <span class="team-name">Maroc</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/zambia.png" alt="Zambie" class="team-flag">
+            <span class="team-name">Zambie</span>
+          </div>
+        </div>
+        <div class="match-venue">Grand Stade de Marrakech</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GroupeB -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe B</span>
+          <span class="match-date">3 JAN 2026 • 17:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/zimbabwe.png" alt="Zimbabwe" class="team-flag">
+            <span class="team-name">Zimbabwe</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/south-africa.png" alt="Afrique du Sud" class="team-flag">
+            <span class="team-name">Afrique du Sud</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Ibn Batouta, Tanger</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe B</span>
+          <span class="match-date">3 JAN 2026 • 20:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/egypt.png" alt="Égypte" class="team-flag">
+            <span class="team-name">Égypte</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/angola.png" alt="Angola" class="team-flag">
+            <span class="team-name">Angola</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Prince Moulay Abdellah, Rabat</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GroupeC -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe C</span>
+          <span class="match-date">4 JAN 2026 • 17:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/uganda.png" alt="Ouganda" class="team-flag">
+            <span class="team-name">Ouganda</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/nigeria.png" alt="Nigeria" class="team-flag">
+            <span class="team-name">Nigeria</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade de Fès, Fès</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe C</span>
+          <span class="match-date">4 JAN 2026 • 20:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/tanzania.png" alt="Tanzanie" class="team-flag">
+            <span class="team-name">Tanzanie</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/tunisia.png" alt="Tunisie" class="team-flag">
+            <span class="team-name">Tunisie</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade d'Agadir, Agadir</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GroupeD -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe D</span>
+          <span class="match-date">2 DEC 2026 • 14:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/botswana.png" alt="Botswana" class="team-flag">
+            <span class="team-name">Botswana</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/benin.png" alt="Bénin" class="team-flag">
+            <span class="team-name">Bénin</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Moulay Hassan, Rabat</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe D</span>
+          <span class="match-date">2 JAN 2026 • 17:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/senegal.png" alt="Sénégal" class="team-flag">
+            <span class="team-name">Sénégal</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/dr-congo.png" alt="RD Congo" class="team-flag">
+            <span class="team-name">RD Congo</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade de Fès, Fès</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GroupeE -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe E</span>
+          <span class="match-date">3 JAN 2026 • 14:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/sudan.png" alt="Soudan" class="team-flag">
+            <span class="team-name">Soudan</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/equatorial-guinea.png" alt="Guinée équatoriale" class="team-flag">
+            <span class="team-name">Guinée équatoriale</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Ibn Batouta, Tanger</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe E</span>
+          <span class="match-date">3 JAN 2026 • 17:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/algeria.png" alt="Algérie" class="team-flag">
+            <span class="team-name">Algérie</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/burkina-faso.png" alt="Burkina Faso" class="team-flag">
+            <span class="team-name">Burkina Faso</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Mohammed V, Casablanca</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GroupeF -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe F</span>
+          <span class="match-date">4 JAN 2026 • 14:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/mozambique.png" alt="Mozambique" class="team-flag">
+            <span class="team-name">Mozambique</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/gabon.png" alt="Gabon" class="team-flag">
+            <span class="team-name">Gabon</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Adrar, Agadir</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="match-card">
+        <div class="match-header">
+          <span class="match-group">Groupe F</span>
+          <span class="match-date">4 JAN 2026 • 17:00</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <img src="assets/images/flags/cote-divoire.png" alt="Côte d'Ivoire" class="team-flag">
+            <span class="team-name">Côte d'Ivoire</span>
+          </div>
+          <div class="score">VS</div>
+          <div class="team">
+            <img src="assets/images/flags/cameroon.png" alt="Cameroun" class="team-flag">
+            <span class="team-name">Cameroun</span>
+          </div>
+        </div>
+        <div class="match-venue">Stade Moulay Hassan, Rabat</div>
+        <div class="match-actions">
+          <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+          <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tableau des huitièmes de finale -->
+<div class="tab-pane fade" id="round16" role="tabpanel"> <!-- Conteneur de l'onglet des huitièmes -->
+  <div class="match-day"> <!-- Section d'une journée de match -->
+    <h3 class="day-title">Huitièmes de finale <span class="date">6-9 Janvier 2025</span></h3> <!-- Titre avec date -->
+    <div class="row"> <!-- Ligne Bootstrap pour les cartes de match -->
+      <!-- Cartes de match des huitièmes de finale -->
+    </div>
+  </div>
+</div>
+
+<!-- Onglet Quarts de finale -->
+<div class="tab-pane fade" id="quarterfinals" role="tabpanel"> <!-- Conteneur de l'onglet des quarts -->
+  <div class="match-day"> <!-- Section d'une journée de match -->
+    <h3 class="day-title">Quart de finale <span class="date">11-13 Janvier 2025</span></h3> <!-- Titre avec date -->
+    <div class="row"> <!-- Ligne Bootstrap pour les cartes de match -->
+      <!-- Cartes de match des quarts de finale -->
+    </div>
+  </div>
+</div>
+
+<!-- Onglet Demi-finales -->
+<div class="tab-pane fade" id="semifinals" role="tabpanel"> <!-- Conteneur de l'onglet des demi-finales -->
+  <div class="match-day"> <!-- Section d'une journée de match -->
+    <h3 class="day-title">Demi-finales <span class="date">15-16 Janvier 2025</span></h3> <!-- Titre avec date -->
+    <div class="row"> <!-- Ligne Bootstrap pour les cartes de match -->
+      <!-- Cartes de match demi-finale -->
+    </div>
+  </div>
+</div>
+
+<!-- Onglet final -->
+<div class="tab-pane fade" id="final" role="tabpanel"> <!-- Conteneur de l'onglet de la finale -->
+  <div class="match-day"> <!-- Section de la journée de la finale -->
+    <h3 class="day-title">Finale <span class="date">18 Janvier 2025</span></h3> <!-- Titre avec date -->
+    <div class="row"> <!-- Ligne Bootstrap pour centrer la carte de la finale -->
+      <div class="col-lg-8 mx-auto"> <!-- Colonne centrée pour la carte -->
+        <div class="match-card final-match"> <!-- Carte de match avec style spécial pour la finale -->
+          <div class="match-header"> <!-- En-tête de la carte -->
+            <span class="match-group">Finale</span> <!-- Libellé du type de match -->
+            <span class="match-date">18 JAN 2025 • 20:00</span> <!-- Date et heure -->
+          </div>
+          <div class="match-teams"> <!-- Section avec les deux équipes -->
+            <div class="team"> <!-- Équipe 1 -->
+              <img src="assets/images/flags/tbd.png" alt="À déterminer" class="team-flag"> <!-- Drapeau -->
+              <span class="team-name">Vainqueur DF1</span> <!-- Nom de l'équipe -->
+            </div>
+            <div class="score">VS</div> <!-- Séparateur entre les équipes -->
+            <div class="team"> <!-- Équipe 2 -->
+              <img src="assets/images/flags/tbd.png" alt="À déterminer" class="team-flag"> <!-- Drapeau -->
+              <span class="team-name">Vainqueur DF2</span> <!-- Nom de l'équipe -->
+            </div>
+          </div>
+          <div class="match-venue">Stade Mohammed V, Casablanca</div> <!-- Lieu de la finale -->
+          <div class="match-actions"> <!-- Actions disponibles -->
+            <a href="#" class="btn btn-sm btn-outline-light">Détails</a> <!-- Lien vers les détails -->
+            <a href="tickets.html" class="btn btn-sm btn-primary">Billets</a> <!-- Lien vers billetterie -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+  <!-- Section Classement -->
+<section id="standings"> <!-- Section pour les classements des groupes -->
+  <div class="container"> <!-- Conteneur Bootstrap pour centrer le contenu -->
+    <h2 class="section-title">Les Groupes</h2> <!-- Titre de la section -->
+    
+    <div class="standings-tabs"> <!-- Conteneur des onglets des groupes -->
+      <ul class="nav nav-tabs" id="standingsTab" role="tablist"> <!-- Liste d'onglets pour chaque groupe -->
+        
+        <li class="nav-item" role="presentation"> <!-- Élément pour Groupe A -->
+          <button class="nav-link active" id="group-a-tab" data-bs-toggle="tab" data-bs-target="#group-a" type="button" role="tab">Groupe A</button> <!-- Bouton pour afficher le contenu de l'onglet A -->
+        </li>
+
+        <li class="nav-item" role="presentation"> <!-- Élément pour Groupe B -->
+          <button class="nav-link" id="group-b-tab" data-bs-toggle="tab" data-bs-target="#group-b" type="button" role="tab">Groupe B</button> <!-- Bouton pour afficher le contenu de l'onglet B -->
+        </li>
+
+        <li class="nav-item" role="presentation"> <!-- Élément pour Groupe C -->
+          <button class="nav-link" id="group-c-tab" data-bs-toggle="tab" data-bs-target="#group-c" type="button" role="tab">Groupe C</button> <!-- Bouton pour afficher le contenu de l'onglet C -->
+        </li>
+
+        <li class="nav-item" role="presentation"> <!-- Élément pour Groupe D -->
+          <button class="nav-link" id="group-d-tab" data-bs-toggle="tab" data-bs-target="#group-d" type="button" role="tab">Groupe D</button> <!-- Bouton pour afficher le contenu de l'onglet D -->
+        </li>
+
+        <li class="nav-item" role="presentation"> <!-- Élément pour Groupe E -->
+          <button class="nav-link" id="group-e-tab" data-bs-toggle="tab" data-bs-target="#group-e" type="button" role="tab">Groupe E</button> <!-- Bouton pour afficher le contenu de l'onglet E -->
+        </li>
+
+        <li class="nav-item" role="presentation"> <!-- Élément pour Groupe F -->
+          <button class="nav-link" id="group-f-tab" data-bs-toggle="tab" data-bs-target="#group-f" type="button" role="tab">Groupe F</button> <!-- Bouton pour afficher le contenu de l'onglet F -->
+        </li>
+      </ul>
+
+      <div class="tab-content" id="standingsTabContent"> <!-- Conteneur des contenus des onglets -->
+
+ <!-- Classement GroupeA -->
+<div class="tab-pane fade show active" id="group-a" role="tabpanel"> <!-- Contenu de l'onglet Groupe A, actif et visible par défaut -->
+  <div class="table-responsive"> <!-- Conteneur pour rendre la table responsive (scroll horizontal sur petits écrans) -->
+    <table class="table standings-table"> <!-- Tableau des classements avec styles Bootstrap et personnalisés -->
+      <thead> <!-- En-tête du tableau -->
+        <tr>
+          <th>Equipe</th> <!-- Colonne équipe (drapeau + nom) -->
+          <th>MJ</th>     <!-- Matches joués -->
+          <th>G</th>      <!-- Matches gagnés -->
+          <th>N</th>      <!-- Matches nuls -->
+          <th>p</th>      <!-- Matches perdus -->
+          <th>BP</th>     <!-- Buts pour -->
+          <th>BC</th>     <!-- Buts contre -->
+          <th>DB</th>     <!-- Différence de buts -->
+          <th>Pts</th>    <!-- Points -->
+        </tr>
+      </thead>
+      <tbody> <!-- Corps du tableau, ligne par équipe -->
+        <tr> <!-- Ligne équipe Maroc -->
+          <td>
+            <img src="assets/images/flags/Morocco.png" alt="Maroc" class="team-flag-sm"> <!-- Drapeau Maroc, petite taille -->
+            <span>Maroc</span> <!-- Nom de l'équipe -->
+          </td>
+          <td>0</td> <!-- Matches joués initialisés à 0 -->
+          <td>0</td> <!-- Matches gagnés initialisés à 0 -->
+          <td>0</td> <!-- Matches nuls initialisés à 0 -->
+          <td>0</td> <!-- Matches perdus initialisés à 0 -->
+          <td>0</td> <!-- Buts pour initialisés à 0 -->
+          <td>0</td> <!-- Buts contre initialisés à 0 -->
+          <td>0</td> <!-- Différence de buts initialisée à 0 -->
+          <td>0</td> <!-- Points initialisés à 0 -->
+        </tr>
+        <tr> <!-- Ligne équipe Mali -->
+          <td>
+            <img src="assets/images/flags/mali.png" alt="Mali" class="team-flag-sm"> <!-- Drapeau Mali -->
+            <span>Mali</span>
+          </td>
+          <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <!-- Stats initialisées à 0 -->
+        </tr>
+        <tr> <!-- Ligne équipe Zambie -->
+          <td>
+            <img src="assets/images/flags/zambia.png" alt="Zambie" class="team-flag-sm"> <!-- Drapeau Zambie -->
+            <span>Zambie</span>
+          </td>
+          <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+        </tr>
+        <tr> <!-- Ligne équipe Comores -->
+          <td>
+            <img src="assets/images/flags/comores.png" alt="Comores" class="team-flag-sm"> <!-- Drapeau Comores -->
+            <span>Comores</span>
+          </td>
+          <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  
+  <!-- Classement GroupeB -->
+  <div class="tab-pane fade" id="group-b" role="tabpanel">
+    <div class="table-responsive">
+      <table class="table standings-table">
+        <thead>
+          <tr>
+            <th>Equipe</th>
+            <th>MJ</th>
+            <th>G</th>
+            <th>N</th>
+            <th>p</th>
+            <th>BP</th>
+            <th>BC</th>
+            <th>DB</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="assets/images/flags/egypt.png" alt="Égypte" class="team-flag-sm">
+              <span>Égypte</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/south-africa.png" alt="Afrique du Sud" class="team-flag-sm">
+              <span>Afrique du Sud</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/angola.png" alt="Angola" class="team-flag-sm">
+              <span>Angola</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/zimbabwe.png" alt="Zimbabwe" class="team-flag-sm">
+              <span>Zimbabwe</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Classement GroupeC -->
+  <div class="tab-pane fade" id="group-c" role="tabpanel">
+    <div class="table-responsive">
+      <table class="table standings-table">
+        <thead>
+          <tr>
+            <th>Equipe</th>
+            <th>MJ</th>
+            <th>G</th>
+            <th>N</th>
+            <th>p</th>
+            <th>BP</th>
+            <th>BC</th>
+            <th>DB</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="assets/images/flags/nigeria.png" alt="Nigeria" class="team-flag-sm">
+              <span>Nigeria</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/tunisia.png" alt="Tunisie" class="team-flag-sm">
+              <span>Tunisie</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/uganda.png" alt="Ouganda" class="team-flag-sm">
+              <span>Ouganda</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/tanzania.png" alt="Tanzanie" class="team-flag-sm">
+              <span>Tanzanie</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Classement GroupeD -->
+  <div class="tab-pane fade" id="group-d" role="tabpanel">
+    <div class="table-responsive">
+      <table class="table standings-table">
+        <thead>
+          <tr>
+            <th>Equipe</th>
+            <th>MJ</th>
+            <th>G</th>
+            <th>N</th>
+            <th>p</th>
+            <th>BP</th>
+            <th>BC</th>
+            <th>DB</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="assets/images/flags/senegal.png" alt="Sénégal" class="team-flag-sm">
+              <span>Sénégal</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/dr-congo.png" alt="RD Congo" class="team-flag-sm">
+              <span>RD Congo</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/benin.png" alt="Bénin" class="team-flag-sm">
+              <span>Bénin</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/botswana.png" alt="Botswana" class="team-flag-sm">
+              <span>Botswana</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- Header -->
-  <header id="main-header">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <div class="logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
-          </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
-            <li class="nav-item"><a class="nav-link active" href="matches.html">Matches</a></li>
-            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
-            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
-          </ul>
-          <div class="language-selector">
-            <select class="form-select">
-              <option value="en">EN</option>
-              <option value="fr">FR</option>
-              <option value="ar">AR</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <!-- Classement GroupeE -->
+  <div class="tab-pane fade" id="group-e" role="tabpanel">
+    <div class="table-responsive">
+      <table class="table standings-table">
+        <thead>
+          <tr>
+            <th>Equipe</th>
+            <th>MJ</th>
+            <th>G</th>
+            <th>N</th>
+            <th>p</th>
+            <th>BP</th>
+            <th>BC</th>
+            <th>DB</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="assets/images/flags/algeria.png" alt="Algérie" class="team-flag-sm">
+              <span>Algérie</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/burkina-faso.png" alt="Burkina Faso" class="team-flag-sm">
+              <span>Burkina Faso</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/equatorial-guinea.png" alt="Guinée Éq." class="team-flag-sm">
+              <span>Guinée Éq.</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/sudan.png" alt="Soudan" class="team-flag-sm">
+              <span>Soudan</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  <!-- Page Banner -->
-  <section id="page-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="page-title">Match Schedule</h1>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Matches</li>
-            </ol>
-          </nav>
+  <!-- Classement GroupeF -->
+  <div class="tab-pane fade" id="group-f" role="tabpanel">
+    <div class="table-responsive">
+      <table class="table standings-table">
+        <thead>
+          <tr>
+            <th>Equipe</th>
+            <th>MJ</th>
+            <th>G</th>
+            <th>N</th>
+            <th>p</th>
+            <th>BP</th>
+            <th>BC</th>
+            <th>DB</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="assets/images/flags/cote-divoire.png" alt="Côte d'Ivoire" class="team-flag-sm">
+              <span>Côte d'Ivoire</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/cameroon.png" alt="Cameroun" class="team-flag-sm">
+              <span>Cameroun</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/gabon.png" alt="Gabon" class="team-flag-sm">
+              <span>Gabon</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/images/flags/mozambique.png" alt="Mozambique" class="team-flag-sm">
+              <span>Mozambique</span>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  </section>
+
+ <!-- Section Newsletter -->
+<section id="newsletter"> <!-- Section dédiée à la newsletter -->
+  <div class="container"> <!-- Conteneur Bootstrap centré et avec marges -->
+    <div class="newsletter-container"> <!-- Conteneur spécifique à la newsletter pour styles personnalisés -->
+      <div class="row align-items-center"> <!-- Ligne Bootstrap, aligne verticalement les colonnes -->
+        <div class="col-lg-6"> <!-- Colonne prenant la moitié de l'écran sur grand écran -->
+          <h2>Restez informé</h2> <!-- Titre de la section -->
+          <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités, les calendriers des matchs et des contenus exclusifs sur la Coupe d'Afrique des Nations Maroc 2025.</p> <!-- Description invitant à s'abonner -->
+        </div>
+        <div class="col-lg-6"> <!-- Deuxième moitié de la ligne -->
+          <form class="newsletter-form"> <!-- Formulaire d'abonnement -->
+            <div class="input-group"> <!-- Groupe input + bouton pour mise en page horizontale -->
+              <input type="email" class="form-control" placeholder="Votre adresse email" required> <!-- Champ email obligatoire avec placeholder -->
+              <button type="submit" class="btn btn-primary">S'abonner</button> <!-- Bouton de soumission -->
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Matches Filter -->
-  <section id="matches-filter">
-    <div class="container">
-      <div class="filter-container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="search-box">
-              <input type="text" id="match-search" class="form-control" placeholder="Search matches...">
-              <i class="fas fa-search"></i>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="filter-buttons">
-              <button class="btn btn-filter active" data-filter="all">All Matches</button>
-              <button class="btn btn-filter" data-filter="group-stage">Group Stage</button>
-              <button class="btn btn-filter" data-filter="knockout">Knockout</button>
-              <button class="btn btn-filter" data-filter="today">Today</button>
-            </div>
-          </div>
+<!-- Pied de page -->
+<footer id="main-footer"> <!-- Footer principal -->
+  <div class="container"> <!-- Conteneur centré -->
+    <div class="row"> <!-- Ligne pour organiser les colonnes -->
+      <div class="col-lg-4 mb-4 mb-lg-0"> <!-- Colonne large pour logo + description + réseaux sociaux -->
+        <div class="footer-logo">
+          <span class="logo-text">CAN <span class="year">2025</span></span> <!-- Texte logo avec année -->
+          <span class="host">MAROC</span> <!-- Texte pays hôte -->
+        </div>
+        <p class="footer-about">Site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisée au Maroc.</p> <!-- Description courte -->
+        <div class="social-links"> <!-- Liens vers réseaux sociaux -->
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a> <!-- Facebook -->
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> <!-- Twitter -->
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a> <!-- Instagram -->
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a> <!-- YouTube -->
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Matches Schedule -->
-  <section id="matches-schedule">
-    <div class="container">
-      <div class="schedule-tabs">
-        <ul class="nav nav-tabs" id="matchesTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="group-stage-tab" data-bs-toggle="tab" data-bs-target="#group-stage" type="button" role="tab">Group Stage</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="round16-tab" data-bs-toggle="tab" data-bs-target="#round16" type="button" role="tab">Round of 16</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="quarterfinals-tab" data-bs-toggle="tab" data-bs-target="#quarterfinals" type="button" role="tab">Quarterfinals</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="semifinals-tab" data-bs-toggle="tab" data-bs-target="#semifinals" type="button" role="tab">Semifinals</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="final-tab" data-bs-toggle="tab" data-bs-target="#final" type="button" role="tab">Final</button>
-          </li>
+      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Tournoi" -->
+        <h4 class="footer-heading">Tournoi</h4> <!-- Titre catégorie -->
+        <ul class="footer-links"> <!-- Liste de liens -->
+          <li><a href="#">À propos</a></li>
+          <li><a href="teams.html">Équipes</a></li>
+          <li><a href="matches.html">Matchs</a></li>
+          <li><a href="#">Classements</a></li>
+          <li><a href="#">Statistiques</a></li>
         </ul>
-        
-        <div class="tab-content" id="matchesTabContent">
-          <!-- Group Stage Tab -->
-          <div class="tab-pane fade show active" id="group-stage" role="tabpanel">
-            <div class="match-day">
-              <h3 class="day-title">Matchday 1 <span class="date">13-15 January 2025</span></h3>
-              <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                  <div class="match-card">
-                    <div class="match-header">
-                      <span class="match-group">Group A</span>
-                      <span class="match-date">13 Jan 2025 • 17:00</span>
-                    </div>
-                    <div class="match-teams">
-                      <div class="team">
-                        <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag">
-                        <span class="team-name">Morocco</span>
-                      </div>
-                      <div class="score">VS</div>
-                      <div class="team">
-                        <img src="assets/images/flags/tanzania.png" alt="Tanzania" class="team-flag">
-                        <span class="team-name">Tanzania</span>
-                      </div>
-                    </div>
-                    <div class="match-venue">Mohammed V Stadium, Casablanca</div>
-                    <div class="match-actions">
-                      <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
-                      <a href="tickets.html" class="btn btn-sm btn-primary">Tickets</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- More match cards for Matchday 1 -->
-              </div>
-            </div>
-            
-            <div class="match-day">
-              <h3 class="day-title">Matchday 2 <span class="date">16-18 January 2025</span></h3>
-              <div class="row">
-                <!-- Match cards for Matchday 2 -->
-              </div>
-            </div>
-            
-            <!-- More match days -->
-          </div>
-          
-          <!-- Round of 16 Tab -->
-          <div class="tab-pane fade" id="round16" role="tabpanel">
-            <div class="match-day">
-              <h3 class="day-title">Round of 16 <span class="date">27-30 January 2025</span></h3>
-              <div class="row">
-                <!-- Round of 16 match cards -->
-              </div>
-            </div>
-          </div>
-          
-          <!-- Quarterfinals Tab -->
-          <div class="tab-pane fade" id="quarterfinals" role="tabpanel">
-            <div class="match-day">
-              <h3 class="day-title">Quarterfinals <span class="date">2-3 February 2025</span></h3>
-              <div class="row">
-                <!-- Quarterfinal match cards -->
-              </div>
-            </div>
-          </div>
-          
-          <!-- Semifinals Tab -->
-          <div class="tab-pane fade" id="semifinals" role="tabpanel">
-            <div class="match-day">
-              <h3 class="day-title">Semifinals <span class="date">6-7 February 2025</span></h3>
-              <div class="row">
-                <!-- Semifinal match cards -->
-              </div>
-            </div>
-          </div>
-          
-          <!-- Final Tab -->
-          <div class="tab-pane fade" id="final" role="tabpanel">
-            <div class="match-day">
-              <h3 class="day-title">Final <span class="date">10 February 2025</span></h3>
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <div class="match-card final-match">
-                    <div class="match-header">
-                      <span class="match-group">Final</span>
-                      <span class="match-date">10 Feb 2025 • 20:00</span>
-                    </div>
-                    <div class="match-teams">
-                      <div class="team">
-                        <img src="assets/images/flags/tbd.png" alt="TBD" class="team-flag">
-                        <span class="team-name">Winner SF1</span>
-                      </div>
-                      <div class="score">VS</div>
-                      <div class="team">
-                        <img src="assets/images/flags/tbd.png" alt="TBD" class="team-flag">
-                        <span class="team-name">Winner SF2</span>
-                      </div>
-                    </div>
-                    <div class="match-venue">Grand Stade de Marrakech</div>
-                    <div class="match-actions">
-                      <a href="#" class="btn btn-sm btn-outline-light">Details</a>
-                      <a href="tickets.html" class="btn btn-sm btn-primary">Tickets</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Standings Section -->
-  <section id="standings">
-    <div class="container">
-      <h2 class="section-title">Group Standings</h2>
-      <div class="standings-tabs">
-        <ul class="nav nav-tabs" id="standingsTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="group-a-tab" data-bs-toggle="tab" data-bs-target="#group-a" type="button" role="tab">Group A</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="group-b-tab" data-bs-toggle="tab" data-bs-target="#group-b" type="button" role="tab">Group B</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="group-c-tab" data-bs-toggle="tab" data-bs-target="#group-c" type="button" role="tab">Group C</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="group-d-tab" data-bs-toggle="tab" data-bs-target="#group-d" type="button" role="tab">Group D</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="group-e-tab" data-bs-toggle="tab" data-bs-target="#group-e" type="button" role="tab">Group E</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="group-f-tab" data-bs-toggle="tab" data-bs-target="#group-f" type="button" role="tab">Group F</button>
-          </li>
+      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Lieux" -->
+        <h4 class="footer-heading">Lieux</h4>
+        <ul class="footer-links">
+          <li><a href="stadiums.html">Stades</a></li>
+          <li><a href="#">Villes hôtes</a></li>
+          <li><a href="#">Centres d'entraînement</a></li>
+          <li><a href="#">Zones pour fans</a></li>
         </ul>
-        
-        <div class="tab-content" id="standingsTabContent">
-          <!-- Group A Standings -->
-          <div class="tab-pane fade show active" id="group-a" role="tabpanel">
-            <div class="table-responsive">
-              <table class="table standings-table">
-                <thead>
-                  <tr>
-                    <th>Team</th>
-                    <th>P</th>
-                    <th>W</th>
-                    <th>D</th>
-                    <th>L</th>
-                    <th>GF</th>
-                    <th>GA</th>
-                    <th>GD</th>
-                    <th>Pts</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag-sm">
-                      <span>Morocco</span>
-                    </td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <!-- More teams in Group A -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-          
-          <!-- Other groups -->
-        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Billets" -->
+        <h4 class="footer-heading">Billets</h4>
+        <ul class="footer-links">
+          <li><a href="tickets.html">Acheter des billets</a></li>
+          <li><a href="#">Tarifs</a></li>
+          <li><a href="#">Forfaits</a></li>
+          <li><a href="#">Hospitalité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Plus" -->
+        <h4 class="footer-heading">Plus</h4>
+        <ul class="footer-links">
+          <li><a href="news.html">Actualités</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="#">Bénévoles</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section id="newsletter">
-    <div class="container">
-      <div class="newsletter-container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
-          </div>
-          <div class="col-lg-6">
-            <form class="newsletter-form">
-              <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your Email Address" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
+    <div class="footer-bottom"> <!-- Bas de page du footer -->
+      <p>&copy; 2024 CAN Maroc 2025. Tous droits réservés.</p> <!-- Mention légale -->
+      <div class="footer-partners"> <!-- Partenaires officiels -->
+        <span>En partenariat avec :</span>
+        <a href="https://www.cafonline.com/" target="_blank">CAF</a> <!-- Lien vers CAF -->
+        <a href="https://www.frmf.ma/" target="_blank">FRMF</a> <!-- Lien vers FRMF -->
       </div>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Footer -->
-  <footer id="main-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="footer-logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
-          </div>
-          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tournament</h4>
-          <ul class="footer-links">
-            <li><a href="#">About</a></li>
-            <li><a href="teams.html">Teams</a></li>
-            <li><a href="matches.html">Matches</a></li>
-            <li><a href="#">Standings</a></li>
-            <li><a href="#">Statistics</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Venues</h4>
-          <ul class="footer-links">
-            <li><a href="stadiums.html">Stadiums</a></li>
-            <li><a href="#">Host Cities</a></li>
-            <li><a href="#">Training Centers</a></li>
-            <li><a href="#">Fan Zones</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tickets</h4>
-          <ul class="footer-links">
-            <li><a href="tickets.html">Buy Tickets</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Packages</a></li>
-            <li><a href="#">Hospitality</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">More</h4>
-          <ul class="footer-links">
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#">Volunteers</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
-        <div class="footer-partners">
-          <span>In partnership with:</span>
-          <a href="https://www.cafonline.com/" target="_blank">CAF</a>
-          <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/matches.js"></script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> <!-- JS Bootstrap -->
+<script src="js/main.js"></script> <!-- Script personnalisé -->
 </body>
 </html>

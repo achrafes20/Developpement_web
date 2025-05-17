@@ -1,0 +1,620 @@
+/* ============================================= */
+/*               PAGE BANNER STYLES              */
+/* ============================================= */
+
+/* Style pour la bannière principale de la page */
+#page-banner {
+  /* Fond dégradé semi-transparent par-dessus une image */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../assets/images/matches-banner.jpg') no-repeat center center;
+  background-size: cover; /* Couvre tout l'espace disponible */
+  color: var(--white); /* Texte en blanc (défini dans les variables) */
+  padding: 8rem 0 4rem; /* Grand padding pour donner de l'espace */
+  position: relative; /* Position relative pour le positionnement des enfants */
+  text-align: center; /* Centrage du texte */
+}
+
+/* Titre principal de la page */
+.page-title {
+  font-size: 3rem; /* Taille importante pour le titre */
+  font-weight: 800; /* Epaisseur de police très gras */
+  margin-bottom: var(--spacing-sm); /* Espacement avec le bas */
+  color: var(--white); /* Couleur de texte */
+  text-transform: uppercase; /* Texte en majuscules */
+}
+
+/* Style pour le fil d'Ariane (breadcrumb) */
+.breadcrumb {
+  justify-content: center; /* Centrage horizontal */
+  background: transparent; /* Fond transparent */
+  padding: 0; /* Pas de padding */
+}
+
+/* Style des éléments du breadcrumb */
+.breadcrumb-item {
+  color: var(--light); /* Couleur claire définie dans les variables */
+  font-size: 0.9rem; /* Taille de police légèrement réduite */
+}
+
+/* Style des liens dans le breadcrumb */
+.breadcrumb-item a {
+  color: var(--accent); /* Couleur d'accent (or) */
+  transition: var(--transition-fast); /* Animation rapide au survol */
+}
+
+/* Effet au survol des liens */
+.breadcrumb-item a:hover {
+  color: var(--white); /* Devient blanc */
+  text-decoration: underline; /* Soulignement */
+}
+
+/* Style pour l'élément actif (page courante) */
+.breadcrumb-item.active {
+  color: var(--white); /* Texte blanc */
+  opacity: 0.8; /* Légère transparence */
+}
+
+/* Séparateur entre les éléments du breadcrumb */
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--white); /* Couleur blanche */
+  opacity: 0.6; /* Légère transparence */
+}
+
+/* ============================================= */
+/*             MATCHES FILTER SECTION            */
+/* ============================================= */
+
+/* Section de filtrage des matchs */
+#matches-filter {
+  background-color: var(--white); /* Fond blanc */
+  padding: var(--spacing-lg) 0; /* Grand espacement vertical */
+  box-shadow: var(--shadow-sm); /* Ombre légère */
+  position: sticky; /* Reste fixe au scroll */
+  top: 0; /* Collé en haut */
+  z-index: 100; /* Au-dessus des autres éléments */
+}
+
+/* Conteneur des filtres */
+.filter-container {
+  background-color: var(--white); /* Fond blanc */
+  border-radius: var(--radius-md); /* Bords arrondis moyens */
+  padding: var(--spacing-sm); /* Petit espacement interne */
+}
+
+/* Boîte de recherche */
+.search-box {
+  position: relative; /* Pour positionner l'icône */
+}
+
+/* Champ de recherche */
+.search-box input {
+  padding-left: 2.5rem; /* Espace pour l'icône */
+  border-radius: var(--radius-md); /* Bords arrondis */
+  border: 1px solid var(--medium); /* Bordure grise moyenne */
+  height: 45px; /* Hauteur fixe */
+}
+
+/* Icône de recherche */
+.search-box i {
+  position: absolute; /* Position absolue dans le conteneur relatif */
+  left: 1rem; /* Position à gauche */
+  top: 50%; /* Centrage vertical */
+  transform: translateY(-50%); /* Ajustement précis du centrage */
+  color: var(--medium); /* Couleur grise moyenne */
+}
+
+/* Conteneur des boutons de filtre */
+.filter-buttons {
+  display: flex; /* Disposition en ligne */
+  gap: var(--spacing-xs); /* Petit espace entre les boutons */
+  flex-wrap: wrap; /* Passage à la ligne si nécessaire */
+}
+
+/* Style des boutons de filtre */
+.btn-filter {
+  background-color: transparent; /* Fond transparent */
+  border: 1px solid var(--medium); /* Bordure grise */
+  color: var(--dark); /* Texte foncé */
+  font-size: 0.8rem; /* Petite taille de police */
+  padding: 0.5rem 1rem; /* Padding confortable */
+  border-radius: var(--radius-md); /* Bords arrondis */
+  transition: var(--transition-fast); /* Animation rapide */
+  font-weight: 600; /* Demi-gras */
+}
+
+/* Effet au survol des boutons */
+.btn-filter:hover {
+  background-color: var(--light); /* Fond très clair */
+  border-color: var(--primary); /* Bordure rouge */
+  color: var(--primary); /* Texte rouge */
+}
+
+/* Style du bouton actif */
+.btn-filter.active {
+  background-color: var(--primary); /* Fond rouge */
+  border-color: var(--primary); /* Bordure rouge */
+  color: var(--white); /* Texte blanc */
+}
+
+/* ============================================= */
+/*            MATCHES SCHEDULE SECTION           */
+/* ============================================= */
+
+/* Section du calendrier des matchs */
+#matches-schedule {
+  background-color: var(--light); /* Fond très clair */
+  padding: var(--spacing-xl) 0; /* Très grand espacement vertical */
+}
+
+/* Style des onglets de navigation */
+.schedule-tabs .nav-tabs {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Ligne de séparation */
+  margin-bottom: var(--spacing-lg); /* Espacement avec le contenu */
+}
+
+/* Style des liens des onglets */
+.schedule-tabs .nav-link {
+  font-family: var(--heading-font); /* Police spéciale pour titres */
+  font-weight: 600; /* Demi-gras */
+  color: var(--medium); /* Texte gris moyen */
+  border: none; /* Pas de bordure */
+  padding: 0.75rem 1.5rem; /* Padding confortable */
+  position: relative; /* Pour le pseudo-élément */
+  text-transform: uppercase; /* Texte en majuscules */
+  font-size: 0.9rem; /* Taille légèrement réduite */
+}
+
+/* Effet au survol des onglets */
+.schedule-tabs .nav-link:hover {
+  color: var(--primary); /* Texte rouge */
+  background-color: transparent; /* Fond inchangé */
+}
+
+/* Style de l'onglet actif */
+.schedule-tabs .nav-link.active {
+  color: var(--primary); /* Texte rouge */
+  background-color: transparent; /* Fond inchangé */
+  border: none; /* Pas de bordure */
+}
+
+/* Indicateur visuel de l'onglet actif */
+.schedule-tabs .nav-link.active::after {
+  content: ''; /* Contenu vide */
+  position: absolute; /* Position absolue */
+  bottom: -2px; /* Aligné avec la bordure inférieure */
+  left: 0; /* Commence à gauche */
+  width: 100%; /* Pleine largeur */
+  height: 2px; /* Épaisseur fine */
+  background-color: var(--primary); /* Ligne rouge */
+}
+
+/* Conteneur d'une journée de matchs */
+.match-day {
+  margin-bottom: var(--spacing-xl); /* Grand espace entre les journées */
+}
+
+/* Titre de la journée */
+.day-title {
+  font-size: 1.5rem; /* Taille importante */
+  margin-bottom: var(--spacing-md); /* Espacement avec les matchs */
+  color: var(--dark); /* Texte foncé */
+  display: flex; /* Disposition flexible */
+  align-items: center; /* Centrage vertical */
+  gap: var(--spacing-sm); /* Espace entre les éléments */
+}
+
+/* Date dans le titre */
+.day-title .date {
+  font-size: 1rem; /* Taille normale */
+  color: var(--medium); /* Texte gris moyen */
+  font-weight: 500; /* Poids normal */
+}
+
+/* Carte d'un match */
+.match-card {
+  background-color: var(--white); /* Fond blanc */
+  border-radius: var(--radius-lg); /* Grands coins arrondis */
+  box-shadow: var(--shadow-sm); /* Ombre légère */
+  padding: var(--spacing-md); /* Espacement interne */
+  transition: var(--transition-normal); /* Animation fluide */
+  height: 100%; /* Prend toute la hauteur */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Bordure très subtile */
+}
+
+/* Effet au survol d'une carte */
+.match-card:hover {
+  transform: translateY(-5px); /* Légère élévation */
+  box-shadow: var(--shadow-md); /* Ombre plus prononcée */
+  border-color: var(--primary); /* Bordure rouge */
+}
+
+/* En-tête de la carte (groupe et date) */
+.match-header {
+  display: flex; /* Disposition flexible */
+  justify-content: space-between; /* Espacement maximal */
+  margin-bottom: var(--spacing-sm); /* Petit espace avec le contenu */
+}
+
+/* Style du nom du groupe */
+.match-group {
+  font-weight: 700; /* Gras */
+  color: var(--primary); /* Texte rouge */
+  font-size: 0.9rem; /* Taille réduite */
+  text-transform: uppercase; /* Majuscules */
+}
+
+/* Style de la date du match */
+.match-date {
+  font-size: 0.8rem; /* Petite taille */
+  color: var(--medium); /* Texte gris moyen */
+  font-weight: 500; /* Poids moyen */
+}
+
+/* Conteneur des équipes et score */
+.match-teams {
+  display: flex; /* Disposition flexible */
+  align-items: center; /* Centrage vertical */
+  justify-content: space-between; /* Espacement maximal */
+  margin: var(--spacing-md) 0; /* Espacement vertical */
+}
+
+/* Style d'une équipe */
+.team {
+  display: flex; /* Disposition flexible */
+  flex-direction: column; /* Empilement vertical */
+  align-items: center; /* Centrage horizontal */
+  width: 40%; /* Largeur fixe */
+}
+
+/* Drapeau de l'équipe */
+.team-flag {
+  width: 60px; /* Largeur fixe */
+  height: 40px; /* Hauteur fixe */
+  object-fit: cover; /* Ajustement de l'image */
+  border-radius: var(--radius-sm); /* Petits coins arrondis */
+  box-shadow: var(--shadow-sm); /* Ombre légère */
+  margin-bottom: var(--spacing-xs); /* Petit espace avec le nom */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure très subtile */
+}
+
+/* Nom de l'équipe */
+.team-name {
+  font-weight: 600; /* Demi-gras */
+  text-align: center; /* Centrage du texte */
+  font-size: 0.9rem; /* Taille réduite */
+}
+
+/* Score du match */
+.score {
+  font-family: var(--heading-font); /* Police spéciale pour titres */
+  font-size: 1.5rem; /* Taille importante */
+  font-weight: 700; /* Gras */
+  color: var(--dark); /* Texte foncé */
+  width: 20%; /* Largeur fixe */
+  text-align: center; /* Centrage */
+}
+
+/* Lieu du match */
+.match-venue {
+  font-size: 0.8rem; /* Petite taille */
+  color: var(--medium); /* Texte gris moyen */
+  margin-bottom: var(--spacing-md); /* Espacement avec les boutons */
+  text-align: center; /* Centrage */
+  font-weight: 500; /* Poids moyen */
+}
+
+/* Conteneur des boutons d'action */
+.match-actions {
+  display: flex; /* Disposition flexible */
+  justify-content: center; /* Centrage horizontal */
+  gap: var(--spacing-sm); /* Espace entre les boutons */
+}
+
+/* Style des boutons dans la carte */
+.match-actions .btn {
+  font-size: 0.8rem; /* Petite taille */
+  padding: 0.4rem 0.8rem; /* Petit padding */
+}
+
+/* Style spécial pour la finale */
+.final-match {
+  border: 2px solid var(--accent); /* Bordure dorée */
+  position: relative; /* Pour le pseudo-élément */
+  overflow: hidden; /* Cache les débordements */
+}
+
+/* Fond dégradé pour la finale */
+.final-match::before {
+  content: ''; /* Contenu vide */
+  position: absolute; /* Position absolue */
+  top: 0; left: 0; /* Positionnement */
+  width: 100%; height: 100%; /* Pleine taille */
+  background: linear-gradient(135deg, rgba(193, 39, 45, 0.1) 0%, rgba(0, 98, 51, 0.1) 100%); /* Dégradé rouge/vert */
+  z-index: 0; /* En arrière-plan */
+}
+
+/* Style du groupe pour la finale */
+.final-match .match-group {
+  font-size: 1.1rem; /* Taille augmentée */
+  color: var(--accent); /* Texte doré */
+}
+
+/* Style du score pour la finale */
+.final-match .score {
+  font-size: 2rem; /* Taille importante */
+  color: var(--accent); /* Texte doré */
+}
+
+/* Style des drapeaux pour la finale */
+.final-match .team-flag {
+  width: 80px; /* Largeur augmentée */
+  height: 50px; /* Hauteur augmentée */
+}
+
+/* ============================================= */
+/*               STANDINGS SECTION               */
+/* ============================================= */
+
+/* Section des classements */
+#standings {
+  background-color: var(--white); /* Fond blanc */
+  padding: var(--spacing-xl) 0; /* Très grand espacement vertical */
+}
+
+/* Style des onglets de classement */
+.standings-tabs .nav-tabs {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Ligne de séparation */
+  margin-bottom: var(--spacing-lg); /* Espacement avec le contenu */
+  justify-content: center; /* Centrage des onglets */
+}
+
+/* Style des liens des onglets */
+.standings-tabs .nav-link {
+  font-family: var(--heading-font); /* Police spéciale pour titres */
+  font-weight: 600; /* Demi-gras */
+  color: var(--medium); /* Texte gris moyen */
+  border: none; /* Pas de bordure */
+  padding: 0.75rem 1.5rem; /* Padding confortable */
+  position: relative; /* Pour le pseudo-élément */
+  text-transform: uppercase; /* Texte en majuscules */
+  font-size: 0.9rem; /* Taille légèrement réduite */
+}
+
+/* Effet au survol des onglets */
+.standings-tabs .nav-link:hover {
+  color: var(--primary); /* Texte rouge */
+  background-color: transparent; /* Fond inchangé */
+}
+
+/* Style de l'onglet actif */
+.standings-tabs .nav-link.active {
+  color: var(--primary); /* Texte rouge */
+  background-color: transparent; /* Fond inchangé */
+  border: none; /* Pas de bordure */
+}
+
+/* Indicateur visuel de l'onglet actif */
+.standings-tabs .nav-link.active::after {
+  content: ''; /* Contenu vide */
+  position: absolute; /* Position absolue */
+  bottom: -2px; /* Aligné avec la bordure inférieure */
+  left: 0; /* Commence à gauche */
+  width: 100%; /* Pleine largeur */
+  height: 2px; /* Épaisseur fine */
+  background-color: var(--primary); /* Ligne rouge */
+}
+
+/* Style du tableau de classement */
+.standings-table {
+  width: 100%; /* Pleine largeur */
+  border-collapse: separate; /* Séparation des bordures */
+  border-spacing: 0; /* Pas d'espace entre les cellules */
+}
+
+/* Style des en-têtes de colonne */
+.standings-table th {
+  background-color: var(--primary); /* Fond rouge */
+  color: var(--white); /* Texte blanc */
+  font-weight: 600; /* Demi-gras */
+  padding: 0.75rem; /* Padding confortable */
+  text-align: center; /* Centrage */
+  text-transform: uppercase; /* Majuscules */
+  font-size: 0.8rem; /* Petite taille */
+}
+
+/* Arrondi du premier en-tête */
+.standings-table th:first-child {
+  border-radius: var(--radius-sm) 0 0 0; /* Arrondi en haut à gauche */
+  text-align: left; /* Alignement à gauche */
+}
+
+/* Arrondi du dernier en-tête */
+.standings-table th:last-child {
+  border-radius: 0 var(--radius-sm) 0 0; /* Arrondi en haut à droite */
+}
+
+/* Style des cellules du tableau */
+.standings-table td {
+  padding: 0.75rem; /* Padding confortable */
+  text-align: center; /* Centrage */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Bordure très subtile */
+  font-weight: 500; /* Poids moyen */
+}
+
+/* Première cellule alignée à gauche */
+.standings-table td:first-child {
+  text-align: left; /* Alignement à gauche */
+  font-weight: 600; /* Demi-gras */
+}
+
+/* Lignes paires avec fond légèrement différent */
+.standings-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02); /* Fond très clair */
+}
+
+/* Effet au survol d'une ligne */
+.standings-table tr:hover {
+  background-color: rgba(193, 39, 45, 0.05); /* Fond rouge très clair */
+}
+
+/* Style des petits drapeaux dans le tableau */
+.team-flag-sm {
+  width: 25px; /* Petite largeur */
+  height: 17px; /* Petite hauteur */
+  object-fit: cover; /* Ajustement de l'image */
+  border-radius: 2px; /* Très légers arrondis */
+  margin-right: var(--spacing-xs); /* Petit espace avec le texte */
+  vertical-align: middle; /* Alignement vertical */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure très subtile */
+}
+
+/* ============================================= */
+/*              NEWSLETTER SECTION               */
+/* ============================================= */
+
+/* Section de newsletter */
+#newsletter {
+  background: linear-gradient(45deg, var(--primary), var(--secondary)); /* Dégradé rouge/vert */
+  color: var(--white); /* Texte blanc */
+  padding: var(--spacing-xl) 0; /* Très grand espacement vertical */
+}
+
+/* Conteneur de la newsletter */
+.newsletter-container {
+  background-color: rgba(255, 255, 255, 0.1); /* Fond blanc très transparent */
+  backdrop-filter: blur(5px); /* Effet de flou */
+  border-radius: var(--radius-lg); /* Grands coins arrondis */
+  padding: var(--spacing-xl); /* Très grand espacement interne */
+}
+
+/* Titre de la newsletter */
+.newsletter-container h2 {
+  font-size: 2rem; /* Taille importante */
+  margin-bottom: var(--spacing-sm); /* Petit espace avec le texte */
+  color: var(--white); /* Texte blanc */
+}
+
+/* Texte de la newsletter */
+.newsletter-container p {
+  opacity: 0.9; /* Légère transparence */
+  margin-bottom: 0; /* Pas de marge en bas */
+}
+
+/* Champ de formulaire */
+.newsletter-form .form-control {
+  height: 50px; /* Hauteur fixe */
+  border-radius: var(--radius-md) 0 0 var(--radius-md); /* Arrondi à gauche */
+  border: none; /* Pas de bordure */
+  padding-left: var(--spacing-md); /* Espace à gauche */
+  font-size: 0.9rem; /* Taille légèrement réduite */
+}
+
+/* Bouton de soumission */
+.newsletter-form .btn {
+  height: 50px; /* Hauteur fixe */
+  border-radius: 0 var(--radius-md) var(--radius-md) 0; /* Arrondi à droite */
+  background-color: var(--accent); /* Fond doré */
+  border-color: var(--accent); /* Bordure dorée */
+  font-weight: 600; /* Demi-gras */
+  text-transform: uppercase; /* Majuscules */
+}
+
+/* Effet au survol du bouton */
+.newsletter-form .btn:hover {
+  background-color: #b08d48; /* Doré plus foncé */
+  border-color: #b08d48; /* Bordure plus foncée */
+}
+
+/* ============================================= */
+/*            RESPONSIVE ADJUSTMENTS             */
+/* ============================================= */
+
+/* Adaptation pour écrans moyens (tablettes) */
+@media (max-width: 992px) {
+  /* Espacement entre les cartes de match */
+  .match-card {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Alignement des boutons de filtre */
+  .filter-buttons {
+    justify-content: flex-start;
+    margin-top: var(--spacing-sm);
+  }
+}
+
+/* Adaptation pour petits écrans (grands smartphones) */
+@media (max-width: 768px) {
+  /* Taille réduite du titre */
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  /* Réduction des onglets */
+  .schedule-tabs .nav-link,
+  .standings-tabs .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Réorganisation du titre de journée */
+  .day-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  .day-title .date {
+    margin-top: 0.25rem;
+  }
+  
+  /* Réduction des cellules du tableau */
+  .standings-table th, 
+  .standings-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Réduction de l'espacement de la newsletter */
+  .newsletter-container {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Adaptation pour très petits écrans (smartphones) */
+@media (max-width: 576px) {
+  /* Réorganisation de l'en-tête des cartes */
+  .match-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  /* Pleine largeur pour groupe et date */
+  .match-group, 
+  .match-date {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Boutons en colonne */
+  .match-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Boutons pleine largeur */
+  .match-actions .btn {
+    width: 100%;
+  }
+  
+  /* Réduction de la taille du tableau */
+  .standings-table {
+    font-size: 0.8rem;
+  }
+  
+  /* Réduction des petits drapeaux */
+  .team-flag-sm {
+    width: 20px;
+    height: 14px;
+  }
+}

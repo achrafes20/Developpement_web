@@ -1,422 +1,619 @@
-/* Team page specific styles for AFCON Morocco 2025 */
+/* Styles spécifiques à la page d'équipe pour la CAN Maroc 2025 */
 
-/* Page Banner */
+/* Bannière de la page */
 #page-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/teams-banner.jpg');
+  /* Applique un fond composé d’un dégradé noir semi-transparent par-dessus une image de bannière */
   background-size: cover;
+  /* Ajuste la taille de l’image de fond pour qu’elle couvre tout l’élément */
   background-position: center;
+  /* Centre l’image de fond horizontalement et verticalement */
   padding: 120px 0 60px;
+  /* Applique un espacement interne : 120px en haut, 60px en bas, 0 à gauche et droite */
   color: var(--white);
+  /* Définit la couleur du texte avec la variable CSS "white" (blanc) */
   position: relative;
+  /* Permet un positionnement relatif pour pouvoir placer des éléments enfants en absolu */
 }
 
 .page-title {
   font-size: 3rem;
+  /* Définit la taille de la police à 3rem pour un titre important */
   font-weight: 800;
+  /* Applique une graisse de police très épaisse */
   margin-bottom: var(--spacing-sm);
+  /* Marge inférieure pour espacer le titre du contenu suivant */
   position: relative;
+  /* Position relative nécessaire pour le pseudo-élément ::after */
   display: inline-block;
+  /* Affiche l’élément comme bloc en ligne pour limiter la largeur au contenu */
 }
 
 .page-title::after {
   content: '';
+  /* Crée un pseudo-élément vide utilisé pour une décoration visuelle */
   position: absolute;
+  /* Permet de positionner ce trait en absolu par rapport au titre */
   bottom: -10px;
+  /* Positionne l’élément 10px sous le bas du titre */
   left: 0;
+  /* Aligne à gauche */
   width: 80px;
+  /* Largeur de la ligne décorative sous le titre */
   height: 4px;
+  /* Hauteur de cette ligne */
   background: linear-gradient(to right, var(--primary), var(--secondary));
+  /* Dégradé de gauche à droite entre les couleurs primaires et secondaires */
   border-radius: var(--radius-sm);
+  /* Arrondit légèrement les coins de la ligne */
 }
 
 .breadcrumb {
   background-color: transparent;
+  /* Aucun fond pour le fil d’Ariane (breadcrumb) */
   padding: 0;
+  /* Aucun espace intérieur */
   margin: 0;
+  /* Aucun espace extérieur */
 }
 
 .breadcrumb-item {
   font-size: 0.9rem;
+  /* Taille du texte légèrement plus petite que la normale pour les éléments de fil d’Ariane */
 }
 
 .breadcrumb-item a {
   color: var(--accent);
+  /* Couleur des liens dans le breadcrumb, utilisant une couleur d’accentuation */
 }
 
 .breadcrumb-item.active {
   color: var(--light);
+  /* L’élément actif (page actuelle) est affiché avec une couleur plus claire */
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
   color: var(--light);
+  /* Couleur du séparateur “/” entre deux éléments breadcrumb */
 }
 
-/* Teams Filter */
+/* Filtrage des équipes */
 #teams-filter {
   padding: var(--spacing-lg) 0 var(--spacing-md);
+  /* Espacement vertical : grand en haut, moyen en bas */
 }
 
 .filter-container {
   background-color: var(--white);
+  /* Fond blanc pour la boîte de filtre */
   padding: var(--spacing-md);
+  /* Espacement intérieur moyen */
   border-radius: var(--radius-lg);
+  /* Bords arrondis de grande taille */
   box-shadow: var(--shadow-md);
+  /* Ombre moyenne autour du conteneur pour lui donner du relief */
   margin-bottom: var(--spacing-md);
+  /* Marge en bas pour espacer ce bloc du suivant */
 }
 
 .search-box {
   position: relative;
+  /* Position relative nécessaire pour placer l’icône à l’intérieur */
 }
 
 .search-box input {
   padding-left: var(--spacing-lg);
+  /* Espacement à gauche pour laisser de la place à l’icône */
   height: 50px;
+  /* Hauteur du champ de recherche */
   border-radius: var(--radius-md);
+  /* Bords arrondis moyens pour le champ */
   border: 1px solid rgba(0, 0, 0, 0.1);
+  /* Bord fin, légèrement grisâtre pour un look discret */
 }
 
 .search-box i {
   position: absolute;
-  left: var(--spacing-md);
+  /* L’icône est placée en absolu par rapport à la boîte */
+  right: 5%;
+  /* Positionne l’icône à 5% du bord droit */
   top: 50%;
+  /* Centre l’icône verticalement */
   transform: translateY(-50%);
+  /* Décale de moitié la hauteur vers le haut pour un centrage parfait */
   color: var(--medium);
+  /* Couleur moyenne définie par une variable CSS */
 }
 
 .filter-buttons {
   display: flex;
+  /* Affiche les boutons avec un système de boîte flexible */
   flex-wrap: wrap;
+  /* Permet aux boutons de passer à la ligne s’ils débordent */
   gap: 0.5rem;
+  /* Espacement entre les boutons */
   justify-content: flex-end;
+  /* Aligne les boutons vers la droite */
 }
 
 .btn-filter {
   padding: 0.5rem 1rem;
+  /* Espacement intérieur des boutons : 0.5rem verticalement, 1rem horizontalement */
   font-size: 0.9rem;
+  /* Taille de police légèrement réduite */
   border-radius: var(--radius-md);
+  /* Bords arrondis moyens */
   background-color: var(--light);
+  /* Fond clair pour les boutons */
   color: var(--dark);
+  /* Texte en couleur foncée pour le contraste */
   border: none;
+  /* Supprime la bordure par défaut */
   transition: var(--transition-normal);
+  /* Applique une transition fluide sur les effets (comme hover) */
 }
+
 
 .btn-filter:hover,
 .btn-filter.active {
   background-color: var(--primary);
+  /* Quand on survole un bouton de filtre ou qu’il est actif, son fond devient la couleur principale */
   color: var(--white);
+  /* Le texte devient blanc pour un meilleur contraste */
 }
 
-/* Teams Grid */
+/* Grille des équipes */
 #teams-grid {
   padding: var(--spacing-md) 0 var(--spacing-xl);
+  /* Applique un espacement vertical : moyen en haut, très grand en bas, 0 sur les côtés */
 }
 
 .team-card {
   background-color: var(--white);
+  /* Fond blanc pour chaque carte d’équipe */
   border-radius: var(--radius-lg);
+  /* Grands bords arrondis pour un look moderne */
   box-shadow: var(--shadow-md);
+  /* Ombre moyenne autour de la carte pour un effet de profondeur */
   padding: var(--spacing-md);
+  /* Espacement intérieur moyen */
   height: 100%;
+  /* Hauteur complète pour remplir le conteneur parent */
   transition: var(--transition-normal);
+  /* Transition fluide pour les effets (comme le survol) */
   position: relative;
+  /* Nécessaire pour positionner des éléments enfants en absolu */
   overflow: hidden;
+  /* Cache les éléments qui dépassent, utile pour le décor en haut à droite */
 }
 
 .team-card::before {
   content: '';
+  /* Crée un élément décoratif vide à afficher dans le coin */
   position: absolute;
+  /* Position absolue dans la carte */
   top: 0;
+  /* Collé en haut */
   right: 0;
+  /* Collé à droite */
   width: 100px;
+  /* Largeur de l’image décorative */
   height: 100px;
+  /* Hauteur de l’image décorative */
   background-image: url('../assets/images/pattern-corner.svg');
+  /* Utilise une image SVG en tant que motif de coin */
   background-size: contain;
+  /* Ajuste la taille pour que l’image tienne entièrement dans la zone */
   background-repeat: no-repeat;
+  /* Empêche que l’image se répète */
   background-position: top right;
+  /* Aligne l’image en haut à droite */
   opacity: 0.05;
+  /* Rend l’image très transparente pour un effet subtil */
   z-index: 0;
+  /* Envoie cet élément décoratif en arrière-plan */
 }
 
 .team-card:hover {
   transform: translateY(-5px);
+  /* Fait légèrement “sauter” la carte vers le haut au survol */
   box-shadow: var(--shadow-lg);
+  /* Applique une ombre plus grande pour accentuer l’effet d’élévation */
 }
 
 .team-header {
   display: flex;
+  /* Utilise Flexbox pour aligner le drapeau et le texte horizontalement */
   align-items: center;
+  /* Centre les éléments verticalement */
   margin-bottom: var(--spacing-md);
+  /* Marge inférieure pour espacer du reste du contenu */
 }
 
 .team-flag {
   width: 70px;
+  /* Largeur fixe pour l’image du drapeau */
   height: 50px;
+  /* Hauteur fixe également */
   margin-right: var(--spacing-md);
+  /* Espacement à droite entre le drapeau et les infos */
   border-radius: var(--radius-sm);
+  /* Bords légèrement arrondis */
   overflow: hidden;
+  /* Cache tout débordement de l’image */
   box-shadow: var(--shadow-sm);
+  /* Petite ombre pour donner un peu de relief au drapeau */
 }
 
 .team-flag img {
   width: 100%;
+  /* L’image occupe toute la largeur disponible */
   height: 100%;
+  /* L’image occupe toute la hauteur disponible */
   object-fit: cover;
+  /* L’image remplit entièrement le cadre sans être déformée */
 }
 
 .team-info {
   flex: 1;
+  /* Permet à cette section de prendre tout l’espace restant */
 }
 
 .team-name {
   font-size: 1.3rem;
+  /* Taille de police relativement grande pour le nom de l’équipe */
   margin-bottom: 0.2rem;
+  /* Petite marge en bas du nom */
   font-weight: 700;
+  /* Police en gras pour mettre le nom en valeur */
 }
 
 .team-group {
   font-size: 0.8rem;
+  /* Taille de police plus petite pour les informations de groupe */
   color: var(--primary);
+  /* Utilise la couleur principale du thème */
   font-weight: 600;
+  /* Police semi-grasse */
   display: inline-block;
+  /* Affiche comme bloc en ligne pour appliquer les paddings et background */
   padding: 0.2rem 0.5rem;
+  /* Petit espacement intérieur vertical et horizontal */
   background-color: rgba(193, 39, 45, 0.1);
+  /* Fond rouge très clair et transparent pour représenter le groupe */
   border-radius: var(--radius-sm);
+  /* Bords légèrement arrondis pour ce badge */
 }
 
 .team-stats {
   display: flex;
+  /* Dispose les statistiques horizontalement */
   justify-content: space-between;
+  /* Répartit les éléments également avec de l’espace entre eux */
   margin-bottom: var(--spacing-md);
+  /* Marge en bas pour espacer de la suite */
   padding-bottom: var(--spacing-md);
+  /* Ajoute un peu d’espace sous les stats */
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* Ligne de séparation très discrète sous les stats */
 }
 
 .stat-item {
   display: flex;
+  /* Utilise Flexbox pour organiser le contenu */
   flex-direction: column;
+  /* Dispose les éléments en colonne (verticalement) */
   align-items: center;
+  /* Centre horizontalement les éléments dans chaque colonne */
   text-align: center;
+  /* Centre le texte à l’intérieur */
 }
 
 .stat-value {
   font-family: var(--heading-font);
+  /* Utilise la police principale définie pour les titres */
   font-size: 1.5rem;
+  /* Taille de police relativement grande pour mettre en valeur la statistique */
   font-weight: 700;
+  /* Met le texte en gras pour le rendre bien visible */
   color: var(--secondary);
+  /* Utilise la couleur secondaire du thème */
   line-height: 1;
+  /* Hauteur de ligne ajustée pour éviter les espacements verticaux inutiles */
 }
 
 .stat-label {
   font-size: 0.7rem;
+  /* Petite taille de texte pour l’étiquette de la statistique */
   color: var(--medium);
+  /* Couleur neutre moyenne pour ne pas dominer visuellement */
   margin-top: 0.2rem;
+  /* Petit espace au-dessus de l’étiquette */
   text-align: center;
+  /* Centre le texte horizontalement */
 }
 
 .team-coach {
   margin-bottom: var(--spacing-md);
+  /* Marge en bas pour espacer des autres éléments */
   font-size: 0.9rem;
+  /* Taille de texte standard */
 }
 
 .coach-label {
   font-weight: 600;
+  /* Met l’étiquette “Entraîneur” en semi-gras */
   margin-right: 0.3rem;
+  /* Légère marge à droite pour séparer du nom de l'entraîneur */
 }
 
 .coach-name {
   color: var(--dark);
+  /* Couleur sombre pour rendre le nom lisible et bien visible */
 }
 
 .btn-view-team {
   width: 100%;
+  /* Le bouton prend toute la largeur disponible */
   text-align: center;
+  /* Centre le texte à l’intérieur du bouton */
 }
 
-/* Team Statistics */
+/* Statistiques de l’équipe */
 #team-statistics {
   background-color: var(--light);
+  /* Fond clair pour bien séparer la section */
   padding: var(--spacing-xl) 0;
+  /* Grand espacement vertical, aucun sur les côtés */
   position: relative;
+  /* Permet de positionner des éléments enfants en absolu si nécessaire */
 }
 
 .stats-card {
   background-color: var(--white);
+  /* Fond blanc pour la carte des stats */
   border-radius: var(--radius-lg);
+  /* Bords arrondis larges */
   box-shadow: var(--shadow-md);
+  /* Ombre moyenne pour créer de la profondeur */
   height: 100%;
+  /* Prend toute la hauteur disponible */
   overflow: hidden;
+  /* Masque les débordements éventuels */
 }
 
 .stats-header {
   background-color: var(--secondary);
+  /* En-tête avec la couleur secondaire (souvent une couleur forte) */
   color: var(--white);
+  /* Texte blanc pour un bon contraste */
   padding: var(--spacing-md);
+  /* Espacement intérieur moyen */
 }
 
 .stats-header h3 {
   margin: 0;
+  /* Supprime la marge par défaut du h3 */
   font-size: 1.2rem;
+  /* Taille de police légèrement plus grande */
   font-weight: 600;
+  /* Semi-gras pour le titre */
 }
 
 .stats-content {
   padding: var(--spacing-md);
+  /* Espacement intérieur moyen pour le contenu des stats */
 }
 
 .stats-list {
   list-style: none;
+  /* Supprime les puces de la liste */
   padding: 0;
+  /* Supprime le padding par défaut */
   margin: 0;
+  /* Supprime la marge par défaut */
 }
 
 .stats-list li {
   display: flex;
+  /* Aligne horizontalement les éléments de chaque ligne de statistique */
   align-items: center;
+  /* Centre verticalement les éléments */
   padding: var(--spacing-sm) 0;
+  /* Espacement vertical entre les éléments */
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* Ligne de séparation subtile entre les stats */
 }
 
 .stats-list li:last-child {
   border-bottom: none;
+  /* Supprime la ligne en bas de la dernière statistique */
 }
 
 .stat-icon {
   display: flex;
+  /* Utilise Flexbox pour centrer l’icône */
   align-items: center;
+  /* Centre verticalement */
   justify-content: center;
+  /* Centre horizontalement */
   width: 40px;
+  /* Taille fixe pour l’icône */
   height: 40px;
   background-color: rgba(0, 98, 51, 0.1);
+  /* Fond vert clair très transparent */
   color: var(--secondary);
+  /* Couleur du texte ou icône */
   border-radius: 50%;
+  /* Rend le fond complètement circulaire */
   margin-right: var(--spacing-sm);
+  /* Espace entre l’icône et le texte de la statistique */
   flex-shrink: 0;
+  /* Empêche l’icône de rétrécir si l’espace manque */
 }
 
 .stat-info {
   display: flex;
+  /* Conteneur flexible */
   flex-direction: column;
+  /* Organise les éléments verticalement (titre + valeur) */
 }
 
 .region-north {
   background-color: var(--primary);
+  /* Applique une couleur de fond spécifique à la région nord (ex : pour une carte ou un badge) */
 }
 
 .region-west {
   background-color: var(--secondary);
+  /* Couleur d’arrière-plan pour représenter la région Ouest, utilisant la couleur secondaire définie */
 }
 
 .region-central {
   background-color: var(--accent);
+  /* Couleur d’arrière-plan pour la région Centre, utilisant la couleur d’accent du thème */
 }
 
 .region-east {
   background-color: #6366F1;
+  /* Couleur personnalisée pour la région Est (un ton violet/bleu) */
 }
 
 .region-south {
   background-color: #8B5CF6;
+  /* Couleur personnalisée pour la région Sud (un ton violet plus clair) */
 }
 
-/* Responsive styles for teams page */
+/* Styles réactifs (responsive) pour la page des équipes */
 @media (max-width: 991px) {
   .filter-buttons {
     justify-content: flex-start;
+    /* Aligne les boutons de filtre à gauche sur écrans moyens */
     margin-top: var(--spacing-sm);
+    /* Ajoute une marge au-dessus des boutons */
   }
   
   .team-stats {
     flex-wrap: wrap;
+    /* Permet aux statistiques de se répartir sur plusieurs lignes si l’espace manque */
   }
   
   .stat-item {
     width: 33%;
+    /* Chaque élément occupe environ un tiers de la ligne */
     margin-bottom: var(--spacing-sm);
+    /* Espacement sous chaque élément */
   }
   
   .page-title {
     font-size: 2rem;
+    /* Réduction de la taille du titre de page pour les écrans moyens */
   }
   
   .team-name {
     font-size: 1.1rem;
+    /* Réduction légère du nom de l'équipe */
   }
 }
 
 @media (max-width: 767px) {
   .btn-filter {
     font-size: 0.8rem;
+    /* Réduction de la taille de police du bouton */
     padding: 0.4rem 0.8rem;
+    /* Réduction de l’espace intérieur pour s’adapter à des écrans plus petits */
   }
   
   .stats-card {
     margin-bottom: var(--spacing-md);
+    /* Ajout d’un espace entre les cartes statistiques sur petits écrans */
   }
   
   .team-flag {
     width: 60px;
     height: 40px;
+    /* Réduction des dimensions du drapeau de l’équipe */
   }
 }
 
 @media (max-width: 575px) {
   #page-banner {
     padding: 100px 0 40px;
+    /* Réduction des espacements verticaux du bandeau de page */
   }
   
   .page-title {
     font-size: 1.8rem;
+    /* Encore plus petit pour s’adapter aux écrans mobiles */
   }
   
   .filter-buttons {
     justify-content: center;
+    /* Centre les boutons de filtre sur mobile */
   }
   
   .btn-filter {
     flex: 1 0 auto;
+    /* Chaque bouton prend une largeur flexible */
     text-align: center;
+    /* Centre le texte dans le bouton */
   }
   
   .team-stats {
     flex-direction: column;
+    /* Affiche les stats en colonne (verticalement) */
     align-items: flex-start;
+    /* Aligne les stats à gauche */
   }
   
   .stat-item {
     width: 100%;
+    /* Chaque statistique prend toute la largeur disponible */
     flex-direction: row;
+    /* Affiche la valeur et le libellé sur la même ligne */
     align-items: center;
+    /* Centre verticalement les contenus */
     justify-content: flex-start;
+    /* Aligne les contenus à gauche */
     margin-bottom: 0.5rem;
+    /* Ajoute un petit espace entre les stats */
   }
   
   .stat-value {
     margin-right: 0.5rem;
+    /* Espace entre la valeur et le libellé */
   }
   
   .stat-label {
     margin-top: 0;
+    /* Supprime la marge supérieure du libellé, car ils sont maintenant côte à côte */
   }
 }
 
-/* Animation for team cards */
+/* Animation pour les cartes des équipes */
 .team-card {
   transform: translateY(20px);
+  /* Décale la carte vers le bas avant l’animation */
   opacity: 0;
+  /* Commence invisible */
   animation: fadeInUp 0.6s forwards;
+  /* Lance une animation nommée "fadeInUp" pendant 0.6s et garde le résultat final */
   animation-delay: calc(var(--animation-order) * 0.1s);
+  /* Délai d’animation en fonction de l’ordre des cartes (permet un effet en cascade) */
 }
 
 @keyframes fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
+    /* Animation : rend l’élément visible et le ramène à sa position normale */
   }
 }
 
-/* Team filter transitions */
+/* Transitions pour le filtre des équipes */
 .team-item {
   transition: all 0.4s ease;
+  /* Applique une transition fluide sur toutes les propriétés (durée 0.4s) */
 }
 
 .team-item.hidden {
@@ -426,10 +623,464 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  /* Lorsque l’élément est masqué (filtré), on le rend invisible, rétréci et on le retire du flux */
 }
 
-/* Chart styles */
+/* Styles pour les graphiques (ex: canvas de Chart.js) */
 canvas {
   max-width: 100%;
+  /* Empêche le canvas de dépasser la largeur de son conteneur */
   height: auto !important;
+  /* Permet au canvas d’ajuster sa hauteur proportionnellement */
+}
+
+/* Section Détails de l'équipe */
+#team-details {
+  padding: var(--spacing-xl) 0;
+  /* Espacement vertical autour de la section */
+}
+
+/* Carte du profil de l'équipe */
+.team-profile-card {
+  background-color: var(--white);
+  /* Fond blanc pour la carte */
+  border-radius: var(--radius-lg);
+  /* Coins arrondis */
+  box-shadow: var(--shadow-md);
+  /* Ombre moyenne pour effet d’élévation */
+  overflow: hidden;
+  /* Masque tout débordement de contenu */
+  margin-bottom: var(--spacing-md);
+  /* Espacement sous la carte */
+  transition: var(--transition-normal);
+  /* Transition fluide sur les effets (hover) */
+}
+
+.team-profile-card:hover {
+  transform: translateY(-5px);
+  /* Fait légèrement remonter la carte au survol */
+  box-shadow: var(--shadow-lg);
+  /* Ombre plus grande pour renforcer l’effet de survol */
+}
+
+/* Grand drapeau de l'équipe */
+.team-flag-large {
+  height: 200px;
+  /* Hauteur fixe du conteneur */
+  background-color: var(--light);
+  /* Fond clair */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Centre le drapeau à l’intérieur horizontalement et verticalement */
+  padding: var(--spacing-md);
+  transition: var(--transition-normal);
+  /* Animation fluide */
+}
+
+.team-flag-large:hover {
+  background-color: #f0f0f0;
+  /* Change le fond au survol */
+}
+
+.team-flag-large img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  /* L’image est contenue sans déformation */
+  transition: var(--transition-normal);
+}
+
+.team-flag-large:hover img {
+  transform: scale(1.05);
+  /* Zoom léger sur l’image au survol */
+}
+
+/* Bloc d'informations de l'équipe */
+.team-info-box {
+  padding: var(--spacing-md);
+  /* Espace intérieur */
+}
+
+.team-info-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--dark);
+  transition: var(--transition-normal);
+  /* Titre de l’équipe avec transition de couleur au survol */
+}
+
+.team-info-box h3:hover {
+  color: var(--primary);
+  /* Titre change de couleur au survol */
+}
+
+.team-group {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(193, 39, 45, 0.1);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition-normal);
+  /* Affichage du groupe de l’équipe avec effet visuel léger */
+}
+
+.team-group:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  /* Fond coloré et texte blanc au survol pour renforcer l’interaction */
+}
+
+/* Statistiques de l'équipe */
+.team-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* Affiche les stats en ligne avec espacement et bordures */
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  transition: var(--transition-normal);
+  /* Chaque statistique occupe le même espace et réagit au survol */
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  /* Soulève légèrement la statistique au survol pour feedback visuel */
+}
+
+.stat-value {
+  font-size: 1.5rem; /* Taille de la police pour la valeur statistique */
+  font-weight: 700; /* Texte en gras pour faire ressortir la valeur */
+  color: var(--secondary); /* Couleur secondaire définie dans les variables CSS */
+  line-height: 1; /* Hauteur de ligne serrée pour une meilleure lisibilité */
+  transition: var(--transition-normal); /* Transition fluide pour les changements de style */
+}
+
+.stat-item:hover .stat-value {
+  color: var(--primary); /* Change la couleur de la valeur statistique au survol de l'élément parent */
+}
+
+.stat-label {
+  font-size: 0.8rem; /* Taille plus petite pour le label des statistiques */
+  color: var(--medium); /* Couleur moyenne pour le texte du label */
+  margin-top: 0.3rem; /* Marge au-dessus pour espacer du contenu précédent */
+  transition: var(--transition-normal); /* Transition fluide lors des changements de style */
+}
+
+.stat-item:hover .stat-label {
+  color: var(--dark); /* Change la couleur du label au survol de l'élément parent */
+}
+
+/* Section Coach et Capitaine */
+.team-coach,
+.team-captain {
+  display: flex; /* Affiche en flexbox pour aligner le contenu horizontalement */
+  margin-bottom: var(--spacing-sm); /* Marge en bas pour espacer des éléments suivants */
+  font-size: 0.95rem; /* Taille de police légèrement plus petite */
+}
+
+.coach-label,
+.captain-label {
+  font-weight: 600; /* Texte semi-gras pour les labels */
+  margin-right: 0.5rem; /* Marge à droite pour espacer du nom */
+  color: var(--medium); /* Couleur moyenne */
+}
+
+.coach-name,
+.captain-name {
+  color: var(--dark); /* Couleur sombre pour les noms */
+  transition: var(--transition-normal); /* Transition fluide pour les changements */
+}
+
+.coach-name:hover,
+.captain-name:hover {
+  color: var(--primary); /* Change la couleur au survol pour indiquer l'interaction */
+}
+
+/* Section Joueurs clés */
+.team-squad {
+  background-color: var(--white); /* Fond blanc */
+  border-radius: var(--radius-lg); /* Coins arrondis */
+  box-shadow: var(--shadow-md); /* Ombre pour effet de profondeur */
+  padding: var(--spacing-md); /* Espacement intérieur */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.team-squad:hover {
+  box-shadow: var(--shadow-lg); /* Ombre plus prononcée au survol */
+}
+
+.player-list {
+  margin-top: var(--spacing-md); /* Marge en haut pour séparer de la section précédente */
+}
+
+.player-item {
+  display: flex; /* Flexbox pour aligner contenu horizontalement */
+  align-items: center; /* Centre verticalement les éléments */
+  padding: var(--spacing-sm) 0; /* Padding vertical */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Ligne séparatrice très légère */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.player-item:last-child {
+  border-bottom: none; /* Retire la bordure du dernier élément */
+}
+
+.player-item:hover {
+  background-color: rgba(0, 98, 51, 0.05); /* Fond légèrement vert au survol */
+  border-radius: var(--radius-sm); /* Bords arrondis au survol */
+  padding-left: var(--spacing-sm); /* Décalage à gauche pour l’effet visuel */
+}
+
+
+.player-name {
+  font-weight: 600; /* Texte semi-gras pour le nom du joueur */
+  flex: 1; /* Le nom prend tout l’espace disponible dans le conteneur flex */
+  transition: var(--transition-normal); /* Transition fluide pour les changements de style */
+}
+
+.player-item:hover .player-name {
+  color: var(--primary); /* Change la couleur du nom du joueur au survol de la ligne joueur */
+}
+
+.player-info {
+  display: flex; /* Conteneur flex pour aligner les infos du joueur horizontalement */
+  font-size: 0.85rem; /* Taille de police légèrement réduite pour les infos */
+  color: var(--medium); /* Couleur moyenne pour un texte moins dominant */
+}
+
+.player-position {
+  margin-right: var(--spacing-sm); /* Marge à droite pour espacer du contenu suivant */
+  padding-right: var(--spacing-sm); /* Padding à droite pour créer un espace intérieur */
+  border-right: 1px solid rgba(0, 0, 0, 0.1); /* Bordure droite fine et légère */
+}
+
+/* Section contenu de l’équipe */
+.team-content {
+  background-color: var(--white); /* Fond blanc */
+  border-radius: var(--radius-lg); /* Bords arrondis */
+  box-shadow: var(--shadow-md); /* Ombre moyenne pour profondeur */
+  padding: var(--spacing-lg); /* Padding important autour du contenu */
+  height: 100%; /* Prend toute la hauteur disponible */
+  transition: var(--transition-normal); /* Transition fluide pour effets visuels */
+}
+
+.team-content:hover {
+  box-shadow: var(--shadow-lg); /* Ombre plus marquée au survol */
+}
+
+/* Éléments du match */
+.match-item {
+  padding: var(--spacing-md); /* Padding moyen intérieur */
+  border-radius: var(--radius-md); /* Coins arrondis moyens */
+  background-color: var(--light); /* Fond clair */
+  margin-bottom: var(--spacing-sm); /* Marge en bas pour espacer les matchs */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.match-item:hover {
+  transform: translateY(-3px); /* Remonte légèrement au survol */
+  box-shadow: var(--shadow-sm); /* Ombre légère */
+  background-color: var(--primary); /* Change fond en couleur primaire */
+  color: var(--white); /* Texte en blanc */
+}
+
+.match-item:hover .match-date,
+.match-item:hover .vs,
+.match-item:hover .team-name {
+  color: var(--white); /* Change la couleur du texte des sous-éléments au survol */
+}
+
+.match-date {
+  font-size: 0.85rem; /* Taille réduite pour la date du match */
+  color: var(--medium); /* Couleur moyenne */
+  margin-bottom: var(--spacing-xs); /* Marge en bas petite */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.match-teams {
+  display: flex; /* Flexbox pour aligner horizontalement les équipes */
+  align-items: center; /* Centre verticalement les éléments */
+  margin-bottom: var(--spacing-xs); /* Petite marge en bas */
+}
+
+.vs {
+  margin: 0 var(--spacing-sm); /* Marge horizontale pour espacer du texte adjacent */
+  font-weight: 600; /* Texte semi-gras */
+  color: var(--primary); /* Couleur primaire */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+
+/* History Timeline */
+/* Ligne de temps historique */
+.history-timeline {
+  position: relative; /* Position relative pour positionner les pseudo-éléments */
+  padding-left: var(--spacing-md); /* Espace à gauche pour la ligne verticale */
+  margin-top: var(--spacing-md); /* Marge au-dessus */
+}
+
+.history-timeline::before {
+  content: ''; /* Contenu vide pour le pseudo-élément */
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  top: 0; /* En haut */
+  left: 0; /* Collé à gauche */
+  height: 100%; /* Prend toute la hauteur du conteneur */
+  width: 2px; /* Largeur fine pour la ligne verticale */
+  background-color: var(--primary); /* Couleur primaire */
+}
+
+.history-item {
+  position: relative; /* Position relative pour les éléments internes */
+  padding-bottom: var(--spacing-md); /* Padding bas */
+  margin-bottom: var(--spacing-md); /* Marge en bas */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.history-item:hover {
+  padding-left: var(--spacing-sm); /* Décalage à gauche au survol */
+}
+
+.history-item:last-child {
+  margin-bottom: 0; /* Pas de marge pour le dernier élément */
+  padding-bottom: 0; /* Pas de padding bas pour le dernier */
+}
+
+.history-item::before {
+  content: ''; /* Contenu vide */
+  position: absolute; /* Position absolue */
+  top: 5px; /* Décalage vers le bas */
+  left: -19px; /* Décalage à gauche, sur la ligne verticale */
+  width: 12px; /* Taille du rond */
+  height: 12px; /* Taille du rond */
+  border-radius: 50%; /* Cercle parfait */
+  background-color: var(--secondary); /* Couleur secondaire */
+  border: 2px solid var(--white); /* Bordure blanche */
+  box-shadow: 0 0 0 2px var(--secondary); /* Ombre autour du cercle */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.history-item:hover::before {
+  background-color: var(--primary); /* Change la couleur du rond au survol */
+  box-shadow: 0 0 0 2px var(--primary); /* Change aussi l'ombre */
+}
+
+.history-year {
+  font-weight: 700; /* Texte en gras */
+  color: var(--primary); /* Couleur primaire */
+  margin-bottom: var(--spacing-xs); /* Petite marge en bas */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.history-item:hover .history-year {
+  color: var(--secondary); /* Change la couleur de l'année au survol */
+}
+
+.history-event {
+  color: var(--medium); /* Couleur moyenne */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.history-item:hover .history-event {
+  color: var(--dark); /* Change la couleur de l'événement au survol */
+}
+
+/* Group Matches */
+/* Matches de groupe */
+.group-match-item {
+  display: flex; /* Conteneur flex */
+  align-items: center; /* Centre vertical */
+  padding: var(--spacing-sm) var(--spacing-md); /* Padding vertical et horizontal */
+  background-color: var(--light); /* Fond clair */
+  border-radius: var(--radius-md); /* Coins arrondis */
+  margin-bottom: var(--spacing-xs); /* Petite marge en bas */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.group-match-item:hover {
+  background-color: var(--primary); /* Fond couleur primaire au survol */
+  color: var(--white); /* Texte blanc au survol */
+}
+
+.group-match-item:hover .match-date,
+.group-match-item:hover .team-name {
+  color: var(--white); /* Texte des sous-éléments en blanc au survol */
+}
+
+.group-match-item .match-date {
+  flex: 0 0 150px; /* Largeur fixe de 150px pour la date */
+  margin-bottom: 0; /* Pas de marge en bas */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+/* --- Header --- */
+/* En-tête principal */
+#main-header {
+  position: relative; /* Position relative */
+}
+
+.navbar {
+  padding: 1rem 0; /* Padding vertical */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.navbar.scrolled {
+  background-color: var(--white); /* Fond blanc lorsque la navbar est scrollée */
+  box-shadow: var(--shadow-md); /* Ombre pour la profondeur */
+  padding: 0.5rem 0; /* Réduction du padding */
+}
+
+.navbar-brand {
+  display: flex; /* Flexbox pour aligner les éléments horizontalement */
+  align-items: center; /* Centre vertical */
+}
+
+.logo {
+  display: flex; /* Flex vertical */
+  flex-direction: column; /* Colonne */
+  line-height: 1; /* Hauteur de ligne */
+}
+
+.logo-text {
+  font-family: var(--heading-font); /* Police principale */
+  font-weight: 800; /* Très gras */
+  font-size: 1.8rem; /* Taille du texte */
+  color: var(--primary); /* Couleur primaire */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.logo .year {
+  color: var(--secondary); /* Couleur secondaire */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+.logo .host {
+  font-size: 0.9rem; /* Taille réduite */
+  letter-spacing: 3px; /* Espacement des lettres */
+  font-weight: 600; /* Semi-gras */
+  color: var(--accent); /* Couleur d’accent */
+  transition: var(--transition-normal); /* Transition fluide */
+}
+
+/* Effets hover pour le logo */
+.navbar-brand:hover .logo-text {
+  color: var(--secondary); /* Change la couleur du texte au survol */
+}
+
+.navbar-brand:hover .logo .year {
+  color: var(--primary); /* Inverse les couleurs avec le texte */
+}
+
+.navbar-brand:hover .logo .host {
+  color: var(--white); /* Change la couleur de "MOROCCO" en blanc */
+  text-shadow: 0 0 5px rgba(0,0,0,0.3); /* Ajoute une ombre portée */
 }

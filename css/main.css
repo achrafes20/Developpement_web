@@ -191,7 +191,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/images/moroccan-star.svg');
+  background-image: url('../assets/images/moroccan-star.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1054,4 +1054,13 @@ section {
 .footer-partners a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+/* Ajouter à la fin pour plus de fluidité */
+.navbar-brand {
+  transition: var(--transition-normal);
+  transform-origin: left center;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
 }

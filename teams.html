@@ -1,376 +1,1399 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Déclaration du type de document : ici HTML5 -->
+
+<html lang="fr">
+<!-- Définition de la langue de la page : français -->
+
 <head>
+  <!-- Début de la section en-tête du document -->
+
   <meta charset="UTF-8">
+  <!-- Définition de l'encodage des caractères en UTF-8 -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teams - Africa Cup of Nations - Morocco 2025</title>
+  <!-- Permet d'adapter la mise en page à la taille de l'écran pour le responsive -->
+
+  <title>Équipes - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Titre affiché dans l'onglet du navigateur -->
+
+  <!-- Liens vers les feuilles de style externes -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Intégration de Bootstrap (framework CSS) pour faciliter le design et la mise en page -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Intégration de Font Awesome pour les icônes -->
+
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Lien vers la feuille de style principale du site -->
+
   <link rel="stylesheet" href="css/teams.css">
+  <!-- Lien vers la feuille de style spécifique à la page des équipes -->
+
+  <link rel="stylesheet" href="css/animations.css">
+  <!-- Lien vers la feuille de style des animations -->
+
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Lien vers la feuille de style qui gère l'affichage sur les différents écrans -->
+
+  <link rel="stylesheet" href="css/teambuilder.css">
+  <!-- Lien vers la feuille de style pour le module de création d'équipe -->
+
 </head>
+<!-- Fin de la section d'en-tête -->
+
 <body>
-  <!-- Preloader -->
+  <!-- Début du corps du document -->
+
   <div id="preloader">
+    <!-- Écran de chargement avant l'affichage complet de la page -->
+
     <div class="moroccan-loader">
+      <!-- Conteneur de l'animation personnalisée -->
+
       <div class="loader-star"></div>
+      <!-- Élément d'animation (étoile ou autre forme animée) -->
+
     </div>
   </div>
 
-  <!-- Header -->
   <header id="main-header">
+    <!-- Début de l'en-tête principal -->
+
     <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Barre de navigation principale, en mode large (lg) et fixe en haut -->
+
       <div class="container">
+        <!-- Conteneur Bootstrap pour structurer le contenu -->
+
         <a class="navbar-brand" href="index.html">
+          <!-- Lien vers la page d'accueil avec le logo du site -->
+
           <div class="logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
+            <!-- Conteneur pour le logo -->
+
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <!-- Texte du logo avec mention de l'année -->
+
+            <span class="host">MAROC</span>
+            <!-- Pays organisateur affiché sous le logo -->
+
           </div>
         </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <!-- Bouton d'ouverture du menu burger pour mobile -->
+
           <span class="navbar-toggler-icon"></span>
+          <!-- Icône du bouton burger -->
+
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Conteneur du menu de navigation qui se replie en mode mobile -->
+
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="teams.html">Teams</a></li>
-            <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
-            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
-            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
+            <!-- Liste des liens de navigation alignés à droite -->
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <!-- Lien vers la page d'accueil -->
+
+            <li class="nav-item"><a class="nav-link active" href="teams.html">Équipes</a></li>
+            <!-- Lien vers la page des équipes, actif sur cette page -->
+
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matchs</a></li>
+            <!-- Lien vers la page des matchs -->
+
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li>
+            <!-- Lien vers la page des stades -->
+
+            <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li>
+            <!-- Lien vers la page des actualités -->
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+            <!-- Lien vers la galerie photo/vidéo -->
+
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li>
+            <!-- Lien vers la billetterie -->
+
           </ul>
+
           <div class="language-selector">
+            <!-- Sélecteur de langue -->
+
             <select class="form-select">
+              <!-- Liste déroulante pour choisir la langue -->
               <option value="en">EN</option>
-              <option value="fr">FR</option>
+              <!-- Option anglais -->
+
+              <option value="fr" selected>FR</option>
+              <!-- Option français sélectionnée -->
+
               <option value="ar">AR</option>
+              <!-- Option arabe -->
+
             </select>
           </div>
+
         </div>
       </div>
+
     </nav>
   </header>
 
-  <!-- Page Banner -->
   <section id="page-banner">
+    <!-- Bannière d’en-tête de la page -->
+
     <div class="container">
+      <!-- Conteneur Bootstrap -->
+
       <div class="row">
+        <!-- Ligne pour organiser le contenu -->
+
         <div class="col-lg-12">
-          <h1 class="page-title">Participating Teams</h1>
+          <!-- Colonne prenant toute la largeur -->
+
+          <h1 class="page-title">Équipes Participantes</h1>
+          <!-- Titre de la page affiché dans la bannière -->
+
           <nav aria-label="breadcrumb">
+            <!-- Fil d'Ariane pour la navigation -->
+
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Teams</li>
+              <!-- Liste des éléments du fil d'Ariane -->
+
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <!-- Premier élément du fil d'Ariane -->
+
+              <li class="breadcrumb-item active" aria-current="page">Équipes</li>
+              <!-- Élément actif indiquant la page actuelle -->
+
             </ol>
+
           </nav>
         </div>
+
       </div>
     </div>
+
   </section>
 
-  <!-- Teams Filter -->
   <section id="teams-filter">
+    <!-- Section des filtres pour trier les équipes -->
+
     <div class="container">
+      <!-- Conteneur Bootstrap -->
+
       <div class="filter-container">
+        <!-- Conteneur pour le système de filtre -->
+
         <div class="row align-items-center">
+          <!-- Ligne avec alignement vertical centré -->
+
           <div class="col-md-6">
+            <!-- Colonne prenant la moitié de la largeur en taille md et plus -->
+
             <div class="search-box">
-              <input type="text" id="team-search" class="form-control" placeholder="Search teams...">
+              <!-- Boîte de recherche -->
+
+              <input type="text" id="team-search" class="form-control" placeholder="Rechercher des équipes...">
+              <!-- Champ de texte pour saisir la recherche -->
+
               <i class="fas fa-search"></i>
+              <!-- Icône de loupe -->
+
             </div>
           </div>
+
           <div class="col-md-6">
+            <!-- Deuxième colonne pour les boutons de filtre -->
+
             <div class="filter-buttons">
-              <button class="btn btn-filter active" data-filter="all">All Teams</button>
-              <button class="btn btn-filter" data-filter="group-a">Group A</button>
-              <button class="btn btn-filter" data-filter="group-b">Group B</button>
-              <button class="btn btn-filter" data-filter="group-c">Group C</button>
-              <button class="btn btn-filter" data-filter="group-d">Group D</button>
+              <!-- Conteneur des boutons de filtre -->
+
+              <button class="btn btn-filter active" data-filter="all">Toutes les équipes</button>
+              <!-- Bouton pour afficher toutes les équipes -->
+
+              <button class="btn btn-filter" data-filter="group-a">Groupe A</button>
+              <!-- Bouton filtre pour le Groupe A -->
+
+              <button class="btn btn-filter" data-filter="group-b">Groupe B</button>
+              <!-- Bouton filtre pour le Groupe B -->
+
+              <button class="btn btn-filter" data-filter="group-c">Groupe C</button>
+              <!-- Bouton filtre pour le Groupe C -->
+
+              <button class="btn btn-filter" data-filter="group-d">Groupe D</button>
+              <!-- Bouton filtre pour le Groupe D -->
+
+              <button class="btn btn-filter" data-filter="group-e">Groupe E</button>
+              <!-- Bouton filtre pour le Groupe E -->
+
+              <button class="btn btn-filter" data-filter="group-f">Groupe F</button>
+              <!-- Bouton filtre pour le Groupe F -->
+
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- Teams Grid -->
   <section id="teams-grid">
+    <!-- Section contenant la grille des équipes -->
+
     <div class="container">
+      <!-- Conteneur Bootstrap -->
+
       <div class="row" id="teams-container">
-        <!-- Group A Teams -->
-        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
-          <div class="team-card">
-            <div class="team-header">
-              <div class="team-flag">
-                <img src="assets/images/flags/morocco.png" alt="Morocco">
-              </div>
-              <div class="team-info">
-                <h3 class="team-name">Morocco</h3>
-                <span class="team-group">Group A</span>
-              </div>
-            </div>
-            <div class="team-stats">
-              <div class="stat-item">
-                <span class="stat-value">5</span>
-                <span class="stat-label">AFCON Appearances</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">1</span>
-                <span class="stat-label">Best Finish (1976)</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">22</span>
-                <span class="stat-label">FIFA Ranking</span>
-              </div>
-            </div>
-            <div class="team-coach">
-              <span class="coach-label">Coach:</span>
-              <span class="coach-name">Walid Regragui</span>
-            </div>
-            <a href="team-details.html?team=morocco" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
-          </div>
-        </div>
+        <!-- Ligne contenant les équipes -->
 
         <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
-          <div class="team-card">
-            <div class="team-header">
-              <div class="team-flag">
-                <img src="assets/images/flags/senegal.png" alt="Senegal">
-              </div>
-              <div class="team-info">
-                <h3 class="team-name">Senegal</h3>
-                <span class="team-group">Group A</span>
-              </div>
-            </div>
-            <div class="team-stats">
-              <div class="stat-item">
-                <span class="stat-value">16</span>
-                <span class="stat-label">AFCON Appearances</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">1</span>
-                <span class="stat-label">Best Finish (2021)</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">20</span>
-                <span class="stat-label">FIFA Ranking</span>
-              </div>
-            </div>
-            <div class="team-coach">
-              <span class="coach-label">Coach:</span>
-              <span class="coach-name">Aliou Cissé</span>
-            </div>
-            <a href="team-details.html?team=senegal" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
-          </div>
-        </div>
+          <!-- Carte d'équipe (prend 6 colonnes md et 3 colonnes lg, avec une marge en bas) -->
 
-        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
           <div class="team-card">
-            <div class="team-header">
-              <div class="team-flag">
-                <img src="assets/images/flags/cameroon.png" alt="Cameroon">
-              </div>
-              <div class="team-info">
-                <h3 class="team-name">Cameroon</h3>
-                <span class="team-group">Group A</span>
-              </div>
-            </div>
-            <div class="team-stats">
-              <div class="stat-item">
-                <span class="stat-value">20</span>
-                <span class="stat-label">AFCON Appearances</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">5</span>
-                <span class="stat-label">Best Finish (2017)</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">42</span>
-                <span class="stat-label">FIFA Ranking</span>
-              </div>
-            </div>
-            <div class="team-coach">
-              <span class="coach-label">Coach:</span>
-              <span class="coach-name">Marc Brys</span>
-            </div>
-            <a href="team-details.html?team=cameroon" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
-          </div>
-        </div>
+            <!-- Conteneur principal de la carte -->
 
-        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
-          <div class="team-card">
             <div class="team-header">
-              <div class="team-flag">
-                <img src="assets/images/flags/tunisia.png" alt="Tunisia">
-              </div>
-              <div class="team-info">
-                <h3 class="team-name">Tunisia</h3>
-                <span class="team-group">Group A</span>
-              </div>
-            </div>
-            <div class="team-stats">
-              <div class="stat-item">
-                <span class="stat-value">20</span>
-                <span class="stat-label">AFCON Appearances</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">1</span>
-                <span class="stat-label">Best Finish (2004)</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">41</span>
-                <span class="stat-label">FIFA Ranking</span>
-              </div>
-            </div>
-            <div class="team-coach">
-              <span class="coach-label">Coach:</span>
-              <span class="coach-name">Faouzi Benzarti</span>
-            </div>
-            <a href="team-details.html?team=tunisia" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
-          </div>
-        </div>
+              <!-- En-tête de la carte -->
 
-        <!-- Group B Teams -->
-        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-b">
-          <div class="team-card">
-            <div class="team-header">
               <div class="team-flag">
-                <img src="assets/images/flags/nigeria.png" alt="Nigeria">
+                <!-- Conteneur du drapeau -->
+
+                <img src="assets/images/flags/morocco.png" alt="Maroc">
+                <!-- Image du drapeau de l'équipe -->
+
               </div>
+
               <div class="team-info">
-                <h3 class="team-name">Nigeria</h3>
-                <span class="team-group">Group B</span>
+                <!-- Informations sur l'équipe -->
+
+                <h3 class="team-name">Maroc</h3>
+                <!-- Nom de l'équipe -->
+
+                <span class="team-group">Groupe A</span>
+                <!-- Groupe d'appartenance -->
+
               </div>
             </div>
+
             <div class="team-stats">
+              <!-- Statistiques de l'équipe -->
+
               <div class="stat-item">
                 <span class="stat-value">19</span>
-                <span class="stat-label">AFCON Appearances</span>
+                <span class="stat-label">Participations à la CAN</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-value">1</span>
+                <span class="stat-label">Meilleur résultat (1976)</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-value">13</span>
+                <span class="stat-label">Classement FIFA</span>
+              </div>
+
+            </div>
+
+            <div class="team-coach">
+              <span class="coach-label">Entraîneur :</span>
+              <span class="coach-name">Walid Regragui</span>
+            </div>
+
+            <a href="team-details.html?team=morocco" class="btn btn-outline-primary btn-view-team">Voir le profil</a>
+            <!-- Bouton vers le profil de l'équipe -->
+
+          </div>
+        </div>
+
+        <!-- Structure identique répétée pour chaque équipe -->
+
+        <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-flag">
+                <img src="assets/images/flags/comoros.png" alt="Comores">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Comores</h3>
+                <span class="team-group">Groupe A</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-item">
+                <span class="stat-value">2</span>
+                <span class="stat-label">Participations à la CAN</span>
               </div>
               <div class="stat-item">
-                <span class="stat-value">3</span>
-                <span class="stat-label">Best Finish (2013)</span>
+                <span class="stat-value">8e</span>
+                <span class="stat-label">Meilleur résultat (2021)</span>
               </div>
               <div class="stat-item">
-                <span class="stat-value">30</span>
-                <span class="stat-label">FIFA Ranking</span>
+                <span class="stat-value">117</span>
+                <span class="stat-label">Classement FIFA</span>
               </div>
             </div>
             <div class="team-coach">
-              <span class="coach-label">Coach:</span>
-              <span class="coach-name">Finidi George</span>
+              <span class="coach-label">Entraîneur :</span>
+              <span class="coach-name">Younes Zerdouk</span>
             </div>
-            <a href="team-details.html?team=nigeria" class="btn btn-outline-primary btn-view-team">View Team Profile</a>
+            <a href="team-details.html?team=comoros" class="btn btn-outline-primary btn-view-team">Voir le profil</a>
           </div>
         </div>
 
-        <!-- Additional teams would be added here following the same pattern -->
+    <!-- Toutes les autres équipes suivent le même modèle... -->
+<!-- Ceci est un commentaire pour indiquer que la suite reprend la même structure pour d'autres équipes -->
 
+<!-- Section des équipes participantes -->
+<!-- Titre de la section qui contient toutes les équipes présentes -->
+
+<!-- Équipe du Mali - Groupe A -->
+<!-- Carte présentant l'équipe du Mali, appartenant au Groupe A -->
+
+<div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+  <!-- Conteneur pour une carte d'équipe ; classes Bootstrap pour définir la taille sur différents écrans + espacement bas -->
+  <!-- data-group : attribut personnalisé utilisé pour regrouper les équipes par groupe -->
+
+  <div class="team-card">
+    <!-- Boîte contenant toutes les infos de l'équipe -->
+
+    <!-- En-tête de la carte équipe -->
+    <!-- Partie haute de la carte contenant le drapeau et le nom de l'équipe -->
+
+    <div class="team-header">
+      <!-- Conteneur pour le drapeau et les infos générales -->
+
+      <!-- Drapeau du pays -->
+      <div class="team-flag">
+        <!-- Conteneur du drapeau -->
+        <img src="assets/images/flags/mali.png" alt="Mali">
+        <!-- Image du drapeau avec chemin d'accès et texte alternatif -->
+      </div>
+
+      <!-- Informations de base -->
+      <div class="team-info">
+        <!-- Conteneur pour le nom et groupe de l'équipe -->
+        <h3 class="team-name">Mali</h3>
+        <!-- Nom de l'équipe affiché en titre -->
+        <span class="team-group">Groupe A</span>
+        <!-- Groupe auquel appartient l'équipe -->
+      </div>
+    </div>
+
+    <!-- Statistiques de l'équipe -->
+    <div class="team-stats">
+      <!-- Conteneur des statistiques -->
+
+      <div class="stat-item">
+        <!-- Élément de statistique -->
+        <span class="stat-value">12</span>
+        <!-- Valeur : nombre de participations à la CAN -->
+        <span class="stat-label">Participations à la CAN</span>
+        <!-- Libellé de la statistique -->
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-value">Finaliste</span>
+        <!-- Valeur : meilleur résultat -->
+        <span class="stat-label">Meilleur résultat (1972)</span>
+        <!-- Libellé expliquant ce résultat -->
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-value">47</span>
+        <!-- Classement FIFA actuel -->
+        <span class="stat-label">Classement FIFA</span>
+      </div>
+    </div>
+
+    <!-- Entraîneur -->
+    <div class="team-coach">
+      <!-- Zone indiquant le sélectionneur -->
+      <span class="coach-label">Entraîneur :</span>
+      <!-- Libellé -->
+      <span class="coach-name">Éric Chelle</span>
+      <!-- Nom du coach -->
+    </div>
+
+    <!-- Bouton pour voir le profil -->
+    <a href="team-details.html?team=mali" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+    <!-- Bouton pour accéder à la page détaillée de l'équipe -->
+  </div>
+</div>
+
+<!-- Équipe de Zambie - Groupe A -->
+<div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-a">
+  <div class="team-card">
+    <div class="team-header">
+      <div class="team-flag">
+        <img src="assets/images/flags/zambia.png" alt="Zambie">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Zambie</h3>
+        <span class="team-group">Groupe A</span>
+      </div>
+    </div>
+    <div class="team-stats">
+      <div class="stat-item">
+        <span class="stat-value">17</span>
+        <span class="stat-label">Participations à la CAN</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">1</span>
+        <span class="stat-label">Meilleur résultat (2012)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">87</span>
+        <span class="stat-label">Classement FIFA</span>
+      </div>
+    </div>
+    <div class="team-coach">
+      <span class="coach-label">Entraîneur :</span>
+      <span class="coach-name">Avram Grant</span>
+    </div>
+    <a href="team-details.html?team=zambia" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+  </div>
+</div>
+
+<!-- Équipe d'Égypte - Groupe B -->
+<div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-b">
+  <div class="team-card">
+    <div class="team-header">
+      <div class="team-flag">
+        <img src="assets/images/flags/egypt.png" alt="Égypte">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Égypte</h3>
+        <span class="team-group">Groupe B</span>
+      </div>
+    </div>
+    <div class="team-stats">
+      <div class="stat-item">
+        <span class="stat-value">25</span>
+        <span class="stat-label">Participations à la CAN</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">7</span>
+        <span class="stat-label">Meilleur résultat (2010)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">36</span>
+        <span class="stat-label">Classement FIFA</span>
+      </div>
+    </div>
+    <div class="team-coach">
+      <span class="coach-label">Entraîneur :</span>
+      <span class="coach-name">Hossam Hassan</span>
+    </div>
+    <a href="team-details.html?team=egypt" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+  </div>
+</div>
+
+<!-- Équipe d'Angola - Groupe B -->
+<div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-b">
+  <div class="team-card">
+    <div class="team-header">
+      <div class="team-flag">
+        <img src="assets/images/flags/angola.png" alt="Angola">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Angola</h3>
+        <span class="team-group">Groupe B</span>
+      </div>
+    </div>
+    <div class="team-stats">
+      <div class="stat-item">
+        <span class="stat-value">8</span>
+        <span class="stat-label">Participations à la CAN</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">QF</span>
+        <span class="stat-label">Meilleur résultat (2008, 2010)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">93</span>
+        <span class="stat-label">Classement FIFA</span>
+      </div>
+    </div>
+    <div class="team-coach">
+      <span class="coach-label">Entraîneur :</span>
+      <span class="coach-name">Pedro Gonçalves</span>
+    </div>
+    <a href="team-details.html?team=angola" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+  </div>
+</div>
+
+<!-- Équipe d'Afrique du Sud - Groupe B -->
+<div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-b">
+  <div class="team-card">
+    <div class="team-header">
+      <div class="team-flag">
+        <img src="assets/images/flags/south-africa.png" alt="Afrique du Sud">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Afrique du Sud</h3>
+        <span class="team-group">Groupe B</span>
+      </div>
+    </div>
+    <div class="team-stats">
+      <div class="stat-item">
+        <span class="stat-value">10</span>
+        <span class="stat-label">Participations à la CAN</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">1</span>
+        <span class="stat-label">Meilleur résultat (1996)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">59</span>
+        <span class="stat-label">Classement FIFA</span>
+      </div>
+    </div>
+    <div class="team-coach">
+      <span class="coach-label">Entraîneur :</span>
+      <span class="coach-name">Hugo Broos</span>
+    </div>
+    <a href="team-details.html?team=south-africa" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+  </div>
+</div>
+
+
+      <!-- Équipe du Zimbabwe - Groupe B -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-b">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/zimbabwe.png" alt="Zimbabwe">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Zimbabwe</h3>
+              <span class="team-group">Groupe B</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">5</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Phase de groupes</span>
+              <span class="stat-label">Meilleur résultat</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">125</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Baltemar Brito</span>
+          </div>
+          <a href="team-details.html?team=zimbabwe" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Nigeria - Groupe C -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-c">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/nigeria.png" alt="Nigeria">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Nigeria</h3>
+              <span class="team-group">Groupe C</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">19</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">3</span>
+              <span class="stat-label">Meilleur résultat (2013)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">42</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Finidi George</span>
+          </div>
+          <a href="team-details.html?team=nigeria" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe de Tanzanie - Groupe C -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-c">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/tanzania.png" alt="Tanzanie">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Tanzanie</h3>
+              <span class="team-group">Groupe C</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">3</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Phase de groupes</span>
+              <span class="stat-label">Meilleur résultat</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">121</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Hemed Morocco</span>
+          </div>
+          <a href="team-details.html?team=tanzania" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe de Tunisie - Groupe C -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-c">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/tunisia.png" alt="Tunisie">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Tunisie</h3>
+              <span class="team-group">Groupe C</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">20</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">1</span>
+              <span class="stat-label">Meilleur résultat (2004)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">41</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Jalel Kadri</span>
+          </div>
+          <a href="team-details.html?team=tunisia" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe d'Ouganda - Groupe C -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-c">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/uganda.png" alt="Ouganda">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Ouganda</h3>
+              <span class="team-group">Groupe C</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">7</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Finaliste</span>
+              <span class="stat-label">Meilleur résultat (1978)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">92</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Paul Put</span>
+          </div>
+          <a href="team-details.html?team=uganda" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Sénégal - Groupe D -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-d">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/senegal.png" alt="Sénégal">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Sénégal</h3>
+              <span class="team-group">Groupe D</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">16</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">1</span>
+              <span class="stat-label">Meilleur résultat (2021)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">20</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Aliou Cissé</span>
+          </div>
+          <a href="team-details.html?team=senegal" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe de RD Congo - Groupe D -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-d">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/dr-congo.png" alt="RD Congo">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">RD Congo</h3>
+              <span class="team-group">Groupe D</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">19</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">2</span>
+              <span class="stat-label">Meilleur résultat (1968, 1974)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">67</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Sébastien Desabre</span>
+          </div>
+          <a href="team-details.html?team=drcongo" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Bénin - Groupe D -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-d">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/benin.png" alt="Bénin">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Bénin</h3>
+              <span class="team-group">Groupe D</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">4</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">QF</span>
+              <span class="stat-label">Meilleur résultat (2019)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">98</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Gernot Rohr</span>
+          </div>
+          <a href="team-details.html?team=benin" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Botswana - Groupe D -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-d">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/botswana.png" alt="Botswana">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Botswana</h3>
+              <span class="team-group">Groupe D</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">3</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Phase de groupes</span>
+              <span class="stat-label">Meilleur résultat</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">148</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Didier Gomes</span>
+          </div>
+          <a href="team-details.html?team=botswana" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe d'Algérie - Groupe E -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-e">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/algeria.png" alt="Algérie">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Algérie</h3>
+              <span class="team-group">Groupe E</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">19</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">2</span>
+              <span class="stat-label">Meilleur résultat (1990, 2019)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">43</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Vladimir Petković</span>
+          </div>
+          <a href="team-details.html?team=algeria" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Burkina Faso - Groupe E -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-e">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/burkina-faso.png" alt="Burkina Faso">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Burkina Faso</h3>
+              <span class="team-group">Groupe E</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">12</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Finaliste</span>
+              <span class="stat-label">Meilleur résultat (2013)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">57</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Hubert Velud</span>
+          </div>
+          <a href="team-details.html?team=burkina-faso" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe de Guinée Équatoriale - Groupe E -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-e">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/equatorial-guinea.png" alt="Guinée Équatoriale">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Guinée Équatoriale</h3>
+              <span class="team-group">Groupe E</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">3</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">4ème</span>
+              <span class="stat-label">Meilleur résultat (2015)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">88</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Juan Micha</span>
+          </div>
+          <a href="team-details.html?team=equatorial-guinea" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Soudan - Groupe E -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-e">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/sudan.png" alt="Soudan">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Soudan</h3>
+              <span class="team-group">Groupe E</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">9</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">1</span>
+              <span class="stat-label">Meilleur résultat (1970)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">127</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Kwon Oh-son</span>
+          </div>
+          <a href="team-details.html?team=sudan" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Cameroun - Groupe F -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-f">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/cameroon.png" alt="Cameroun">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Cameroun</h3>
+              <span class="team-group">Groupe F</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">20</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">5</span>
+              <span class="stat-label">Meilleur résultat (2017)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">51</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Marc Brys</span>
+          </div>
+          <a href="team-details.html?team=cameroon" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe de Côte d'Ivoire - Groupe F -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-f">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/ivory-coast.png" alt="Côte d'Ivoire">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Côte d'Ivoire</h3>
+              <span class="team-group">Groupe F</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">24</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">2</span>
+              <span class="stat-label">Meilleur résultat (1992, 2015)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">49</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Emerse Faé</span>
+          </div>
+          <a href="team-details.html?team=ivory-coast" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Gabon - Groupe F -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-f">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/gabon.png" alt="Gabon">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Gabon</h3>
+              <span class="team-group">Groupe F</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">8</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">QF</span>
+              <span class="stat-label">Meilleur résultat (1996, 2012)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">86</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Patrice Neveu</span>
+          </div>
+          <a href="team-details.html?team=gabon" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+      <!-- Équipe du Mozambique - Groupe F -->
+      <div class="col-md-6 col-lg-3 mb-4 team-item" data-group="group-f">
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-flag">
+              <img src="assets/images/flags/mozambique.png" alt="Mozambique">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Mozambique</h3>
+              <span class="team-group">Groupe F</span>
+            </div>
+          </div>
+          <div class="team-stats">
+            <div class="stat-item">
+              <span class="stat-value">4</span>
+              <span class="stat-label">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Phase de groupes</span>
+              <span class="stat-label">Meilleur résultat</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">111</span>
+              <span class="stat-label">Classement FIFA</span>
+            </div>
+          </div>
+          <div class="team-coach">
+            <span class="coach-label">Entraîneur :</span>
+            <span class="coach-name">Chiquinho Conde</span>
+          </div>
+          <a href="team-details.html?team=mozambique" class="btn btn-outline-primary btn-view-team">Voir le profil de l'équipe</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       </div>
     </div>
   </section>
 
-  <!-- Team Statistics -->
-  <section id="team-statistics" class="moroccan-pattern">
-    <div class="container">
-      <h2 class="section-title">Tournament Statistics</h2>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="stats-card">
-            <div class="stats-header">
-              <h3>AFCON 2025 Participating Teams by Region</h3>
-            </div>
-            <div class="stats-content">
-              <canvas id="regions-chart"></canvas>
-            </div>
+  <!-- Statistiques des équipes -->
+  <!-- Statistiques des équipes -->
+<section id="team-statistics" class="moroccan-pattern"> 
+  <!-- Section pour afficher les statistiques des équipes avec un identifiant 'team-statistics' et une classe pour le style graphique -->
+  <div class="container"> 
+    <!-- Conteneur Bootstrap pour centrer et mettre en forme le contenu -->
+
+    <h2 class="section-title">Statistiques du Tournoi</h2>
+    <!-- Titre de niveau 2 pour introduire la section des statistiques -->
+
+    <div class="row">
+      <!-- Ligne Bootstrap pour organiser les colonnes -->
+
+      <div class="col-lg-8">
+        <!-- Colonne de 8 colonnes (sur 12) en grand écran -->
+
+        <div class="stats-card">
+          <!-- Carte pour présenter les statistiques -->
+
+          <div class="stats-header">
+            <!-- En-tête de la carte -->
+            <h3>Équipes participantes à la CAN 2025 par région</h3>
+            <!-- Titre de niveau 3 pour cette carte de stats -->
+          </div>
+
+          <div class="stats-content">
+            <!-- Contenu principal de la carte -->
+
+            <canvas id="regions-chart"></canvas>
+            <!-- Zone canvas HTML5 pour dessiner un graphique (géré par Chart.js via JS) -->
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="stats-card">
-            <div class="stats-header">
-              <h3>Tournament Facts</h3>
-            </div>
-            <div class="stats-content">
-              <ul class="stats-list">
-                <li>
-                  <span class="stat-icon"><i class="fas fa-trophy"></i></span>
-                  <div class="stat-info">
-                    <span class="stat-value">24</span>
-                    <span class="stat-label">Participating Teams</span>
-                  </div>
-                </li>
-                <li>
-                  <span class="stat-icon"><i class="fas fa-medal"></i></span>
-                  <div class="stat-info">
-                    <span class="stat-value">7</span>
-                    <span class="stat-label">Previous Champions</span>
-                  </div>
-                </li>
-                <li>
-                  <span class="stat-icon"><i class="fas fa-user-tie"></i></span>
-                  <div class="stat-info">
-                    <span class="stat-value">18</span>
-                    <span class="stat-label">African Coaches</span>
-                  </div>
-                </li>
-                <li>
-                  <span class="stat-icon"><i class="fas fa-futbol"></i></span>
-                  <div class="stat-info">
-                    <span class="stat-value">52</span>
-                    <span class="stat-label">Total Matches</span>
-                  </div>
-                </li>
-                <li>
-                  <span class="stat-icon"><i class="fas fa-star"></i></span>
-                  <div class="stat-info">
-                    <span class="stat-value">25</span>
-                    <span class="stat-label">FIFA Top 100 Players</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
+      </div>
+
+      <div class="col-lg-4">
+        <!-- Colonne de 4 colonnes (sur 12) en grand écran -->
+
+        <div class="stats-card">
+          <!-- Deuxième carte pour afficher d’autres statistiques -->
+
+          <div class="stats-header">
+            <!-- En-tête de la deuxième carte -->
+            <h3>Faits sur le tournoi</h3>
+            <!-- Titre : "Faits sur le tournoi" -->
+          </div>
+
+          <div class="stats-content">
+            <!-- Contenu principal de cette carte -->
+
+            <ul class="stats-list">
+              <!-- Liste d'éléments statistiques -->
+
+              <li>
+                <!-- Élément de la liste -->
+                <span class="stat-icon"><i class="fas fa-trophy"></i></span>
+                <!-- Icône Font Awesome représentant un trophée -->
+                <div class="stat-info">
+                  <span class="stat-value">24</span>
+                  <!-- Valeur numérique -->
+                  <span class="stat-label">Équipes participantes</span>
+                  <!-- Légende : Équipes participantes -->
+                </div>
+              </li>
+
+              <!-- Même principe pour les autres statistiques : -->
+
+              <li>
+                <span class="stat-icon"><i class="fas fa-medal"></i></span>
+                <div class="stat-info">
+                  <span class="stat-value">7</span>
+                  <span class="stat-label">Anciens champions</span>
+                </div>
+              </li>
+
+              <li>
+                <span class="stat-icon"><i class="fas fa-user-tie"></i></span>
+                <div class="stat-info">
+                  <span class="stat-value">18</span>
+                  <span class="stat-label">Entraîneurs africains</span>
+                </div>
+              </li>
+
+              <li>
+                <span class="stat-icon"><i class="fas fa-futbol"></i></span>
+                <div class="stat-info">
+                  <span class="stat-value">52</span>
+                  <span class="stat-label">Matchs au total</span>
+                </div>
+              </li>
+
+              <li>
+                <span class="stat-icon"><i class="fas fa-star"></i></span>
+                <div class="stat-info">
+                  <span class="stat-value">25</span>
+                  <span class="stat-label">Joueurs dans le top 100 FIFA</span>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Fin de la section Statistiques -->
+
+<!-- Section Constructeur d'équipe -->
+<section id="team-builder">
+  <!-- Section pour permettre aux utilisateurs de créer leur propre équipe -->
+  <div class="container">
+    <!-- Conteneur Bootstrap -->
+
+    <h2 class="section-title">Construisez votre équipe de rêve</h2>
+    <!-- Titre : "Construisez votre équipe de rêve" -->
+
+    <div class="team-builder-container">
+      <!-- Conteneur principal du constructeur -->
+
+      <div class="team-builder-content">
+        <!-- Contenu du constructeur -->
+
+        <div class="team-builder-pitch">
+          <!-- Zone du terrain de football -->
+
+          <canvas id="pitch" width="400" height="400"></canvas>
+          <!-- Canvas pour afficher le terrain -->
+
+          <ul id="starting_11" class="4-4-2">
+            <!-- Liste des positions de départ sur le terrain en formation 4-4-2 -->
+
+            <li data-pos="gk" id="pos1"></li> <!-- Gardien de but -->
+            <li data-pos="df" id="pos2"></li> <!-- Défenseur -->
+            <li data-pos="df" id="pos3"></li>
+            <li data-pos="df" id="pos4"></li>
+            <li data-pos="df" id="pos5"></li>
+            <li data-pos="md" id="pos6"></li> <!-- Milieu de terrain -->
+            <li data-pos="md" id="pos7"></li>
+            <li data-pos="md" id="pos8"></li>
+            <li data-pos="md" id="pos9"></li>
+            <li data-pos="fw" id="pos10"></li> <!-- Attaquant -->
+            <li data-pos="fw" id="pos11"></li>
+          </ul>
+        </div>
+
+        <div class="team-builder-players">
+          <!-- Liste des joueurs disponibles pour constituer l'équipe -->
+
+          <h3>Gardiens</h3>
+          <!-- Sous-titre : Gardiens -->
+
+          <ul data-pos="gk">
+            <!-- Liste des joueurs gardiens -->
+            <!-- Chaque joueur est draggable pour pouvoir être déplacé sur le terrain -->
+
+            <li><div draggable="true" data-player="Ronwen Williams"><img src="assets/images/players/williams.jpg" alt="Ronwen Williams"/></div></li>
+            <li><div draggable="true" data-player="Edouard Mendy"><img src="assets/images/players/mendy.jpg" alt="Edouard Mendy"/></div></li>
+            <li><div draggable="true" data-player="Andre Onana"><img src="assets/images/players/onana.jpg" alt="Andre Onana"/></div></li>
+            <li><div draggable="true" data-player="Yacine Bounou"><img src="assets/images/players/bounou.jpg" alt="Yacine Bounou"/></div></li>
+          </ul>
+
+          <h3>Défenseurs</h3>
+          <!-- Sous-titre : Défenseurs -->
+          <ul data-pos="df">
+            <!-- Liste des défenseurs disponibles -->
+            <!-- Même principe que pour les gardiens -->
+              <li><div draggable="true" data-player="Achraf Hakimi"><img src="assets/images/players/hakimi.jpg" alt="Achraf Hakimi"/></div></li>
+              <li><div draggable="true" data-player="William Troost-Ekong"><img src="assets/images/players/troost-ekong.jpg" alt="William Troost-Ekong"/></div></li>
+              <li><div draggable="true" data-player="Kalidou Koulibaly"><img src="assets/images/players/koulibaly.jpg" alt="Kalidou Koulibaly"/></div></li>
+              <li><div draggable="true" data-player="Chancel Mbemba"><img src="assets/images/players/mbemba.jpg" alt="Chancel Mbemba"/></div></li>
+              <li><div draggable="true" data-player="Ramy Bensebaini"><img src="assets/images/players/bensebaini.jpg" alt="Ramy Bensebaini"/></div></li>
+            </ul>
+
+            <h3>Milieux</h3>
+            <ul data-pos="md">
+              <li><div draggable="true" data-player="Azzedine Ounahi"><img src="assets/images/players/ounahi.jpg" alt="Azzedine Ounahi"/></div></li>
+              <li><div draggable="true" data-player="Carlos Baleba"><img src="assets/images/players/baleba.jpg" alt="Carlos Baleba"/></div></li>
+              <li><div draggable="true" data-player="Teboho Mokoena"><img src="assets/images/players/mokoena.jpg" alt="Teboho Mokoena"/></div></li>
+              <li><div draggable="true" data-player="Lamine Camara"><img src="assets/images/players/camara.jpg" alt="Lamine Camara"/></div></li>
+              <li><div draggable="true" data-player="Yves Bissouma"><img src="assets/images/players/bissouma.jpg" alt="Yves Bissouma"/></div></li>
+            </ul>
+
+            <h3>Attaquants</h3>
+            <ul data-pos="fw">
+              <li><div draggable="true" data-player="Victor Osimhen"><img src="assets/images/players/osimhen.jpg" alt="Victor Osimhen"/></div></li>
+              <li><div draggable="true" data-player="Mohamed Salah"><img src="assets/images/players/salah.jpg" alt="Mohamed Salah"/></div></li>
+              <li><div draggable="true" data-player="Ademola Lookman"><img src="assets/images/players/lookman.jpg" alt="Ademola Lookman"/></div></li>
+              <li><div draggable="true" data-player="Sadio Mane"><img src="assets/images/players/mane.jpg" alt="Sadio Mane"/></div></li>
+              <li><div draggable="true" data-player="Simon Adingra"><img src="assets/images/players/adingra.jpg" alt="Simon Adingra"/></div></li>
+              <li><div draggable="true" data-player="Brahim Diaz"><img src="assets/images/players/diaz.jpg" alt="Brahim Diaz"/></div></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter Section -->
-  <section id="newsletter">
-    <div class="container">
-      <div class="newsletter-container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
-          </div>
-          <div class="col-lg-6">
-            <form class="newsletter-form">
-              <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your Email Address" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-              </div>
-            </form>
-          </div>
+  <!-- Fin du constructeur d'équipe -->
+
+<!-- Section Newsletter -->
+<section id="newsletter">
+  <!-- Section d'inscription à la newsletter -->
+  <div class="container">
+    <!-- Conteneur Bootstrap -->
+
+    <div class="newsletter-container">
+      <div class="row align-items-center">
+        <!-- Ligne avec alignement vertical centré -->
+
+        <div class="col-lg-6">
+          <h2>Restez informé</h2>
+          <!-- Titre : Restez informé -->
+
+          <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités, les horaires des matchs et du contenu exclusif sur la Coupe d'Afrique des Nations Maroc 2025.</p>
+          <!-- Texte incitant à s'inscrire -->
+        </div>
+
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <!-- Formulaire d'inscription -->
+
+            <div class="input-group">
+              <!-- Groupe contenant le champ et le bouton -->
+              <input type="email" class="form-control" placeholder="Votre adresse email" required>
+              <!-- Champ de saisie pour l'adresse mail -->
+              <button type="submit" class="btn btn-primary">S'abonner</button>
+              <!-- Bouton pour s'abonner -->
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
+  </div>
+</section>
+  
+  <!-- Pied de page -->
   <footer id="main-footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4 mb-lg-0">
           <div class="footer-logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <span class="host">MAROC</span>
           </div>
-          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
+          <p class="footer-about">Le site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisé au Maroc.</p>
           <div class="social-links">
+            <!-- Liens vers les réseaux sociaux -->
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -378,49 +1401,50 @@
           </div>
         </div>
         <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tournament</h4>
+          <h4 class="footer-heading">Tournoi</h4>
           <ul class="footer-links">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Teams</a></li>
-            <li><a href="#">Matches</a></li>
-            <li><a href="#">Standings</a></li>
-            <li><a href="#">Statistics</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Équipes</a></li>
+            <li><a href="#">Matchs</a></li>
+            <li><a href="#">Classements</a></li>
+            <li><a href="#">Statistiques</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Venues</h4>
+          <h4 class="footer-heading">Lieux</h4>
           <ul class="footer-links">
-            <li><a href="#">Stadiums</a></li>
-            <li><a href="#">Host Cities</a></li>
-            <li><a href="#">Training Centers</a></li>
-            <li><a href="#">Fan Zones</a></li>
+            <li><a href="#">Stades</a></li>
+            <li><a href="#">Villes hôtes</a></li>
+            <li><a href="#">Centres d'entraînement</a></li>
+            <li><a href="#">Zones pour fans</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tickets</h4>
+          <h4 class="footer-heading">Billets</h4>
           <ul class="footer-links">
-            <li><a href="#">Buy Tickets</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Packages</a></li>
-            <li><a href="#">Hospitality</a></li>
-            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Acheter des billets</a></li>
+            <li><a href="#">Tarifs</a></li>
+            <li><a href="#">Forfaits</a></li>
+            <li><a href="#">Hospitalité</a></li>
+            <li><a href="#">FAQ</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">More</h4>
+          <h4 class="footer-heading">Plus</h4>
           <ul class="footer-links">
-            <li><a href="#">News</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Volunteers</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Galerie</a></li>
+            <li><a href="#">Bénévoles</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+        <!-- Bas de page -->
+        <p>&copy; 2024 CAN Maroc 2025. Tous droits réservés.</p>
         <div class="footer-partners">
-          <span>In partnership with:</span>
+          <span>En partenariat avec :</span>
           <a href="https://www.cafonline.com/" target="_blank">CAF</a>
           <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
         </div>
@@ -428,10 +1452,16 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bibliothèque Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Bibliothèque pour les graphiques -->
   <script src="js/main.js"></script>
+  <!-- Script principal du site -->
   <script src="js/teams.js"></script>
+  <!-- Script spécifique à la page des équipes -->
+  <script src="js/teambuilder.js"></script>
+  <!-- Script pour le constructeur d'équipe -->
 </body>
 </html>

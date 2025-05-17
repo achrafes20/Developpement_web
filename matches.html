@@ -1,104 +1,169 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document : ici HTML5 -->
+
 <html lang="fr">
+<!-- Définition de la langue de la page : français -->
+
 <head>
+  <!-- Début de la section en-tête du document -->
+
   <meta charset="UTF-8">
+  <!-- Définition de l'encodage des caractères en UTF-8 -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matchs - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Permet d'adapter la mise en page à la taille de l'écran pour le responsive -->
+
+  <title>Équipes - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Titre affiché dans l'onglet du navigateur -->
+   <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
+
+  <!-- Liens vers les feuilles de style externes -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Intégration de Bootstrap (framework CSS) pour faciliter le design et la mise en page -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Intégration de Font Awesome pour les icônes -->
+
   <link rel="stylesheet" href="css/main.css">
+  <!-- Lien vers la feuille de style principale du site -->
+
+  <link rel="stylesheet" href="css/teams.css">
+  <!-- Lien vers la feuille de style spécifique à la page des équipes -->
+
   <link rel="stylesheet" href="css/animations.css">
+  <!-- Lien vers la feuille de style des animations -->
+
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/matches.css">
+  <!-- Lien vers la feuille de style qui gère l'affichage sur les différents écrans -->
+
+  <link rel="stylesheet" href="css/teambuilder.css">
+  <!-- Lien vers la feuille de style pour le module de création d'équipe -->
+
 </head>
+<!-- Fin de la section d'en-tête -->
+
 <body>
-  <!-- 
-  Préchargeur de la page :
-  Ce bloc s'affiche pendant le chargement initial du site.
-  Il contient une animation personnalisée (style marocain) représentée par une étoile tournante.
--->
-<div id="preloader">
-  <div class="moroccan-loader">
-    <div class="loader-star"></div>
+  <!-- Début du corps du document -->
+
+  <div id="preloader">
+    <!-- Écran de chargement avant l'affichage complet de la page -->
+
+    <div class="moroccan-loader">
+      <!-- Conteneur de l'animation personnalisée -->
+
+      <div class="loader-star"></div>
+      <!-- Élément d'animation (étoile ou autre forme animée) -->
+
+    </div>
   </div>
-</div>
-  <!-- En-tête -->
-<header id="main-header"> <!-- Début de l'en-tête principal -->
-  <nav class="navbar navbar-expand-lg fixed-top"> <!-- Barre de navigation responsive, fixée en haut -->
-    <div class="container"> <!-- Conteneur Bootstrap pour centrer le contenu -->
 
-      <a class="navbar-brand" href="index.html"> <!-- Logo cliquable redirigeant vers la page d'accueil -->
-        <div class="logo">
-          <span class="logo-text">CAN <span class="year">2025</span></span> <!-- Texte principal du logo -->
-          <span class="host">MAROC</span> <!-- Nom du pays hôte -->
-        </div>
-      </a>
+  <header id="main-header">
+    <!-- Début de l'en-tête principal -->
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <!-- Bouton pour afficher/cacher le menu sur petits écrans -->
-        <span class="navbar-toggler-icon"></span> <!-- Icône de menu hamburger -->
-      </button>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Barre de navigation principale, en mode large (lg) et fixe en haut -->
 
-      <div class="collapse navbar-collapse" id="navbarNav"> <!-- Menu de navigation collapsible -->
-        <ul class="navbar-nav ms-auto"> <!-- Liste des liens de navigation, alignée à droite -->
-          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li> <!-- Lien vers la page d'accueil -->
-          <li class="nav-item"><a class="nav-link" href="teams.html">Équipes</a></li> <!-- Lien vers la page des équipes -->
-          <li class="nav-item"><a class="nav-link active" href="matches.html">Matchs</a></li> <!-- Lien actif vers la page des matchs -->
-          <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li> <!-- Lien vers les stades -->
-          <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li> <!-- Lien vers les actualités -->
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li> <!-- Lien vers la galerie photo -->
-          <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li> <!-- Lien vers la billetterie -->
-        </ul>
-      </div> <!-- Fin du menu collapsible -->
-    </div> <!-- Fin du conteneur -->
-  </nav> <!-- Fin de la barre de navigation -->
-</header> <!-- Fin de l'en-tête -->
+      <div class="container">
+        <!-- Conteneur Bootstrap pour structurer le contenu -->
 
+        <a class="navbar-brand" href="index.html">
+          <!-- Lien vers la page d'accueil avec le logo du site -->
 
-  <!-- Bannière de page -->
-<section id="page-banner"> <!-- Début de la section bannière de page -->
-  <div class="container"> <!-- Conteneur Bootstrap pour centrer et aligner le contenu -->
-    <div class="row"> <!-- Ligne Bootstrap pour la mise en page -->
-      <div class="col-lg-12"> <!-- Colonne prenant toute la largeur sur grands écrans -->
+          <div class="logo">
+            <!-- Conteneur pour le logo -->
 
-        <h1 class="page-title">Calendrier des Matchs</h1> <!-- Titre principal de la page -->
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <!-- Texte du logo avec mention de l'année -->
 
-        <nav aria-label="breadcrumb"> <!-- Navigation pour le fil d’Ariane, améliore l’accessibilité -->
-          <ol class="breadcrumb"> <!-- Liste ordonnée représentant le fil d’Ariane -->
-            <li class="breadcrumb-item"><a href="index.html">Accueil</a></li> <!-- Lien vers la page d'accueil -->
-            <li class="breadcrumb-item active" aria-current="page">Matchs</li> <!-- Page actuelle (active) -->
-          </ol>
-        </nav>
+            <span class="host">MAROC</span>
+            <!-- Pays organisateur affiché sous le logo -->
 
-      </div> <!-- Fin de la colonne -->
-    </div> <!-- Fin de la ligne -->
-  </div> <!-- Fin du conteneur -->
-</section> <!-- Fin de la section bannière -->
-
-
-  <!-- Matches Filter -->
-<section id="matches-filter"> <!-- Section contenant les filtres de recherche des matchs -->
-  <div class="container"> <!-- Conteneur Bootstrap pour centrer le contenu -->
-    <div class="filter-container"> <!-- Conteneur personnalisé pour les filtres -->
-      <div class="row align-items-center"> <!-- Ligne avec alignement vertical centré -->
-        <div class="col-md-6"> <!-- Colonne contenant la barre de recherche -->
-          <div class="search-box"> <!-- Boîte de recherche -->
-            <input type="text" id="match-search" class="form-control" placeholder="Rechercher des matchs..."> <!-- Champ de recherche -->
-            <i class="fas fa-search"></i> <!-- Icône de loupe (font awesome) -->
           </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <!-- Bouton d'ouverture du menu burger pour mobile -->
+
+          <span class="navbar-toggler-icon"></span>
+          <!-- Icône du bouton burger -->
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Conteneur du menu de navigation qui se replie en mode mobile -->
+
+          <ul class="navbar-nav ms-auto">
+            <!-- Liste des liens de navigation alignés à droite -->
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <!-- Lien vers la page d'accueil -->
+
+            <li class="nav-item"><a class="nav-link " href="teams.html">Équipes</a></li>
+            <!-- Lien vers la page des équipes, actif sur cette page -->
+
+            <li class="nav-item"><a class="nav-link active" href="matches.html">Matchs</a></li>
+            <!-- Lien vers la page des matchs -->
+
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li>
+            <!-- Lien vers la page des stades -->
+
+            <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li>
+            <!-- Lien vers la page des actualités -->
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+            <!-- Lien vers la galerie photo/vidéo -->
+
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li>
+            <!-- Lien vers la billetterie -->
+
+          </ul>
+
+          
+
         </div>
-        <div class="col-md-6"> <!-- Colonne contenant les boutons de filtre -->
-          <div class="filter-buttons"> <!-- Groupe de boutons de filtre -->
-            <button class="btn btn-filter active" data-filter="all">Tous les matchs</button> <!-- Filtre : tous les matchs -->
-            <button class="btn btn-filter" data-filter="group-stage">Phase de groupes</button> <!-- Filtre : phase de groupes -->
-            <button class="btn btn-filter" data-filter="knockout">Éliminatoires</button> <!-- Filtre : matchs à élimination directe -->
-            <button class="btn btn-filter" data-filter="today">Aujourd'hui</button> <!-- Filtre : matchs du jour -->
-          </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <section id="page-banner">
+    <!-- Bannière d’en-tête de la page -->
+
+    <div class="container">
+      <!-- Conteneur Bootstrap -->
+
+      <div class="row">
+        <!-- Ligne pour organiser le contenu -->
+
+        <div class="col-lg-12">
+          <!-- Colonne prenant toute la largeur -->
+
+          <h1 class="page-title">Calendrier des Matches</h1>
+          <!-- Titre de la page affiché dans la bannière -->
+
+          <nav aria-label="breadcrumb">
+            <!-- Fil d'Ariane pour la navigation -->
+
+            <ol class="breadcrumb">
+              <!-- Liste des éléments du fil d'Ariane -->
+
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <!-- Premier élément du fil d'Ariane -->
+
+              <li class="breadcrumb-item active" aria-current="page">Équipes</li>
+              <!-- Élément actif indiquant la page actuelle -->
+
+            </ol>
+
+          </nav>
         </div>
-      </div> <!-- Fin de la ligne -->
-    </div> <!-- Fin du conteneur des filtres -->
-  </div> <!-- Fin du conteneur principal -->
-</section> <!-- Fin de la section filtres -->
+
+      </div>
+    </div>
+
+  </section>
+
+  
 
 
   <!-- Calendrier des matchs -->
@@ -1163,9 +1228,7 @@
           <button class="nav-link" id="group-f-tab" data-bs-toggle="tab" data-bs-target="#group-f" type="button" role="tab">Groupe F</button> <!-- Bouton pour afficher le contenu de l'onglet F -->
         </li>
       </ul>
-
       <div class="tab-content" id="standingsTabContent"> <!-- Conteneur des contenus des onglets -->
-
  <!-- Classement GroupeA -->
 <div class="tab-pane fade show active" id="group-a" role="tabpanel"> <!-- Contenu de l'onglet Groupe A, actif et visible par défaut -->
   <div class="table-responsive"> <!-- Conteneur pour rendre la table responsive (scroll horizontal sur petits écrans) -->
@@ -1223,7 +1286,6 @@
     </table>
   </div>
 </div>
-
   
   <!-- Classement GroupeB -->
   <div class="tab-pane fade" id="group-b" role="tabpanel">
@@ -1645,69 +1707,46 @@
 </section>
 
 <!-- Pied de page -->
-<footer id="main-footer"> <!-- Footer principal -->
-  <div class="container"> <!-- Conteneur centré -->
-    <div class="row"> <!-- Ligne pour organiser les colonnes -->
-      <div class="col-lg-4 mb-4 mb-lg-0"> <!-- Colonne large pour logo + description + réseaux sociaux -->
+<footer id="main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <!-- Colonne logo et description -->
         <div class="footer-logo">
-          <span class="logo-text">CAN <span class="year">2025</span></span> <!-- Texte logo avec année -->
-          <span class="host">MAROC</span> <!-- Texte pays hôte -->
+          <span class="logo-text">CAN <span class="year">2025</span></span>
+          <span class="host">MAROC</span>
         </div>
-        <p class="footer-about">Site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisée au Maroc.</p> <!-- Description courte -->
-        <div class="social-links"> <!-- Liens vers réseaux sociaux -->
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a> <!-- Facebook -->
-          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> <!-- Twitter -->
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a> <!-- Instagram -->
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a> <!-- YouTube -->
-        </div>
+        <p class="footer-about">Le site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisée au Maroc.</p>
       </div>
-      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Tournoi" -->
-        <h4 class="footer-heading">Tournoi</h4> <!-- Titre catégorie -->
-        <ul class="footer-links"> <!-- Liste de liens -->
-          <li><a href="#">À propos</a></li>
+      
+      <!-- Colonnes de liens -->
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
           <li><a href="teams.html">Équipes</a></li>
           <li><a href="matches.html">Matchs</a></li>
-          <li><a href="#">Classements</a></li>
-          <li><a href="#">Statistiques</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Lieux" -->
-        <h4 class="footer-heading">Lieux</h4>
-        <ul class="footer-links">
           <li><a href="stadiums.html">Stades</a></li>
-          <li><a href="#">Villes hôtes</a></li>
-          <li><a href="#">Centres d'entraînement</a></li>
-          <li><a href="#">Zones pour fans</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Billets" -->
-        <h4 class="footer-heading">Billets</h4>
-        <ul class="footer-links">
-          <li><a href="tickets.html">Acheter des billets</a></li>
-          <li><a href="#">Tarifs</a></li>
-          <li><a href="#">Forfaits</a></li>
-          <li><a href="#">Hospitalité</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0"> <!-- Colonne liens "Plus" -->
-        <h4 class="footer-heading">Plus</h4>
-        <ul class="footer-links">
           <li><a href="news.html">Actualités</a></li>
           <li><a href="gallery.html">Galerie</a></li>
-          <li><a href="#">Bénévoles</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="tickets.html">Billets</a></li>
         </ul>
       </div>
-    </div>
-    <div class="footer-bottom"> <!-- Bas de page du footer -->
-      <p>&copy; 2024 CAN Maroc 2025. Tous droits réservés.</p> <!-- Mention légale -->
-      <div class="footer-partners"> <!-- Partenaires officiels -->
-        <span>En partenariat avec :</span>
-        <a href="https://www.cafonline.com/" target="_blank">CAF</a> <!-- Lien vers CAF -->
-        <a href="https://www.frmf.ma/" target="_blank">FRMF</a> <!-- Lien vers FRMF -->
+      
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Réseaux sociaux</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/ConfederationAfricaineDeFootball/" class="social-link"><i class="fab fa-facebook-f"></i> </a><br>
+          <a href="https://x.com/CAF_Online" class="social-link"><i class="fab fa-twitter"></i> </a><br>
+          <a href="https://www.instagram.com/caf_online/" class="social-link"><i class="fab fa-instagram"></i> </a><br>
+          <a href="https://www.youtube.com/user/MyAfricanFootball" class="social-link"><i class="fab fa-youtube"></i> </a>
+        </div>
       </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <!-- Bas de pied de page -->
+      <p>&copy;CAN Maroc 2025. Tous droits réservés.</p>
     </div>
   </div>
 </footer>

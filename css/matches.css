@@ -69,7 +69,6 @@
   background-color: var(--white); /* Fond blanc */
   padding: var(--spacing-lg) 0; /* Grand espacement vertical */
   box-shadow: var(--shadow-sm); /* Ombre légère */
-  position: sticky; /* Reste fixe au scroll */
   top: 0; /* Collé en haut */
   z-index: 100; /* Au-dessus des autres éléments */
 }

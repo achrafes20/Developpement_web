@@ -1,142 +1,190 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document : ici HTML5 -->
+
 <html lang="fr">
+<!-- Définition de la langue de la page : français -->
+
 <head>
-  <!-- Métadonnées de base -->
+  <!-- Début de la section en-tête du document -->
+
   <meta charset="UTF-8">
+  <!-- Définition de l'encodage des caractères en UTF-8 -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Actualités - Coupe d'Afrique des Nations - Maroc 2025</title>
-  
-  <!-- Liens vers les feuilles de style -->
+  <!-- Permet d'adapter la mise en page à la taille de l'écran pour le responsive -->
+
+  <title>Équipes - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Titre affiché dans l'onglet du navigateur -->
+   <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
+
+  <!-- Liens vers les feuilles de style externes -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Intégration de Bootstrap (framework CSS) pour faciliter le design et la mise en page -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Intégration de Font Awesome pour les icônes -->
+
   <link rel="stylesheet" href="css/main.css">
+  <!-- Lien vers la feuille de style principale du site -->
+
+  <link rel="stylesheet" href="css/teams.css">
+  <!-- Lien vers la feuille de style spécifique à la page des équipes -->
+
   <link rel="stylesheet" href="css/animations.css">
+  <!-- Lien vers la feuille de style des animations -->
+
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/news.css">
+  <!-- Lien vers la feuille de style qui gère l'affichage sur les différents écrans -->
+
+  <link rel="stylesheet" href="css/teambuilder.css">
+  <!-- Lien vers la feuille de style pour le module de création d'équipe -->
+
+
 </head>
+<!-- Fin de la section d'en-tête -->
+
 <body>
-  <!-- Préchargeur - Animation de chargement -->
-<div id="preloader"> <!-- Conteneur principal du préchargeur, affiché pendant le chargement initial de la page -->
-  <div class="moroccan-loader"> <!-- Élément de style personnalisé pour afficher une animation de type marocain -->  
-    <div class="loader-star"></div> <!-- Élément graphique de l'animation (ex. : une étoile stylisée animée) -->
-  </div>
-</div>
+  <!-- Début du corps du document -->
 
+  <div id="preloader">
+    <!-- Écran de chargement avant l'affichage complet de la page -->
 
-  <!-- En-tête principal -->
-<header id="main-header"> <!-- En-tête du site contenant la barre de navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top"> <!-- Barre de navigation Bootstrap avec position fixe -->
-    <div class="container"> <!-- Conteneur pour centrer le contenu -->
+    <div class="moroccan-loader">
+      <!-- Conteneur de l'animation personnalisée -->
 
-      <!-- Logo -->
-      <a class="navbar-brand" href="index.html"> <!-- Lien vers la page d'accueil avec le logo -->
-        <div class="logo"> <!-- Conteneur du logo -->
-          <span class="logo-text">CAN <span class="year">2025</span></span> <!-- Texte principal du logo avec l'année -->
-          <span class="host">MAROC</span> <!-- Pays hôte -->
-        </div>
-      </a>
+      <div class="loader-star"></div>
+      <!-- Élément d'animation (étoile ou autre forme animée) -->
 
-      <!-- Bouton menu mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <!-- Bouton qui permet d’afficher/cacher le menu en version mobile -->
-        <span class="navbar-toggler-icon"></span> <!-- Icône du bouton mobile -->
-      </button>
-
-      <!-- Navigation principale -->
-      <div class="collapse navbar-collapse" id="navbarNav"> <!-- Menu qui se replie sur mobile -->
-        <ul class="navbar-nav ms-auto"> <!-- Liste des liens de navigation alignée à droite -->
-
-          <!-- Liens de navigation -->
-          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="teams.html">Équipes</a></li>
-          <li class="nav-item"><a class="nav-link" href="matches.html">Matchs</a></li>
-          <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li>
-          <li class="nav-item"><a class="nav-link active" href="news.html">Actualités</a></li> <!-- Lien actif -->
-          <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li> <!-- Mise en avant pour les billets -->
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<!-- Bannière de page -->
-<section id="page-banner"> <!-- Section avec une bannière pour le titre de la page -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-title">Dernières Actualités</h1> <!-- Titre principal de la page -->
-
-        <!-- Fil d'Ariane (breadcrumb) -->
-        <nav aria-label="breadcrumb"> <!-- Navigation secondaire pour indiquer le chemin -->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Accueil</a></li> <!-- Lien vers la page d'accueil -->
-            <li class="breadcrumb-item active" aria-current="page">Actualités</li> <!-- Page actuelle -->
-          </ol>
-        </nav>
-      </div>
     </div>
   </div>
-</section>
 
-<!-- Filtres des actualités -->
-<section id="news-filter"> <!-- Section des filtres de recherche pour les actualités -->
-  <div class="container">
-    <div class="filter-container">
-      <div class="row align-items-center">
+  <header id="main-header">
+    <!-- Début de l'en-tête principal -->
 
-        <!-- Barre de recherche -->
-        <div class="col-md-6">
-          <div class="search-box"> <!-- Champ de recherche stylisé -->
-            <input type="text" id="news-search" class="form-control" placeholder="Rechercher des actualités..."> <!-- Champ texte -->
-            <i class="fas fa-search"></i> <!-- Icône de loupe -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Barre de navigation principale, en mode large (lg) et fixe en haut -->
+
+      <div class="container">
+        <!-- Conteneur Bootstrap pour structurer le contenu -->
+
+        <a class="navbar-brand" href="index.html">
+          <!-- Lien vers la page d'accueil avec le logo du site -->
+
+          <div class="logo">
+            <!-- Conteneur pour le logo -->
+
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <!-- Texte du logo avec mention de l'année -->
+
+            <span class="host">MAROC</span>
+            <!-- Pays organisateur affiché sous le logo -->
+
           </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <!-- Bouton d'ouverture du menu burger pour mobile -->
+
+          <span class="navbar-toggler-icon"></span>
+          <!-- Icône du bouton burger -->
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Conteneur du menu de navigation qui se replie en mode mobile -->
+
+          <ul class="navbar-nav ms-auto">
+            <!-- Liste des liens de navigation alignés à droite -->
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <!-- Lien vers la page d'accueil -->
+
+            <li class="nav-item"><a class="nav-link " href="teams.html">Équipes</a></li>
+            <!-- Lien vers la page des équipes, actif sur cette page -->
+
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matchs</a></li>
+            <!-- Lien vers la page des matchs -->
+
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li>
+            <!-- Lien vers la page des stades -->
+
+            <li class="nav-item"><a class="nav-link active" href="news.html">Actualités</a></li>
+            <!-- Lien vers la page des actualités -->
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+            <!-- Lien vers la galerie photo/vidéo -->
+
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li>
+            <!-- Lien vers la billetterie -->
+
+          </ul>
+
+          
+
         </div>
-<<<<<<< Updated upstream
       </div>
+
     </nav>
   </header>
 
-  
-
-  <!-- Page Banner -->
   <section id="page-banner">
+    <!-- Bannière d’en-tête de la page -->
+
     <div class="container">
+      <!-- Conteneur Bootstrap -->
+
       <div class="row">
+        <!-- Ligne pour organiser le contenu -->
+
         <div class="col-lg-12">
-          <h1 class="page-title">Latest News</h1>
+          <!-- Colonne prenant toute la largeur -->
+
+          <h1 class="page-title">Dernières actualités</h1>
+          <!-- Titre de la page affiché dans la bannière -->
+
           <nav aria-label="breadcrumb">
+            <!-- Fil d'Ariane pour la navigation -->
+
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">News</li>
+              <!-- Liste des éléments du fil d'Ariane -->
+
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <!-- Premier élément du fil d'Ariane -->
+
+              <li class="breadcrumb-item active" aria-current="page">Équipes</li>
+              <!-- Élément actif indiquant la page actuelle -->
+
             </ol>
+
           </nav>
         </div>
+
       </div>
     </div>
+
   </section>
 
-  <!-- News Filter -->
+ <!-- Filtres des actualités -->
   <section id="news-filter">
     <div class="container">
       <div class="filter-container">
         <div class="row align-items-center">
+          <!-- Barre de recherche -->
           <div class="col-md-6">
             <div class="search-box">
-              <input type="text" id="news-search" class="form-control" placeholder="Search news...">
+              <input type="text" id="news-search" class="form-control" placeholder="   Rechercher des actualités...">
               <i class="fas fa-search"></i>
-=======
-          
-                    <!-- Boutons de filtrage -->
-          <div class="col-md-6"> <!-- Colonne contenant les boutons de filtre -->
-            <div class="filter-buttons"> <!-- Conteneur pour les boutons -->
-              <button class="btn btn-filter active" data-filter="all">Toutes</button> <!-- Bouton pour afficher toutes les actualités (filtre par défaut actif) -->
-              <button class="btn btn-filter" data-filter="tournament">Tournoi</button> <!-- Bouton pour filtrer les actualités de type "Tournoi" -->
-              <button class="btn btn-filter" data-filter="teams">Équipes</button> <!-- Bouton pour filtrer les actualités liées aux équipes -->
-              <button class="btn btn-filter" data-filter="stadiums">Stades</button> <!-- Bouton pour filtrer les actualités sur les stades -->
->>>>>>> Stashed changes
             </div>
           </div>
+          
+          <!-- Boutons de filtrage -->
+          <div class="col-md-6">
+            <div class="filter-buttons">
+              <button class="btn btn-filter active" data-filter="all">Toutes</button>
+              <button class="btn btn-filter" data-filter="tournament">Tournoi</button>
+              <button class="btn btn-filter" data-filter="teams">Équipes</button>
+              <button class="btn btn-filter" data-filter="stadiums">Stades</button>
+            </div>
           </div>
         </div>
       </div>
@@ -144,192 +192,165 @@
   </section>
 
   <!-- Section des actualités -->
-<section id="latest-news"> <!-- Section principale affichant toutes les actualités -->
-  <div class="container">
-    <div class="row">
-
-      <!-- Actualité vedette -->
-      <div class="col-lg-12 mb-5"> <!-- Actualité en vedette sur toute la largeur -->
-        <div class="news-card"> <!-- Carte d’actualité stylisée -->
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="image"> <!-- Image de l’actualité vedette -->
-                <img src="assets/images/news/winter.jpg" alt="CAN 2025 en hiver 2026" class="img-fluid"> <!-- Image responsive -->
-                <span class="news-category">Tournoi</span> <!-- Catégorie de l’actualité -->
+  <section id="latest-news">
+    <div class="container">
+      <div class="row">
+        <!-- Actualité vedette -->
+        <div class="col-lg-12 mb-5">
+          <div class="news-card">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="image">
+                  <img src="assets/images/news/winter.jpg" alt="CAN 2025 en hiver 2026" class="img-fluid">
+                  <span class="news-category">Tournament</span>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="featured-content"> <!-- Contenu textuel vedette -->
-                <div class="news-date">05 juin 2024</div> <!-- Date de l’actualité -->
-                <h2 class="news-title">La CAN 2025 aura lieu en hiver 2026 au Maroc</h2> <!-- Titre principal -->
-                <p class="news-excerpt">La Coupe d'Afrique des Nations initialement prévue pour 2025 se tiendra finalement en janvier-février 2026 au Maroc...</p> <!-- Résumé -->
-                <a href="https://..." class="read-more" target="_blank">Lire l'article complet <i class="fas fa-arrow-right"></i></a> <!-- Lien vers l’article externe -->
+              <div class="col-lg-6">
+                <div class="featured-content">
+                  <div class="news-date">05 juin 2024</div>
+                  <h2 class="news-title">La CAN 2025 aura lieu en hiver 2026 au Maroc</h2>
+                  <p class="news-excerpt">La Coupe d'Afrique des Nations initialement prévue pour 2025 se tiendra finalement en janvier-février 2026 au Maroc, en raison des préoccupations climatiques et des conflits de calendrier avec les clubs européens.</p>
+                  <a href="https://www.lemonde.fr/afrique/article/2024/06/05/la-coupe-d-afrique-des-nations-2025-aura-lieu-a-l-hiver-2026-au-maroc_6237530_3212.html" class="read-more" target="_blank">Lire l'article complet <i class="fas fa-arrow-right"></i></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
         
-       <!-- Section principale de la grille d'actualités -->
-<section>
-  <div class="container">
-    <div class="row">
-      <!-- Début de la première carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">  <!-- Colonne responsive avec marge basse -->
-        <div class="news-card">  <!-- Conteneur de la carte -->
-          <div class="news-image">  <!-- Conteneur de l'image -->
-            <!-- Image de l'actualité avec classe responsive -->
-            <img src="assets/images/news/qualifiers-guide.jpg" alt="Qualifications CAN 2025" class="img-fluid">
-            <!-- Badge de catégorie -->
-            <span class="news-category">Tournoi</span>
-          </div>
-          <div class="news-content">  <!-- Contenu textuel -->
-            <div class="news-date">20 novembre 2024</div>  <!-- Date de publication -->
-            <h3 class="news-title">Guide complet des qualifications pour la CAN 2025</h3>  <!-- Titre -->
-            <!-- Extrait de l'article -->
-            <p class="news-excerpt">Tout ce que vous devez savoir sur les qualifications : calendrier, scores, classements et les surprises du parcours vers le Maroc.</p>
-            <!-- Lien "Lire plus" avec icône flèche et ouverture dans un nouvel onglet -->
-            <a href="https://www.espn.com/espn/story/_/id/41785984/2025-afcon-qualifiers-guide-news-scores-standings-everything-need-know" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+        <!-- Grille des actualités régulières -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/qualifiers-guide.jpg" alt="Qualifications CAN 2025" class="img-fluid">
+              <span class="news-category">Tournament</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">20 novembre 2024</div>
+              <h3 class="news-title">Guide complet des qualifications pour la CAN 2025</h3>
+              <p class="news-excerpt">Tout ce que vous devez savoir sur les qualifications : calendrier, scores, classements et les surprises du parcours vers le Maroc.</p>
+              <a href="https://www.espn.com/espn/story/_/id/41785984/2025-afcon-qualifiers-guide-news-scores-standings-everything-need-know" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Deuxième carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="news-card">
-          <div class="news-image">
-            <!-- Logo officiel de la CAN 2025 -->
-            <img src="assets/images/trophy.png" alt="Logo CAN 2025" class="img-fluid">
-            <span class="news-category">Tournoi</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">26 janvier 2025</div>
-            <h3 class="news-title">Le Maroc dévoile le logo officiel de la CAN 2025</h3>
-            <p class="news-excerpt">La Fédération Royale Marocaine de Football (FRMF) a officiellement dévoilé le logo de la Coupe d'Afrique des Nations 2025...</p>
-            <a href="https://www.mapnews.ma/en/actualites/sport/afcon-morocco-2025-official-logo-revealed" target="_blank" class="read-more">Lire plus <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Troisième carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="news-card">
-          <div class="news-image">
-            <img src="assets/images/news/morocco-prep.png" alt="Préparatifs du Maroc" class="img-fluid">
-            <!-- Catégorie différente pour cette carte -->
-            <span class="news-category">Stadiums</span>
-          </div>
-          <div class="news-content">
-            <!-- Date avec format différent (attention à la cohérence) -->
-            <div class="news-date">24 Avril 2025</div>
-            <h3 class="news-title">Infrastructures et logistique: la stratégie marocaine dévoilée</h3>
-            <p class="news-excerpt">Le Maroc détaille son plan ambitieux pour accueillir la CAN 2025, avec des investissements massifs dans les stades, les transports et la sécurité.</p>
-            <a href="https://fr.le360.ma/societe/infrastructures-logistique-visas-la-strategie-pour-la-can-2025-devoilee_ANNF4Y65VFEKNBZ4F4EE7N4RQM/" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/trophy.png" alt="Logo CAN 2025" class="img-fluid">
+              <span class="news-category">Tournament</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">26 janvier 2025</div>
+              <h3 class="news-title">Le Maroc dévoile le logo officiel de la CAN 2025</h3>
+              <p class="news-excerpt">La Fédération Royale Marocaine de Football (FRMF) a officiellement dévoilé le logo de la Coupe d'Afrique des Nations 2025...</p>
+              <a href="https://www.mapnews.ma/en/actualites/sport/afcon-morocco-2025-official-logo-revealed" target="_blank" class="read-more">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Quatrième carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="news-card">
-          <div class="news-image">
-            <img src="assets/images/news/late-qualifiers.jpg" alt="Derniers qualifiés" class="img-fluid">
-            <span class="news-category">Teams</span>
-          </div>
-          <div class="news-content">
-            <!-- Date en anglais (incohérence avec les autres dates) -->
-            <div class="news-date">19 November 2024</div>
-            <h3 class="news-title">CAN 2025: Tanzanie, Botswana et Mozambique se qualifient</h3>
-            <p class="news-excerpt">Les trois nations ont décroché leur billet pour le tournoi continental après les derniers matchs de qualification, complétant la liste des participants.</p>
-            <a href="https://information.tv5monde.com/sport/can-2025-tanzanie-botswana-et-mozambique-les-derniers-qualifies-2749196" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/morocco-prep.png" alt="Préparatifs du Maroc" class="img-fluid">
+              <span class="news-category">Stadiums</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">24 Avril 2025</div>
+              <h3 class="news-title">Infrastructures et logistique: la stratégie marocaine dévoilée</h3>
+              <p class="news-excerpt">Le Maroc détaille son plan ambitieux pour accueillir la CAN 2025, avec des investissements massifs dans les stades, les transports et la sécurité.</p>
+              <a href="https://fr.le360.ma/societe/infrastructures-logistique-visas-la-strategie-pour-la-can-2025-devoilee_ANNF4Y65VFEKNBZ4F4EE7N4RQM/" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Cinquième carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="news-card">
-          <div class="news-image">
-            <img src="assets/images/news/afcon-2025.jpg" alt="CAN 2025" class="img-fluid">
-            <!-- Catégorie en anglais (incohérence) -->
-            <span class="news-category">Tournament</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">20 December 2024</div>
-            <h3 class="news-title">CAN 2025: Ce qu'il faut savoir sur le tournoi</h3>
-            <p class="news-excerpt">Dates, stades, format et favoris: tout ce que vous devez savoir sur la prochaine Coupe d'Afrique des Nations au Maroc.</p>
-            <a href="https://www.bbc.com/sport/football/articles/cn08j7q7zjxo" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/late-qualifiers.jpg" alt="Derniers qualifiés" class="img-fluid">
+              <span class="news-category">Teams</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">19 November 2024</div>
+              <h3 class="news-title">CAN 2025: Tanzanie, Botswana et Mozambique se qualifient</h3>
+              <p class="news-excerpt">Les trois nations ont décroché leur billet pour le tournoi continental après les derniers matchs de qualification, complétant la liste des participants.</p>
+              <a href="https://information.tv5monde.com/sport/can-2025-tanzanie-botswana-et-mozambique-les-derniers-qualifies-2749196" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Sixième carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="news-card">
-          <div class="news-image">
-            <img src="assets/images/news/gabon.jpg" alt="Rénovation des stades" class="img-fluid">
-            <span class="news-category">Teams</span>
-          </div>
-          <div class="news-content">
-            <!-- Date en français avec majuscule (incohérence) -->
-            <div class="news-date">04 Février 2025</div>
-            <h3 class="news-title">CAN 2025: Retour du Benin, Gabon parmis d'autres</h3>
-            <!-- Faute d'orthographe "parmis" au lieu de "parmi" -->
-            <p class="news-excerpt">Le Bénin revient à la CAN après avoir manqué les deux précédentes éditions, s'étant qualifié de justesse en terminant deuxième de son groupe lors des éliminatoires.</p>
-            <a href="https://www.cafonline.com/fr/coupe-dafrique-des-nations/infos/can-2025-que-peuvent-les-revenants/?utm_source=chatgpt.com" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/afcon-2025.jpg" alt="CAN 2025" class="img-fluid">
+              <span class="news-category">Tournament</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">20 December 2024</div>
+              <h3 class="news-title">CAN 2025: Ce qu'il faut savoir sur le tournoi</h3>
+              <p class="news-excerpt">Dates, stades, format et favoris: tout ce que vous devez savoir sur la prochaine Coupe d'Afrique des Nations au Maroc.</p>
+              <a href="https://www.bbc.com/sport/football/articles/cn08j7q7zjxo" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Septième carte d'actualité -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="news-card">
-          <div class="news-image">
-            <img src="assets/images/news/amelioration.jpg" alt="Préparation des équipes" class="img-fluid">
-            <span class="news-category">Stadiums</span>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/gabon.jpg" alt="Rénovation des stades" class="img-fluid">
+              <span class="news-category">Teams</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">04 Février 2025</div>
+              <h3 class="news-title">CAN 2025: Retour du Benin, Gabon parmis d'autres</h3>
+              <p class="news-excerpt">Le Bénin revient à la CAN après avoir manqué les deux précédentes éditions, s'étant qualifié de justesse en terminant deuxième de son groupe lors des éliminatoires.</p>
+              <a href="https://www.cafonline.com/fr/coupe-dafrique-des-nations/infos/can-2025-que-peuvent-les-revenants/?utm_source=chatgpt.com" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="news-content">
-            <div class="news-date">17 Avril 2025</div>
-            <h3 class="news-title">Le Maroc améliore ses stades et ses villes en vue de la CAN 2025</h3>
-            <p class="news-excerpt">Le Maroc rénove et modernise les stades de six villes hôtes en vue de la CAN 2025, visant une organisation exemplaire en amont du Mondial 2030.</p>
-            <a href="https://www.yabiladi.com/articles/details/164279/maroc-ameliore-stades-villes-2025.html" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/amelioration.jpg" alt="Préparation des équipes" class="img-fluid">
+              <span class="news-category">Stadiums</span>
+            </div>
+            <div class="news-content">
+              <div class="news-date">17 Avril 2025</div>
+              <h3 class="news-title">Le Maroc améliore ses stades et ses villes en vue de la CAN 2025</h3>
+              <p class="news-excerpt">Le Maroc rénove et modernise les stades de six villes hôtes en vue de la CAN 2025, visant une organisation exemplaire en amont du Mondial 2030.</p>
+              <a href="https://www.yabiladi.com/articles/details/164279/maroc-ameliore-stades-villes-2025.html" class="read-more" target="_blank">Lire plus <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Section Newsletter -->
-<section id="newsletter">
-  <div class="container"> <!-- Conteneur Bootstrap -->
-    <div class="newsletter-container"> <!-- Conteneur personnalisé pour la newsletter -->
-      <div class="row align-items-center"> <!-- Ligne avec alignement vertical centré -->
-        
-        <!-- Colonne gauche : texte d'information -->
-        <div class="col-lg-6">
-          <h2>Restez informé</h2> <!-- Titre de la section -->
-          <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités, le calendrier des matchs et du contenu exclusif sur la Coupe d'Afrique des Nations Maroc 2025.</p>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Restez informé</h2>
+            <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités, le calendrier des matchs et du contenu exclusif sur la Coupe d'Afrique des Nations Maroc 2025.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Votre adresse email" required>
+                <button type="submit" class="btn btn-primary">S'abonner</button>
+              </div>
+            </form>
+          </div>
         </div>
-
-        <!-- Colonne droite : formulaire d'inscription -->
-        <div class="col-lg-6">
-          <form class="newsletter-form"> <!-- Formulaire de newsletter -->
-            <div class="input-group"> <!-- Groupe input + bouton -->
-              <input type="email" class="form-control" placeholder="Votre adresse email" required> <!-- Champ email obligatoire -->
-              <button type="submit" class="btn btn-primary">S'abonner</button> <!-- Bouton de soumission -->
-            </div>
-          </form>
-        </div>
-
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Pied de page principal -->
-<footer id="main-footer">
+  <!-- Pied de page -->
+  <footer id="main-footer">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 mb-4 mb-lg-0">
@@ -371,12 +392,11 @@
       <p>&copy;CAN Maroc 2025. Tous droits réservés.</p>
     </div>
   </div>
-  </footer>
+</footer>
 
-<!-- Chargement des scripts JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
-<script src="js/main.js"></script> <!-- Script principal personnalisé -->
-<script src="js/news.js"></script> <!-- Script spécifique aux actualités -->
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/news.js"></script>
 </body>
 </html>

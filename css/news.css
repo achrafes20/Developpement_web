@@ -1,0 +1,480 @@
+/* ============================================= */
+/* STYLES SPECIFIQUES À LA PAGE D'ACTUALITÉS     */
+/* Coupe d'Afrique des Nations - Maroc 2025      */
+/* ============================================= */
+
+/* --------------------------------------------- */
+/* 1. BANNIÈRE DE PAGE                           */
+/* --------------------------------------------- */
+#page-banner {
+  /* Fond dégradé semi-transparent sur image */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../assets/images/news-banner.jpg');
+  background-size: cover; /* Couvre tout l'espace */
+  background-position: center; /* Centrage de l'image */
+  padding: 120px 0 60px; /* Espacement interne */
+  color: var(--white); /* Texte en blanc */
+  position: relative; /* Pour positionnement des enfants */
+}
+
+/* Titre principal de la bannière */
+.page-title {
+  font-size: 3rem; /* Taille importante */
+  font-weight: 800; /* Epaisseur forte */
+  margin-bottom: var(--spacing-sm); /* Espacement standardisé */
+  position: relative; /* Pour le pseudo-élément */
+  display: inline-block; /* Adaptation à la largeur du texte */
+}
+
+/* Barre colorée sous le titre */
+.page-title::after {
+  content: ''; /* Nécessaire pour les pseudo-éléments */
+  position: absolute;
+  bottom: -10px; /* Position sous le texte */
+  left: 0;
+  width: 80px; /* Largeur de la barre */
+  height: 4px; /* Épaisseur de la barre */
+  background: linear-gradient(to right, var(--primary), var(--secondary)); /* Dégradé */
+  border-radius: var(--radius-sm); /* Coins légèrement arrondis */
+}
+
+/* --------------------------------------------- */
+/* 2. FIL D'ARIANE (BREADCRUMB)                 */
+/* --------------------------------------------- */
+.breadcrumb {
+  background-color: transparent; /* Fond transparent */
+  padding: 0; /* Réinitialisation */
+  margin: 0; /* Réinitialisation */
+}
+
+/* Élément individuel du fil d'Ariane */
+.breadcrumb-item {
+  font-size: 0.9rem; /* Taille réduite */
+}
+
+/* Liens dans le fil d'Ariane */
+.breadcrumb-item a {
+  color: var(--accent); /* Couleur or */
+}
+
+/* Élément actif (page courante) */
+.breadcrumb-item.active {
+  color: var(--light); /* Texte gris clair */
+}
+
+/* Séparateur entre les éléments */
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--light); /* Couleur du séparateur */
+}
+
+/* --------------------------------------------- */
+/* 3. FILTRES D'ACTUALITÉS                      */
+/* --------------------------------------------- */
+#news-filter {
+  padding: var(--spacing-lg) 0 var(--spacing-md); /* Espacement vertical */
+}
+
+/* Conteneur des filtres */
+.filter-container {
+  background-color: var(--white); /* Fond blanc */
+  padding: var(--spacing-md); /* Espacement interne */
+  border-radius: var(--radius-lg); /* Coins arrondis */
+  box-shadow: var(--shadow-md); /* Ombre portée */
+  margin-bottom: var(--spacing-md); /* Marge basse */
+}
+
+/* Barre de recherche */
+.search-box {
+  position: relative; /* Pour positionner l'icône */
+}
+
+.search-box input {
+  padding-left: var(--spacing-lg); /* Espace pour l'icône */
+  height: 50px; /* Hauteur fixe */
+  border-radius: var(--radius-md); /* Coins arrondis */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure subtile */
+}
+
+/* Icône de recherche */
+.search-box i {
+  position: absolute; /* Positionnement précis */
+  left: var(--spacing-md); /* Alignement à gauche */
+  top: 50%; /* Centrage vertical */
+  transform: translateY(-50%); /* Ajustement précis */
+  color: var(--medium); /* Couleur de l'icône */
+}
+
+/* Conteneur des boutons de filtre */
+.filter-buttons {
+  display: flex; /* Disposition flexible */
+  flex-wrap: wrap; /* Passage à la ligne si besoin */
+  gap: 0.5rem; /* Espace entre boutons */
+  justify-content: flex-end; /* Alignement à droite */
+}
+
+/* Style des boutons de filtre */
+.btn-filter {
+  padding: 0.5rem 1rem; /* Espacement interne */
+  font-size: 0.9rem; /* Taille de police */
+  border-radius: var(--radius-md); /* Coins arrondis */
+  background-color: var(--light); /* Fond gris clair */
+  color: var(--dark); /* Texte foncé */
+  border: none; /* Pas de bordure */
+  transition: var(--transition-normal); /* Animation fluide */
+}
+
+/* États des boutons */
+.btn-filter:hover,
+.btn-filter.active {
+  background-color: var(--primary); /* Fond rouge au survol/actif */
+  color: var(--white); /* Texte blanc */
+}
+
+/* --------------------------------------------- */
+/* 4. SECTION DES ACTUALITÉS                     */
+/* --------------------------------------------- */
+#latest-news {
+  padding: var(--spacing-md) 0 var(--spacing-xl); /* Espacement vertical */
+}
+
+/* Article vedette */
+.featured-news {
+  background-color: var(--white); /* Fond blanc */
+  border-radius: var(--radius-lg); /* Coins arrondis */
+  box-shadow: var(--shadow-md); /* Ombre portée */
+  overflow: hidden; /* Cache les débordements */
+  margin-bottom: var(--spacing-lg); /* Marge basse importante */
+}
+
+/* Image de l'article vedette */
+.featured-image {
+  position: relative; /* Pour positionnement enfant */
+  height: 100%; /* Hauteur complète */
+  min-height: 300px; /* Hauteur minimale */
+}
+
+.featured-image img {
+  width: 100%; /* Largeur complète */
+  height: 100%; /* Hauteur complète */
+  object-fit: fill; /* Remplissage du conteneur */
+  overflow: hidden; /* Cache les débordements */
+}
+
+/* Badge de catégorie */
+.news-category {
+  position: absolute; /* Positionnement par rapport à l'image */
+  top: var(--spacing-md); /* Espace depuis le haut */
+  left: var(--spacing-md); /* Espace depuis la gauche */
+  background-color: var(--primary); /* Fond rouge par défaut */
+  color: var(--white); /* Texte blanc */
+  padding: 0.3rem 0.8rem; /* Espacement interne */
+  border-radius: var(--radius-sm); /* Coins arrondis */
+  font-size: 0.8rem; /* Petite taille */
+  font-weight: 600; /* Demi-gras */
+  text-transform: uppercase; /* Texte en majuscules */
+}
+
+/* Contenu de l'article vedette */
+.featured-content {
+  padding: var(--spacing-lg); /* Grand espacement */
+  height: 100%; /* Hauteur complète */
+  display: flex; /* Disposition flexible */
+  flex-direction: column; /* Empilement vertical */
+  justify-content: center; /* Centrage vertical */
+}
+
+/* Date des articles */
+.news-date {
+  color: var(--medium); /* Texte gris */
+  font-size: 0.9rem; /* Petite taille */
+  margin-bottom: var(--spacing-sm); /* Espacement bas */
+}
+
+/* Titre des articles */
+.news-title {
+  font-size: 1.8rem; /* Taille importante */
+  font-weight: 700; /* Gras */
+  margin-bottom: var(--spacing-md); /* Espacement */
+  color: var(--dark); /* Texte foncé */
+  line-height: 1.3; /* Interligne */
+}
+
+/* Extrait des articles */
+.news-excerpt {
+  color: var(--medium); /* Texte gris */
+  margin-bottom: var(--spacing-md); /* Espacement */
+  font-size: 1rem; /* Taille normale */
+  line-height: 1.6; /* Interligne large */
+}
+
+/* Lien "Lire plus" */
+.read-more {
+  color: var(--primary); /* Couleur rouge */
+  font-weight: 600; /* Demi-gras */
+  text-decoration: none; /* Pas de soulignement */
+  display: inline-flex; /* Disposition flexible */
+  align-items: center; /* Alignement vertical */
+  transition: var(--transition-normal); /* Animation */
+}
+
+.read-more i {
+  margin-left: 0.5rem; /* Espace après le texte */
+  transition: var(--transition-normal); /* Animation */
+}
+
+/* Effet au survol */
+.read-more:hover {
+  color: var(--secondary); /* Couleur verte */
+}
+
+.read-more:hover i {
+  transform: translateX(3px); /* Déplacement de l'icône */
+}
+
+/* Carte d'article standard */
+.news-card {
+  background-color: var(--white); /* Fond blanc */
+  border-radius: var(--radius-lg); /* Coins arrondis */
+  box-shadow: var(--shadow-md); /* Ombre portée */
+  overflow: hidden; /* Cache les débordements */
+  height: 100%; /* Hauteur complète */
+  transition: var(--transition-normal); /* Animation */
+  position: relative; /* Pour éléments positionnés */
+}
+
+/* Effet au survol */
+.news-card:hover {
+  transform: translateY(-5px); /* Légère élévation */
+  box-shadow: var(--shadow-lg); /* Ombre plus prononcée */
+}
+
+/* Motif décoratif en coin */
+.news-card::before {
+  content: ''; /* Nécessaire pour pseudo-éléments */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url('../assets/images/pattern-corner.svg');
+  background-size: contain; /* Adaptation à la taille */
+  background-repeat: no-repeat; /* Pas de répétition */
+  background-position: top right; /* Position coin */
+  opacity: 0.05; /* Très transparent */
+  z-index: 0; /* En arrière-plan */
+}
+
+/* Image des articles */
+.news-image {
+  position: relative; /* Pour positionnement enfant */
+  height: 200px; /* Hauteur fixe */
+  overflow: hidden; /* Cache les débordements */
+}
+
+.news-image img {
+  width: 100%; /* Largeur complète */
+  height: 100%; /* Hauteur complète */
+  object-fit: cover; /* Couverture sans déformation */
+  transition: var(--transition-normal); /* Animation */
+}
+
+/* Effet zoom au survol */
+.news-card:hover .news-image img {
+  transform: scale(1.05); /* Légère augmentation */
+}
+
+/* Contenu des cartes */
+.news-content {
+  padding: var(--spacing-md); /* Espacement interne */
+}
+
+/* Adaptation des titres dans les cartes */
+.news-card .news-title {
+  font-size: 1.3rem; /* Taille réduite */
+  margin-bottom: var(--spacing-sm); /* Espacement */
+}
+
+/* Adaptation des extraits dans les cartes */
+.news-card .news-excerpt {
+  font-size: 0.9rem; /* Taille réduite */
+  margin-bottom: var(--spacing-md); /* Espacement */
+}
+/* --------------------------------------------- */
+/* 6. NEWSLETTER                                 */
+/* --------------------------------------------- */
+#newsletter {
+  background-color: var(--secondary); /* Fond vert */
+  color: var(--white); /* Texte blanc */
+  padding: var(--spacing-xl) 0; /* Grand espacement */
+}
+
+/* Conteneur de la newsletter */
+.newsletter-container {
+  background-color: rgba(255, 255, 255, 0.1); /* Blanc très transparent */
+  padding: var(--spacing-lg); /* Espacement interne */
+  border-radius: var(--radius-lg); /* Coins arrondis */
+}
+
+/* Champ de formulaire */
+.newsletter-form .form-control {
+  height: 50px; /* Hauteur fixe */
+  border-radius: var(--radius-md); /* Coins arrondis */
+  border: none; /* Pas de bordure */
+  padding: 0 var(--spacing-md); /* Espacement interne */
+}
+
+/* Bouton d'envoi */
+.newsletter-form .btn-primary {
+  background-color: var(--primary); /* Fond rouge */
+  border: none; /* Pas de bordure */
+  padding: 0 var(--spacing-lg); /* Espacement interne */
+  font-weight: 600; /* Demi-gras */
+  transition: var(--transition-normal); /* Animation */
+}
+
+/* Effet au survol */
+.newsletter-form .btn-primary:hover {
+  background-color: var(--dark); /* Fond noir */
+}
+
+/* --------------------------------------------- */
+/* 7. REQUÊTES DE MÉDIA (RESPONSIVE)            */
+/* --------------------------------------------- */
+
+/* Tablettes et petits écrans */
+@media (max-width: 991px) {
+  .filter-buttons {
+    justify-content: flex-start; /* Alignement à gauche */
+    margin-top: var(--spacing-sm); /* Espacement haut */
+  }
+  
+  .featured-content {
+    padding: var(--spacing-md); /* Espacement réduit */
+  }
+  
+  .news-title {
+    font-size: 1.5rem; /* Taille réduite */
+  }
+  
+  .page-title {
+    font-size: 2rem; /* Taille réduite */
+  }
+}
+
+/* Mobiles en mode paysage */
+@media (max-width: 767px) {
+  .btn-filter {
+    font-size: 0.8rem; /* Taille réduite */
+    padding: 0.4rem 0.8rem; /* Espacement réduit */
+  }
+  
+  /* Réorganisation des éléments vedettes */
+  .featured-news .row > div {
+    order: 1; /* Réordonnancement */
+  }
+  
+  .featured-image {
+    order: 2; /* Image après le contenu */
+    min-height: 250px; /* Hauteur ajustée */
+  }
+  
+  .news-card .news-title {
+    font-size: 1.1rem; /* Taille réduite */
+  }
+}
+
+/* Mobiles en mode portrait */
+@media (max-width: 575px) {
+  #page-banner {
+    padding: 100px 0 40px; /* Espacement réduit */
+  }
+  
+  .page-title {
+    font-size: 1.8rem; /* Taille réduite */
+  }
+  
+  .filter-buttons {
+    justify-content: center; /* Centrage */
+  }
+  
+  .btn-filter {
+    flex: 1 0 auto; /* Flexibilité */
+    text-align: center; /* Centrage texte */
+  }
+  
+  .news-title {
+    font-size: 1.3rem; /* Taille réduite */
+  }
+  
+  /* Adaptation formulaire newsletter */
+  .newsletter-form .input-group {
+    flex-direction: column; /* Empilement vertical */
+  }
+  
+  .newsletter-form .btn-primary {
+    width: 100%; /* Pleine largeur */
+    margin-top: var(--spacing-sm); /* Espacement haut */
+  }
+}
+
+/* --------------------------------------------- */
+/* 8. ANIMATIONS                                 */
+/* --------------------------------------------- */
+
+/* Animation d'apparition des cartes */
+.news-card {
+  transform: translateY(20px); /* Position initiale */
+  opacity: 0; /* Invisible au départ */
+  animation: fadeInUp 0.6s forwards; /* Animation */
+  animation-delay: calc(var(--animation-order) * 0.1s); /* Délai progressif */
+}
+
+/* Animation de l'article vedette */
+.featured-news {
+  transform: translateY(20px); /* Position initiale */
+  opacity: 0; /* Invisible au départ */
+  animation: fadeInUp 0.6s forwards; /* Animation */
+  animation-delay: 0.2s; /* Délai fixe */
+}
+
+/* Définition de l'animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Devenir visible */
+    transform: translateY(0); /* Position finale */
+  }
+}
+
+/* Transition pour le filtrage */
+.news-item {
+  transition: all 0.4s ease; /* Animation fluide */
+}
+
+/* État caché pour le filtrage */
+.news-item.hidden {
+  opacity: 0; /* Transparence */
+  transform: scale(0.8); /* Réduction */
+  height: 0; /* Hauteur nulle */
+  margin: 0; /* Pas de marge */
+  padding: 0; /* Pas de padding */
+  overflow: hidden; /* Masquage */
+}
+
+/* --------------------------------------------- */
+/* 9. COULEURS DES CATÉGORIES                    */
+/* --------------------------------------------- */
+.news-category.tournament {
+  background-color: var(--primary); /* Rouge */
+}
+
+.news-category.teams {
+  background-color: var(--secondary); /* Vert */
+}
+
+.news-category.stadiums {
+  background-color: var(--accent); /* Or */
+}
+
+.news-category.highlights {
+  background-color: #6366F1; /* Violet */
+}

@@ -1,51 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Déclaration du type de document HTML5 -->
+
+<html lang="fr">
+<!-- Début du document HTML avec la langue définie sur français -->
+
 <head>
+  <!-- Section d'en-tête contenant les métadonnées et liens -->
+
   <meta charset="UTF-8">
+  <!-- Définit l'encodage des caractères en UTF-8 pour supporter les caractères spéciaux -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Africa Cup of Nations - Morocco 2025</title>
+  <!-- Assure un affichage responsive sur tous les appareils -->
+
+  <title>Galerie - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Titre de la page affiché dans l'onglet du navigateur -->
+
+  <!-- Liens vers les feuilles de style externes -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Framework Bootstrap pour le style et le responsive -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Bibliothèque d'icônes Font Awesome -->
+
   <link rel="stylesheet" href="css/main.css">
+  <!-- Feuille de style principale du site -->
+
+  <link rel="stylesheet" href="css/teams.css">
+  <!-- Feuille de style spécifique aux équipes -->
+
   <link rel="stylesheet" href="css/animations.css">
+  <!-- Feuille de style pour les animations -->
+
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <!-- Feuille de style pour le responsive design -->
+
+  <link rel="stylesheet" href="css/teambuilder.css">
+  <!-- Feuille de style pour le constructeur d'équipe -->
+
 </head>
+<!-- Fin de la section head -->
+
 <body>
-  <!-- Preloader -->
+  <!-- Début du corps de la page -->
+
   <div id="preloader">
+    <!-- Préchargeur affiché pendant le chargement de la page -->
     <div class="moroccan-loader">
+      <!-- Animation de chargement style marocain -->
       <div class="loader-star"></div>
+      <!-- Élément visuel de l'animation -->
     </div>
   </div>
 
-  <!-- Header -->
   <header id="main-header">
+    <!-- En-tête principal du site -->
     <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Barre de navigation fixée en haut -->
       <div class="container">
+        <!-- Conteneur pour aligner le contenu -->
         <a class="navbar-brand" href="index.html">
+          <!-- Logo qui renvoie à l'accueil -->
           <div class="logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <!-- Texte du logo -->
+            <span class="host">MAROC</span>
+            <!-- Pays hôte -->
           </div>
         </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <!-- Bouton menu burger pour mobile -->
           <span class="navbar-toggler-icon"></span>
+          <!-- Icône du menu burger -->
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Contenu du menu navigable -->
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
-            <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
-            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
-            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-            <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
+            <!-- Liste des liens de navigation -->
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="teams.html">Équipes</a></li>
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matchs</a></li>
+            <li class="nav-item"><a class="nav-link" href="stadiums.html">Stades</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li>
+            <li class="nav-item"><a class="nav-link active" href="gallery.html">Galerie</a></li>
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li>
           </ul>
+
           <div class="language-selector">
+            <!-- Sélecteur de langue -->
             <select class="form-select">
               <option value="en">EN</option>
-              <option value="fr">FR</option>
+              <option value="fr" selected>FR</option>
               <option value="ar">AR</option>
             </select>
           </div>
@@ -54,16 +101,18 @@
     </nav>
   </header>
 
-  <!-- Page Banner -->
   <section id="page-banner">
+    <!-- Bannière de la page -->
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-title">Photo Gallery</h1>
+          <h1 class="page-title">Galerie</h1>
+          <!-- Titre principal de la page -->
           <nav aria-label="breadcrumb">
+            <!-- Fil d'Ariane -->
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Galerie</li>
             </ol>
           </nav>
         </div>
@@ -71,102 +120,310 @@
     </div>
   </section>
 
-  <!-- Gallery Filter -->
-  <section id="gallery-filter">
+  <!-- Galerie photo -->
+  <section id="photo-gallery" class="py-5">
+    <!-- Section galerie photo avec padding vertical -->
     <div class="container">
-      <div class="filter-container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="search-box">
-              <input type="text" id="gallery-search" class="form-control" placeholder="Search gallery...">
-              <i class="fas fa-search"></i>
-            </div>
+      <h2 class="section-title">Moments de la CAN</h2>
+      <!-- Titre de section -->
+      
+      <div class="row g-4 gallery-grid">
+        <!-- Grille de galerie -->
+        
+        <!-- Photo 1 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo1.jpg" data-fslightbox="afcon-gallery" data-caption="La Côte d'Ivoire remporte le trophée de la CAN 2023">
+              <!-- Lien vers image en grand format -->
+              <img src="assets/images/gallery/photo1-thumb.jpg" alt="La Côte d'Ivoire remporte le trophée de la CAN 2023" class="img-fluid">
+              <!-- Image miniature -->
+              <div class="gallery-overlay">
+                <!-- Overlay au survol -->
+                <h3>La Côte d'Ivoire remporte le trophée de la CAN 2023</h3>
+              </div>
+            </a>
           </div>
-          <div class="col-md-6">
-            <div class="filter-buttons">
-              <button class="btn btn-filter active" data-filter="all">All Photos</button>
-              <button class="btn btn-filter" data-filter="stadiums">Stadiums</button>
-              <button class="btn btn-filter" data-filter="teams">Teams</button>
-              <button class="btn btn-filter" data-filter="history">History</button>
-            </div>
+        </div>
+        
+        <!-- Photo 2 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo2.jpg" data-fslightbox="afcon-gallery" data-caption="Supporters célébrant dans les rues de Casablanca">
+              <img src="assets/images/gallery/photo2-thumb.jpg" alt="Supporters célébrant" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>Équipe type de la CAN Côte d'Ivoire 2023</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Photo 3 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo3.jpg" data-fslightbox="afcon-gallery" data-caption="Récompenses de la CAN Côte d'Ivoire 2023">
+              <img src="assets/images/gallery/photo3-thumb.jpg" alt="Récompenses de la CAN Côte d'Ivoire 2023" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>Récompenses de la CAN Côte d'Ivoire 2023</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Photo 4 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo4.jpg" data-fslightbox="afcon-gallery" data-caption="CAN 2022 : Le Sénégal remporte la Coupe d'Afrique des Nations aux tirs au but contre l'Égypte">
+              <img src="assets/images/gallery/photo4-thumb.jpg" alt="CAN 2022 : Le Sénégal remporte la Coupe d'Afrique des Nations aux tirs au but contre l'Égypte" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>CAN 2022 : Victoire du Sénégal contre l'Égypte</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Photo 5 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo5.jpg" data-fslightbox="afcon-gallery" data-caption="CAN 2023 commence avec un spectacle d'unité africaine, de musique et de football">
+              <img src="assets/images/gallery/photo5-thumb.jpg" alt="CAN 2023 commence avec un spectacle d'unité africaine, de musique et de football" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>CAN 2023 : Spectacle d'ouverture</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Photo 6 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo6.jpg" data-fslightbox="afcon-gallery" data-caption="Tirage au sort final de la Coupe d'Afrique des Nations TotalEnergies, Maroc 2025">
+              <img src="assets/images/gallery/photo6-thumb.jpg" alt="Tirage au sort final de la Coupe d'Afrique des Nations TotalEnergies, Maroc 2025" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>Tirage au sort final CAN 2025</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Photo 7 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo7.jpg" data-fslightbox="afcon-gallery" data-caption="Cérémonie d'ouverture CAN 2019">
+              <img src="assets/images/gallery/photo7-thumb.jpg" alt="Cérémonie d'ouverture CAN 2019" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>Cérémonie d'ouverture CAN 2019</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Photo 8 -->
+        <div class="col-md-4 col-lg-3">
+          <div class="gallery-item">
+            <a href="assets/images/gallery/photo8.jpg" data-fslightbox="afcon-gallery" data-caption="Cérémonie d'ouverture CAN 2021">
+              <img src="assets/images/gallery/photo8-thumb.jpg" alt="Cérémonie d'ouverture CAN 2021" class="img-fluid">
+              <div class="gallery-overlay">
+                <h3>Cérémonie d'ouverture CAN 2021</h3>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="photo-gallery">
+  <!-- Galerie vidéo -->
+  <section id="video-gallery" class="py-5 bg-light">
+    <!-- Section galerie vidéo avec fond clair -->
     <div class="container">
-      <div class="row gallery-grid">
-        <div class="col-md-6 col-lg-4 mb-4 gallery-item" data-category="stadiums">
-          <div class="gallery-card">
-            <img src="assets/images/gallery/stadium1.jpg" alt="Stadium Photo" class="img-fluid">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Mohammed V Stadium, Casablanca</div>
-              <a href="assets/images/gallery/stadium1.jpg" data-fslightbox="gallery" class="gallery-zoom">
-                <i class="fas fa-expand"></i>
+      <div class="section-header d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title">Vidéos à la une</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Vidéo 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="video-card card h-100 border-0 shadow-sm">
+            <!-- Carte vidéo -->
+            <div class="video-thumbnail position-relative">
+              <!-- Miniature vidéo -->
+              <img src="assets/images/gallery/video1.jpg" alt="CAN 2025 - Logo Officiel" class="img-fluid w-100">
+              <div class="play-button position-absolute top-50 start-50 translate-middle">
+                <!-- Bouton play -->
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="duration-badge position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 m-2 rounded">0:55</div>
+              <!-- Durée de la vidéo -->
+            </div>
+            <div class="card-body">
+              <!-- Corps de la carte -->
+              <h5 class="video-title mb-2">Bande-annonce officielle CAN 2025</h5>
+              <div class="video-meta d-flex justify-content-between text-muted small">
+                <!-- Métadonnées -->
+                <span><i class="far fa-calendar-alt me-1"></i> 15 Jan 2025</span>
+                <span><i class="far fa-eye me-1"></i> 231k vues</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pt-0">
+              <!-- Pied de carte -->
+              <a href="https://youtu.be/_3S1JolO-Zg?si=V81V59-xdEkeXX-B" class="btn btn-sm btn-outline-primary w-100" target="_blank">
+                Voir sur YouTube
               </a>
             </div>
           </div>
         </div>
         
-        <!-- More gallery items -->
-      </div>
-      
-      <!-- Pagination -->
-      <nav aria-label="Gallery pagination">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </section>
-
-  <!-- Video Gallery -->
-  <section id="video-gallery">
-    <div class="container">
-      <h2 class="section-title">Video Gallery</h2>
-      <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="video-card">
-            <div class="video-thumbnail">
-              <img src="assets/images/gallery/video1.jpg" alt="Video Thumbnail" class="img-fluid">
-              <div class="play-button">
-                <i class="fas fa-play"></i>
+        <!-- Vidéo 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="video-card card h-100 border-0 shadow-sm">
+            <div class="video-thumbnail position-relative">
+              <img src="assets/images/gallery/video2.jpg" alt="Stades prêts pour la CAN 2025" class="img-fluid w-100">
+              <div class="play-button position-absolute top-50 start-50 translate-middle">
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="duration-badge position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 m-2 rounded">2:12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="video-title mb-2">Stades de la CAN 2025 (Maroc)</h5>
+              <div class="video-meta d-flex justify-content-between text-muted small">
+                <span><i class="far fa-calendar-alt me-1"></i> 10 Jan 2025</span>
+                <span><i class="far fa-eye me-1"></i> 856K vues</span>
               </div>
             </div>
-            <div class="video-caption">AFCON 2025 Official Promo</div>
+            <div class="card-footer bg-transparent border-0 pt-0">
+              <a href="https://youtu.be/MDoGpSAE0Fc" class="btn btn-sm btn-outline-primary w-100" target="_blank">
+                Voir sur YouTube
+              </a>
+            </div>
           </div>
         </div>
         
-        <!-- More video items -->
+        <!-- Vidéo 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="video-card card h-100 border-0 shadow-sm">
+            <div class="video-thumbnail position-relative">
+              <img src="assets/images/gallery/video3.jpg" alt="Préparations des équipes au Maroc" class="img-fluid w-100">
+              <div class="play-button position-absolute top-50 start-50 translate-middle">
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="duration-badge position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 m-2 rounded">1:51:20</div>
+            </div>
+            <div class="card-body">
+              <h5 class="video-title mb-2">Tirage au sort final #TotalEnergiesCAN2025</h5>
+              <div class="video-meta d-flex justify-content-between text-muted small">
+                <span><i class="far fa-calendar-alt me-1"></i> 5 Jan 2025</span>
+                <span><i class="far fa-eye me-1"></i> 165K vues</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pt-0">
+              <a href="https://youtu.be/nQjzVcw-s4o" class="btn btn-sm btn-outline-primary w-100" target="_blank">
+                Voir sur YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vidéo 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="video-card card h-100 border-0 shadow-sm">
+            <div class="video-thumbnail position-relative">
+              <img src="assets/images/gallery/video4.jpg" alt="Tournée du trophée CAN 2025" class="img-fluid w-100">
+              <div class="play-button position-absolute top-50 start-50 translate-middle">
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="duration-badge position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 m-2 rounded">29:11</div>
+            </div>
+            <div class="card-body">
+              <h5 class="video-title mb-2">TOUS LES BUTS CAN 2024 | HD</h5>
+              <div class="video-meta d-flex justify-content-between text-muted small">
+                <span><i class="far fa-calendar-alt me-1"></i> 28 Déc 2024</span>
+                <span><i class="far fa-eye me-1"></i> 273k vues</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pt-0">
+              <a href="https://www.youtube.com/watch?v=qkHV-RqLcuA&ab_channel=FutCompsHQ" class="btn btn-sm btn-outline-primary w-100" target="_blank">
+                Voir sur YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vidéo 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="video-card card h-100 border-0 shadow-sm">
+            <div class="video-thumbnail position-relative">
+              <img src="assets/images/gallery/video5.jpg" alt="Héritage footballistique du Maroc" class="img-fluid w-100">
+              <div class="play-button position-absolute top-50 start-50 translate-middle">
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="duration-badge position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 m-2 rounded">2:26</div>
+            </div>
+            <div class="card-body">
+              <h5 class="video-title mb-2">RÉSUMÉ | Nigeria 🆚 Côte d'Ivoire | #TotalEnergiesCAN2023 - Finale</h5>
+              <div class="video-meta d-flex justify-content-between text-muted small">
+                <span><i class="far fa-calendar-alt me-1"></i> 20 Déc 2023</span>
+                <span><i class="far fa-eye me-1"></i> 3,1M vues</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pt-0">
+              <a href="https://youtu.be/_S9sFlf3zXU?si=BZZDdoPARZjLAvvu" class="btn btn-sm btn-outline-primary w-100" target="_blank">
+                Voir sur YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vidéo 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="video-card card h-100 border-0 shadow-sm">
+            <div class="video-thumbnail position-relative">
+              <img src="assets/images/gallery/video6.jpg" alt="Programme des volontaires CAN 2025" class="img-fluid w-100">
+              <div class="play-button position-absolute top-50 start-50 translate-middle">
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="duration-badge position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 m-2 rounded">13:01</div>
+            </div>
+            <div class="card-body">
+              <h5 class="video-title mb-2">Sénégal 🆚 Égypte Tous les penalties - CAN TotalEnergies 2021 - Finale</h5>
+              <div class="video-meta d-flex justify-content-between text-muted small">
+                <span><i class="far fa-calendar-alt me-1"></i> 08 Fév 2022</span>
+                <span><i class="far fa-eye me-1"></i> 24M vues</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pt-0">
+              <a href="https://www.youtube.com/watch?v=KaYjMEy8U-M&ab_channel=CAFTV" class="btn btn-sm btn-outline-primary w-100" target="_blank">
+                Voir sur YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <!-- Bouton pour voir plus de vidéos -->
+        <a href="https://www.youtube.com/@CAF_TV" class="btn btn-primary px-4">
+          <i class="fas fa-play-circle me-2"></i> Visitez notre chaîne YouTube
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter Section -->
+  <!-- Section Newsletter -->
   <section id="newsletter">
+    <!-- Section pour s'abonner à la newsletter -->
     <div class="container">
       <div class="newsletter-container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
+            <h2>Restez informé</h2>
+            <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités, les horaires des matchs et du contenu exclusif sur la Coupe d'Afrique des Nations Maroc 2025.</p>
           </div>
           <div class="col-lg-6">
             <form class="newsletter-form">
+              <!-- Formulaire d'inscription -->
               <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your Email Address" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <input type="email" class="form-control" placeholder="Votre adresse email" required>
+                <button type="submit" class="btn btn-primary">S'abonner</button>
               </div>
             </form>
           </div>
@@ -175,78 +432,82 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Pied de page -->
   <footer id="main-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="footer-logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
-          </div>
-          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <!-- Colonne logo et description -->
+        <div class="footer-logo">
+          <span class="logo-text">CAN <span class="year">2025</span></span>
+          <span class="host">MAROC</span>
         </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tournament</h4>
-          <ul class="footer-links">
-            <li><a href="#">About</a></li>
-            <li><a href="teams.html">Teams</a></li>
-            <li><a href="matches.html">Matches</a></li>
-            <li><a href="#">Standings</a></li>
-            <li><a href="#">Statistics</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Venues</h4>
-          <ul class="footer-links">
-            <li><a href="stadiums.html">Stadiums</a></li>
-            <li><a href="#">Host Cities</a></li>
-            <li><a href="#">Training Centers</a></li>
-            <li><a href="#">Fan Zones</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tickets</h4>
-          <ul class="footer-links">
-            <li><a href="tickets.html">Buy Tickets</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Packages</a></li>
-            <li><a href="#">Hospitality</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">More</h4>
-          <ul class="footer-links">
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#">Volunteers</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
+        <p class="footer-about">Le site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisée au Maroc.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
-        <div class="footer-partners">
-          <span>In partnership with:</span>
-          <a href="https://www.cafonline.com/" target="_blank">CAF</a>
-          <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
+      
+      <!-- Colonnes de liens -->
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="teams.html">Équipes</a></li>
+          <li><a href="matches.html">Matchs</a></li>
+          <li><a href="stadiums.html">Stades</a></li>
+          <li><a href="news.html">Actualités</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="tickets.html">Billets</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Réseaux sociaux</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/ConfederationAfricaineDeFootball/" class="social-link"><i class="fab fa-facebook-f"></i> </a><br>
+          <a href="https://x.com/CAF_Online" class="social-link"><i class="fab fa-twitter"></i> </a><br>
+          <a href="https://www.instagram.com/caf_online/" class="social-link"><i class="fab fa-instagram"></i> </a><br>
+          <a href="https://www.youtube.com/user/MyAfricanFootball" class="social-link"><i class="fab fa-youtube"></i> </a>
         </div>
       </div>
     </div>
-  </footer>
+    
+    <div class="footer-bottom">
+      <!-- Bas de pied de page -->
+      <p>&copy;CAN Maroc 2025. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
 
-  <!-- Scripts -->
+  <!-- Scripts JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bibliothèque Bootstrap JS -->
   <script src="js/fslightbox.js"></script>
+  <!-- Lightbox pour la galerie -->
   <script src="js/main.js"></script>
-  <script src="js/gallery.js"></script>
+  <!-- Script principal du site -->
+  
+  <script>
+    // Script pour la galerie photo
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fonctionnalité "Charger plus de photos"
+      const loadMoreBtn = document.getElementById('load-more-photos');
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+          // Dans un scénario réel, cela chargerait plus de photos via AJAX
+          alert('Plus de photos seraient chargées dans une implémentation réelle');
+        });
+      }
+      
+      // Gestionnaire de clic pour les cartes vidéo
+      const videoCards = document.querySelectorAll('.video-card');
+      videoCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (!e.target.closest('.btn-outline-primary')) {
+            const youtubeLink = this.querySelector('.btn-outline-primary').href;
+            window.open(youtubeLink, '_blank');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,22 +1,43 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document : ici HTML5 -->
+
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Détail Stade - Coupe d'Afrique des Nations - Maroc 2025</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/stadiums.css" />
-    <style>
+<!-- Définition de la langue de la page : français -->
+
+<head>
+  <!-- Début de la section en-tête du document -->
+
+  <meta charset="UTF-8">
+  <!-- Définition de l'encodage des caractères en UTF-8 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Permet d'adapter la mise en page à la taille de l'écran pour le responsive -->
+
+  <title>Équipes - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Titre affiché dans l'onglet du navigateur -->
+
+  <!-- Liens vers les feuilles de style externes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Intégration de Bootstrap (framework CSS) pour faciliter le design et la mise en page -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Intégration de Font Awesome pour les icônes -->
+
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Lien vers la feuille de style principale du site -->
+
+  <link rel="stylesheet" href="css/teams.css">
+  <!-- Lien vers la feuille de style spécifique à la page des équipes -->
+
+  <link rel="stylesheet" href="css/animations.css">
+  <!-- Lien vers la feuille de style des animations -->
+
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Lien vers la feuille de style qui gère l'affichage sur les différents écrans -->
+
+  <link rel="stylesheet" href="css/teambuilder.css">
+  <!-- Lien vers la feuille de style pour le module de création d'équipe -->
+   <style>
       /* Styles supplémentaires pour la page de détail du stade */
       .stadium-header-container {
         background-color: #f8f9fa;
@@ -193,89 +214,145 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="moroccan-loader">
-        <div class="loader-star"></div>
+
+</head>
+<!-- Fin de la section d'en-tête -->
+
+<body>
+  <!-- Début du corps du document -->
+
+  <div id="preloader">
+    <!-- Écran de chargement avant l'affichage complet de la page -->
+
+    <div class="moroccan-loader">
+      <!-- Conteneur de l'animation personnalisée -->
+
+      <div class="loader-star"></div>
+      <!-- Élément d'animation (étoile ou autre forme animée) -->
+
+    </div>
+  </div>
+
+  <header id="main-header">
+    <!-- Début de l'en-tête principal -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Barre de navigation principale, en mode large (lg) et fixe en haut -->
+
+      <div class="container">
+        <!-- Conteneur Bootstrap pour structurer le contenu -->
+
+        <a class="navbar-brand" href="index.html">
+          <!-- Lien vers la page d'accueil avec le logo du site -->
+
+          <div class="logo">
+            <!-- Conteneur pour le logo -->
+
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <!-- Texte du logo avec mention de l'année -->
+
+            <span class="host">MAROC</span>
+            <!-- Pays organisateur affiché sous le logo -->
+
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <!-- Bouton d'ouverture du menu burger pour mobile -->
+
+          <span class="navbar-toggler-icon"></span>
+          <!-- Icône du bouton burger -->
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Conteneur du menu de navigation qui se replie en mode mobile -->
+
+          <ul class="navbar-nav ms-auto">
+            <!-- Liste des liens de navigation alignés à droite -->
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <!-- Lien vers la page d'accueil -->
+
+            <li class="nav-item"><a class="nav-link" href="teams.html">Équipes</a></li>
+            <!-- Lien vers la page des équipes, actif sur cette page -->
+
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matchs</a></li>
+            <!-- Lien vers la page des matchs -->
+
+            <li class="nav-item"><a class="nav-link active" href="stadiums.html">Stades</a></li>
+            <!-- Lien vers la page des stades -->
+
+            <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li>
+            <!-- Lien vers la page des actualités -->
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+            <!-- Lien vers la galerie photo/vidéo -->
+
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li>
+            <!-- Lien vers la billetterie -->
+
+          </ul>
+
+          <div class="language-selector">
+            <!-- Sélecteur de langue -->
+
+            <select class="form-select">
+              <!-- Liste déroulante pour choisir la langue -->
+              <option value="en">EN</option>
+              <!-- Option anglais -->
+
+              <option value="fr" selected>FR</option>
+              <!-- Option français sélectionnée -->
+
+              <option value="ar">AR</option>
+              <!-- Option arabe -->
+
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <section id="page-banner">
+    <!-- Bannière d’en-tête de la page -->
+
+    <div class="container">
+      <!-- Conteneur Bootstrap -->
+
+      <div class="row">
+        <!-- Ligne pour organiser le contenu -->
+
+        <div class="col-lg-12">
+          <!-- Colonne prenant toute la largeur -->
+
+          <h1 class="page-title">Détails du Stade</h1>
+          <!-- Titre de la page affiché dans la bannière -->
+
+          <nav aria-label="breadcrumb">
+            <!-- Fil d'Ariane pour la navigation -->
+
+            <ol class="breadcrumb">
+              <!-- Liste des éléments du fil d'Ariane -->
+
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <!-- Premier élément du fil d'Ariane -->
+
+              <li class="breadcrumb-item active" aria-current="page">Équipes</li>
+              <!-- Élément actif indiquant la page actuelle -->
+
+            </ol>
+
+          </nav>
+        </div>
+
       </div>
     </div>
 
-    <!-- Header -->
-    <header id="main-header">
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <div class="logo">
-              <span class="logo-text">CAN <span class="year">2025</span></span>
-              <span class="host">MAROC</span>
-            </div>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="teams.html">Équipes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="stadiums.html">Stades</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="news.html">Actualités</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gallery.html">Galerie</a>
-              </li>
-              <li class="nav-item ticket-btn">
-                <a class="nav-link" href="tickets.html">Billets</a>
-              </li>
-            </ul>
-            <div class="language-selector">
-              <select class="form-select">
-                <option value="fr">FR</option>
-                <option value="ar">AR</option>
-                <option value="en">EN</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Page Banner -->
-    <section id="page-banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="page-title">Détails du Stade</h1>
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="index.html">Accueil</a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="stadiums.html">Stades</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  <span id="dynamic-stadium-name">Stade</span>
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </section>
+  </section>
 
     <!-- Stadium Content -->
     <section id="stadium-content">
@@ -492,7 +569,7 @@
                 <h3 class="section-title">Plan du stade</h3>
                 <div class="stadium-map">
                   <img
-                    src="morocco map with stadium.png"
+                    src="assets/images/morocco map with stadium.png"
                     alt="Plan du stade"
                     class="img-fluid"
                   />
@@ -896,7 +973,7 @@
                 <h3 class="section-title">Plan du stade</h3>
                 <div class="stadium-map">
                   <img
-                    src="morocco map with stadium.png"
+                    src="assets/images/morocco map with stadium.png"
                     alt="Plan du stade"
                     class="img-fluid"
                   />
@@ -1302,7 +1379,7 @@
                 <h3 class="section-title">Plan du stade</h3>
                 <div class="stadium-map">
                   <img
-                    src="morocco map with stadium.png"
+                    src="assets/images/morocco map with stadium.png"
                     alt="Plan du stade"
                     class="img-fluid"
                   />
@@ -1533,21 +1610,21 @@
                 <div class="stadium-thumbnails">
                   <div class="thumbnail">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Stade_Moulay_Abdellah_%28Rabat%29.jpg"
+                      src="https://mobile.ledesk.ma/wp-content/uploads/2016/04/complexe-moulay-abdellah-photo-FIFA.jpg"
                       alt="Vue du stade 1"
                       class="img-fluid"
                     />
                   </div>
                   <div class="thumbnail">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Stade_Moulay_Abdellah_%28Rabat%29_-_panoramio.jpg"
+                      src="https://static.medias24.com/content/uploads/2023/06/27/complexe-sportif-Prince-Moulay-Abadallah-Rabat3-e1696262484845.png?x92820"
                       alt="Vue du stade 2"
                       class="img-fluid"
                     />
                   </div>
                   <div class="thumbnail">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Stade_Moulay_Abdellah_%28Rabat%29_-_panoramio_%281%29.jpg"
+                      src="https://fr.alyaoum24.com/content/uploads/2022/09/complexe-moulay-abdellah.jpeg"
                       alt="Vue du stade 3"
                       class="img-fluid"
                     />
@@ -1677,10 +1754,20 @@
                     </div>
                     <div class="match-teams">
                       <div class="team">
+                        <img
+                          src="assets/images/flags/ivory-coast.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
                         <span class="team-name">Côte d'Ivoire</span>
                       </div>
                       <div class="score">VS</div>
                       <div class="team">
+                        <img
+                          src="assets/images/flags/guinea.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
                         <span class="team-name">Guinée</span>
                       </div>
                     </div>
@@ -1703,7 +1790,7 @@
                 <h3 class="section-title">Plan du stade</h3>
                 <div class="stadium-map">
                   <img
-                    src="morocco map with stadium.png"
+                    src="assets/images/morocco map with stadium.png"
                     alt="Plan du stade"
                     class="img-fluid"
                   />
@@ -2058,10 +2145,20 @@
                     </div>
                     <div class="match-teams">
                       <div class="team">
+                        <img
+                          src="assets/images/flags/senegal.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
                         <span class="team-name">Sénégal</span>
                       </div>
                       <div class="score">VS</div>
                       <div class="team">
+                        <img
+                          src="assets/images/flags/tanzania.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
                         <span class="team-name">Tanzanie</span>
                       </div>
                     </div>
@@ -2110,7 +2207,7 @@
                 <h3 class="section-title">Plan du stade</h3>
                 <div class="stadium-map">
                   <img
-                    src="morocco map with stadium.png"
+                    src="assets/images/morocco map with stadium.png"
                     alt="Plan du stade"
                     class="img-fluid"
                   />
@@ -2460,10 +2557,20 @@
                     </div>
                     <div class="match-teams">
                       <div class="team">
+                        <img
+                          src="assets/images/flags/nigeria.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
                         <span class="team-name">Nigeria</span>
                       </div>
                       <div class="score">VS</div>
                       <div class="team">
+                        <img
+                          src="assets/images/flags/guinea.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
                         <span class="team-name">Guinée-Bissau</span>
                       </div>
                     </div>
@@ -2512,7 +2619,7 @@
                 <h3 class="section-title">Plan du stade</h3>
                 <div class="stadium-map">
                   <img
-                    src="morocco map with stadium.png"
+                    src="assets/images/morocco map with stadium.png"
                     alt="Plan du stade"
                     class="img-fluid"
                   />
@@ -2743,78 +2850,48 @@
 
     <!-- Footer -->
     <footer id="main-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <div class="footer-logo">
-              <span class="logo-text">CAN <span class="year">2025</span></span>
-              <span class="host">MAROC</span>
-            </div>
-            <p class="footer-about">
-              Le site officiel du tournoi de la Coupe d'Afrique des Nations 2025
-              organisée au Maroc.
-            </p>
-            <div class="social-links">
-              <a href="#" class="social-link"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="footer-heading">Tournoi</h4>
-            <ul class="footer-links">
-              <li><a href="#">À propos</a></li>
-              <li><a href="teams.html">Équipes</a></li>
-              <li><a href="matches.html">Matchs</a></li>
-              <li><a href="#">Classements</a></li>
-              <li><a href="#">Statistiques</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="footer-heading">Lieux</h4>
-            <ul class="footer-links">
-              <li><a href="stadiums.html">Stades</a></li>
-              <li><a href="#">Villes hôtes</a></li>
-              <li><a href="#">Centres d'entraînement</a></li>
-              <li><a href="#">Zones fans</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="footer-heading">Billets</h4>
-            <ul class="footer-links">
-              <li><a href="tickets.html">Acheter des billets</a></li>
-              <li><a href="#">Tarifs</a></li>
-              <li><a href="#">Forfaits</a></li>
-              <li><a href="#">Hospitalité</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="footer-heading">Plus</h4>
-            <ul class="footer-links">
-              <li><a href="news.html">Actualités</a></li>
-              <li><a href="gallery.html">Galerie</a></li>
-              <li><a href="#">Bénévoles</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Politique de confidentialité</a></li>
-            </ul>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <!-- Colonne logo et description -->
+        <div class="footer-logo">
+          <span class="logo-text">CAN <span class="year">2025</span></span>
+          <span class="host">MAROC</span>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 CAN Maroc 2025. Tous droits réservés.</p>
-          <div class="footer-partners">
-            <span>En partenariat avec :</span>
-            <a href="https://www.cafonline.com/" target="_blank">CAF</a>
-            <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
-          </div>
+        <p class="footer-about">Le site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisée au Maroc.</p>
+      </div>
+      
+      <!-- Colonnes de liens -->
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="teams.html">Équipes</a></li>
+          <li><a href="matches.html">Matchs</a></li>
+          <li><a href="stadiums.html">Stades</a></li>
+          <li><a href="news.html">Actualités</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="tickets.html">Billets</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Réseaux sociaux</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/ConfederationAfricaineDeFootball/" class="social-link"><i class="fab fa-facebook-f"></i> </a><br>
+          <a href="https://x.com/CAF_Online" class="social-link"><i class="fab fa-twitter"></i> </a><br>
+          <a href="https://www.instagram.com/caf_online/" class="social-link"><i class="fab fa-instagram"></i> </a><br>
+          <a href="https://www.youtube.com/user/MyAfricanFootball" class="social-link"><i class="fab fa-youtube"></i> </a>
         </div>
       </div>
-    </footer>
+    </div>
+    
+    <div class="footer-bottom">
+      <!-- Bas de pied de page -->
+      <p>&copy;CAN Maroc 2025. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,31 +1,24 @@
-/* ======================
-STYLE DE LA PAGE TICKETS
-====================== */
+/* STYLE DE LA PAGE TICKETS*/
 
-/* ---------------
-1. Styles de base
---------------- */
+/*1. Styles de base*/
 :root {
   /* Variables CSS personnalisées */
   --primary: #C1272D; /* Rouge AFCON */
   --secondary: #006233; /* Vert AFCON */
-  --accent: #F9A01B; /* Or */
-  --dark: #222222; /* Noir foncé */
-  --medium: #666666; /* Gris moyen */
-  --light: #F5F5F5; /* Gris clair */
-  --white: #FFFFFF; /* Blanc */
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1); /* Ombre légère */
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.15); /* Ombre moyenne */
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2); /* Ombre large */
-  --radius-sm: 4px; /* Petit rayon de bordure */
-  --radius-md: 8px; /* Rayon de bordure moyen */
-  --radius-lg: 12px; /* Grand rayon de bordure */
-  --transition: all 0.3s ease; /* Transition par défaut */
+  --accent: #F9A01B; 
+  --dark: #222222; 
+  --medium: #666666; 
+  --light: #F5F5F5; 
+  --white: #FFFFFF; 
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1); 
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15); 
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2); 
+  --radius-sm: 4px;
+  --radius-md: 8px; 
+  --radius-lg: 12px; 
+  --transition: all 0.3s ease; 
 }
-
-/* ---------------
-2. Bannière & Titre
---------------- */
+/*2. Bannière & Titre*/
 .tickets-hero {
   /* Style de la bannière principale */
   background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%),
@@ -53,7 +46,7 @@ STYLE DE LA PAGE TICKETS
   z-index: 2; /* Au-dessus des autres éléments */
 }
 
-/* Navigation fil d'Ariane amélioré */
+/* Navigation fil d'Ariane  */
 .breadcrumb-nav {
   margin-bottom: 1rem; /* Marge en bas */
 }
@@ -99,13 +92,11 @@ STYLE DE LA PAGE TICKETS
   font-weight: normal; /* Poids de police normal */
 }
 
-/* ======================
-TITRES DE TICKETS EN ROUGE
-====================== */
+/*TITRES DE TICKETS EN ROUGE*/
 .ticket-type h4 {
   /* Style des titres de type de ticket */
-  color: #C1272D !important; /* Rouge AFCON */
-  font-weight: 800 !important; /* Extra gras */
+  color: #C1272D !important; 
+  font-weight: 800 !important; 
   margin-bottom: 0.5rem; /* Marge en bas */
   text-transform: uppercase; /* Texte en majuscules */
   letter-spacing: 0.5px; /* Espacement des lettres */
@@ -114,7 +105,7 @@ TITRES DE TICKETS EN ROUGE
   display: inline-block; /* Affichage en ligne */
 }
 
-/* Effet de soulignement rouge optionnel */
+/* Effet de soulignement rouge */
 .ticket-type h4::after {
   content: '';
   position: absolute;
@@ -129,7 +120,7 @@ TITRES DE TICKETS EN ROUGE
 .single-match-title,
 .team-series-title,
 .hospitality-title {
-  color: #C1272D !important; /* Rouge AFCON */
+  color: #C1272D !important; 
   font-weight: 800 !important; /* Extra gras */
 }
 
@@ -171,12 +162,10 @@ TITRES DE TICKETS EN ROUGE
   left: 0;
   width: 60px;
   height: 3px;
-  background: var(--accent); /* Couleur or */
+  background: var(--accent); 
 }
 
-/* ---------------
-3. Cartes de tickets
---------------- */
+/*3. Cartes de tickets */
 .ticket-card {
   /* Style de base des cartes */
   background: var(--white); /* Fond blanc */
@@ -203,7 +192,7 @@ TITRES DE TICKETS EN ROUGE
 
 .ticket-card.popular .ticket-card-header {
   /* En-tête pour carte "populaire" */
-  background: linear-gradient(135deg, var(--accent) 0%, #F9C22E 100%); /* Dégradé or */
+  background: linear-gradient(135deg, var(--accent) 0%, #F9C22E 100%); 
 }
 
 .ticket-card-title {
@@ -263,13 +252,11 @@ TITRES DE TICKETS EN ROUGE
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--secondary); /* Couleur verte */
+  color: var(--secondary); 
   font-weight: bold; /* Gras */
 }
 
-/* ---------------
-4. Boutons désactivés
---------------- */
+/*4.Boutons */
 .btn-ticket {
   /* Style de base des boutons */
   display: block; /* Affichage en bloc */
@@ -298,9 +285,7 @@ TITRES DE TICKETS EN ROUGE
   opacity: 0.6; /* Légère transparence */
 }
 
-/* ======================
-SECTION DISPONIBILITÉ DES TICKETS
-====================== */
+/* 5.SECTION DISPONIBILITÉ DES TICKETS*/
 
 /* Conteneur des contrôles de filtre */
 .availability-filters {
@@ -348,7 +333,7 @@ SECTION DISPONIBILITÉ DES TICKETS
 
 .availability-table th {
   /* En-tête du tableau */
-  background-color: #C1272D; /* Rouge AFCON */
+  background-color: #C1272D; 
   color: white; /* Texte blanc */
   padding: 1rem; /* Espacement interne */
   text-align: left; /* Alignement à gauche */
@@ -384,7 +369,7 @@ SECTION DISPONIBILITÉ DES TICKETS
 
 /* Statut de disponibilité */
 .available {
-  color: #28a745; /* Vert */
+  color: #28a745; 
   font-weight: 600; /* Poids de police */
   display: inline-flex; /* Affichage flexible en ligne */
   align-items: center; /* Alignement vertical */
@@ -403,7 +388,7 @@ SECTION DISPONIBILITÉ DES TICKETS
 
 /* Bouton d'achat */
 .btn-buy {
-  background-color: #C1272D; /* Rouge AFCON */
+  background-color: #C1272D; 
   color: white; /* Texte blanc */
   border: none; /* Pas de bordure */
   padding: 0.5rem 1.25rem; /* Espacement interne */
@@ -435,9 +420,7 @@ SECTION DISPONIBILITÉ DES TICKETS
   }
 }
 
-/* ---------------
-6. Ajustements responsives
---------------- */
+/*6. Ajustements responsives */
 @media (max-width: 992px) {
   .page-main-title {
     font-size: 3rem; /* Taille réduite */

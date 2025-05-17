@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="css/responsive.css"> <!-- Feuille de style pour le responsive -->
   <link rel="stylesheet" href="css/tickets.css"> <!-- Feuille de style spécifique aux billets -->
 </head>
-<body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="moroccan-loader">
-      <div class="loader-star"></div>
+<body> <!-- Corps du document -->
+  <!-- Preloader - Animation de chargement -->
+  <div id="preloader"> <!-- Conteneur du preloader -->
+    <div class="moroccan-loader"> <!-- Loader de style marocain -->
+      <div class="loader-star"></div> <!-- Élément visuel du loader -->
     </div>
   </div>
 
@@ -30,8 +30,8 @@
             <span class="host">MAROC</span> <!-- Pays hôte -->
           </div>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <!-- Bouton menu mobile -->
+          <span class="navbar-toggler-icon"></span> <!-- Icône du bouton -->
         </button>
         <div class="collapse navbar-collapse" id="navbarNav"> <!-- Contenu de la navbar -->
           <ul class="navbar-nav ms-auto"> <!-- Liste des liens de navigation -->
@@ -93,15 +93,15 @@
                 <p>Choisissez les matchs individuels que vous souhaitez voir</p> <!-- Description -->
               </div>
             </div>
-            <div class="ticket-type">
-              <i class="fas fa-calendar-alt"></i>
+            <div class="ticket-type"> <!-- Série pour une équipe -->
+              <i class="fas fa-calendar-alt"></i> <!-- Icône -->
               <div>
                 <h4>Forfait Équipe</h4> <!-- Titre -->
                 <p>Suivez votre équipe tout au long du tournoi</p> <!-- Description -->
               </div>
             </div>
-            <div class="ticket-type">
-              <i class="fas fa-star"></i>
+            <div class="ticket-type"> <!-- Packages hospitalité -->
+              <i class="fas fa-star"></i> <!-- Icône -->
               <div>
                 <h4>Packages Hospitality</h4> <!-- Titre -->
                 <p>Expériences premium avec avantages exclusifs</p> <!-- Description -->
@@ -112,7 +112,7 @@
           <a href="#tickets-pricing" class="btn btn-primary btn-lg">Voir les Tarifs</a> <!-- Bouton -->
         </div>
         <div class="col-lg-6"> <!-- Colonne droite -->
-          <img src="assets/images/afcon.png" alt="Billets" class="img-fluid rounded"> <!-- Image -->
+          <img src="assets/images/afcon/afcon.png" alt="Billets" class="img-fluid rounded"> <!-- Image -->
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
               <h3>Catégorie 4</h3> <!-- Catégorie -->
               <div class="price">250 MAD<span> / match</span></div> <!-- Prix -->
             </div>
-            <div class="pricing-features">
+            <div class="pricing-features"> <!-- Caractéristiques -->
               <ul>
                 <li>Sièges en tribune supérieure</li> <!-- Avantage 1 -->
                 <li>Bonne vue sur le terrain</li> <!-- Avantage 2 -->
@@ -152,7 +152,7 @@
               <div class="price">750 MAD<span> / match</span></div> <!-- Prix -->
               <div class="popular-badge">Le Plus Populaire</div> <!-- Badge populaire -->
             </div>
-            <div class="pricing-features">
+            <div class="pricing-features"> <!-- Caractéristiques -->
               <ul>
                 <li>Sièges en tribune inférieure</li> <!-- Avantage 1 -->
                 <li>Excellente vue sur le terrain</li> <!-- Avantage 2 -->
@@ -172,7 +172,7 @@
               <h3>VIP</h3> <!-- Catégorie -->
               <div class="price">2000 MAD<span> / match</span></div> <!-- Prix -->
             </div>
-            <div class="pricing-features">
+            <div class="pricing-features"> <!-- Caractéristiques -->
               <ul>
                 <li>Sièges premium</li> <!-- Avantage 1 -->
                 <li>Meilleures vues du stade</li> <!-- Avantage 2 -->
@@ -226,6 +226,7 @@
     <tbody> <!-- Corps du tableau -->
       <!-- Journée 1 - 26-28 décembre 2025 -->
       <tr> <!-- Ligne de match -->
+         <!-- Match Maroc vs Comores -->
         <td>
           <div class="match-info"> <!-- Info match -->
             <div class="match-teams">Maroc vs Comores</div> <!-- Équipes -->
@@ -237,6 +238,7 @@
         <td><button class="btn-buy">ACHETER BILLETS</button></td> <!-- Bouton -->
       </tr>
       <tr>
+         <!-- Match Egypte vs Afrique du Sud -->
         <td>
           <div class="match-info">
             <div class="match-teams">Égypte vs Afrique du Sud</div>
@@ -248,6 +250,7 @@
         <td><button class="btn-buy">ACHETER BILLETS</button></td>
       </tr>
       <tr>
+  <!-- Match Tunisie vs Nigeria -->
   <td>
     <div class="match-info">
       <div class="match-teams">Tunisie vs Nigeria</div>
@@ -656,47 +659,8 @@
           
           <button class="btn btn-outline-light" disabled>Voir les Packages</button> <!-- Bouton -->
         </div>
-      </div>
-      
-      <div class="availability-table">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Match</th>
-                <th>Date & Time</th>
-                <th>Venue</th>
-                <th>Availability</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="match-teams">
-                    <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag-sm">
-                    <span>Morocco</span>
-                    <span>vs</span>
-                    <img src="assets/images/flags/tanzania.png" alt="Tanzania" class="team-flag-sm">
-                    <span>Tanzania</span>
-                  </div>
-                  <div class="match-group">Group A</div>
-                </td>
-                <td>
-                  <div class="match-date">13 Jan 2025</div>
-                  <div class="match-time">17:00</div>
-                </td>
-                <td>Casablanca</td>
-                <td>
-                  <div class="availability-status available">Available</div>
-                </td>
-                <td>
-                  <a href="#" class="btn btn-sm btn-primary">Buy Tickets</a>
-                </td>
-              </tr>
-              <!-- More match rows -->
-            </tbody>
-          </table>
+        <div class="col-lg-6"> <!-- Colonne droite -->
+          <img src="assets/images/afcon/afcon_2025.webp" alt="Hospitality" class="img-fluid rounded"> <!-- Image -->
         </div>
       </div>
     </div>
@@ -719,6 +683,9 @@
               Les billets peuvent être achetés via notre site officiel, auprès des agents agréés et dans les bureaux de billetterie désignés dans les villes hôtes. Les achats en ligne nécessitent une inscription et une pièce d'identité valide. <!-- Réponse -->
             </div>
           </div>
+        </div>
+        <!-- ... (autres éléments d'accordéon) ... -->
+      </div>
     </div>
   </section>
 

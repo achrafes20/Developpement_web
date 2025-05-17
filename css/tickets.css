@@ -1,37 +1,37 @@
-/*STYLE DE LA PAGE TICKETS */
+/* STYLE DE LA PAGE BILLETS */
 
-/*1. Styles de base*/
+/* 1. Styles de base */
 :root {
   /* Variables CSS personnalisées */
   --primary: #C1272D; 
-  --secondary: #006233;
-  --accent: #F9A01B; 
+  --secondary: #006233; 
+  --accent: #F9A01B;
   --dark: #222222; 
   --medium: #666666; 
   --light: #F5F5F5; 
-  --white: #FFFFFF;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1); /* Ombre légère */
+  --white: #FFFFFF; 
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1); /* Petite ombre */
   --shadow-md: 0 4px 12px rgba(0,0,0,0.15); /* Ombre moyenne */
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2); /* Ombre large */
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2); /* Grande ombre */
   --radius-sm: 4px; /* Petit rayon de bordure */
   --radius-md: 8px; /* Rayon de bordure moyen */
   --radius-lg: 12px; /* Grand rayon de bordure */
   --transition: all 0.3s ease; /* Transition par défaut */
 }
 
-/*2. Bannière & Titre */
+/* 2. Bannière & Titre */
 .tickets-hero {
   /* Style de la bannière principale */
   background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%),
               url('../assets/images/tickets-banner.jpg') center/cover;
-  padding: 120px 0 80px; /* Espacement interne */
+  padding: 120px 0 80px; /* Espacement intérieur haut/milieu/bas */
   color: var(--white); /* Couleur du texte */
-  position: relative; /* Position relative pour les éléments enfants */
-  overflow: hidden; /* Cache le débordement */
+  position: relative; /* Positionnement relatif */
+  overflow: hidden; /* Masquage du débordement */
 }
 
 .tickets-hero::before {
-  /* Barre colorée en bas de la bannière */
+  /* Barre décorative en bas de la bannière */
   content: '';
   position: absolute;
   bottom: 0;
@@ -42,20 +42,20 @@
 }
 
 .tickets-header {
-  /* Positionnement du contenu de l'en-tête */
+  /* Conteneur de l'en-tête */
   position: relative;
-  z-index: 2; /* Au-dessus des autres éléments */
+  z-index: 2; /* Position en avant-plan */
 }
 
-/* Navigation fil d'Ariane amélioré */
+/* Navigation par fil d'Ariane */
 .breadcrumb-nav {
-  margin-bottom: 1rem; /* Marge en bas */
+  margin-bottom: 1rem; /* Espacement en bas */
 }
 
 .breadcrumb {
   /* Style du fil d'Ariane */
   background: transparent; /* Fond transparent */
-  padding: 0.5rem 0; /* Espacement interne */
+  padding: 0.5rem 0; /* Espacement intérieur */
   font-size: 0.9rem; /* Taille de police */
 }
 
@@ -66,47 +66,47 @@
 }
 
 .breadcrumb-item a {
-  /* Lien dans le fil d'Ariane */
-  color: rgba(255,255,255,0.8); /* Couleur avec transparence */
+  /* Style des liens */
+  color: rgba(255,255,255,0.8); 
   text-decoration: none; /* Pas de soulignement */
-  transition: var(--transition); /* Animation de transition */
-  font-weight: 500; /* Poids de police */
+  transition: var(--transition); /* Animation */
+  font-weight: 500; /* Épaisseur de police */
 }
 
 .breadcrumb-item a:hover {
-  /* Lien au survol */
-  color: var(--white); /* Couleur blanche */
+  /* Style au survol */
+  color: var(--white); 
   text-decoration: underline; /* Soulignement */
 }
 
 .breadcrumb-item.active {
-  /* Élément actif du fil d'Ariane */
-  color: var(--white); /* Couleur blanche */
-  font-weight: 600; /* Poids de police */
+  /* Élément actif */
+  color: var(--white); 
+  font-weight: 600; /* Police plus épaisse */
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
   /* Séparateur entre éléments */
   content: "/";
-  color: rgba(255,255,255,0.6); /* Couleur avec transparence */
+  color: rgba(255,255,255,0.6); 
   padding: 0 0.5rem; /* Espacement */
-  font-weight: normal; /* Poids de police normal */
+  font-weight: normal; /* Épaisseur normale */
 }
 
-/*TITRES DE TICKETS EN ROUGE */
+/* Titres des billets en rouge */
 .ticket-type h4 {
-  /* Style des titres de type de ticket */
+  /* Style des titres */
   color: #C1272D !important; 
-  font-weight: 800 !important;
-  margin-bottom: 0.5rem; /* Marge en bas */
-  text-transform: uppercase; /* Texte en majuscules */
+  font-weight: 800 !important; 
+  margin-bottom: 0.5rem; /* Espacement en bas */
+  text-transform: uppercase; /* Majuscules */
   letter-spacing: 0.5px; /* Espacement des lettres */
   font-size: 1.25rem; /* Taille de police */
   position: relative; /* Position relative */
   display: inline-block; /* Affichage en ligne */
 }
 
-/* Effet de soulignement rouge optionnel */
+/* Effet de soulignement */
 .ticket-type h4::after {
   content: '';
   position: absolute;
@@ -121,59 +121,59 @@
 .single-match-title,
 .team-series-title,
 .hospitality-title {
-  color: #C1272D !important; /* Rouge AFCON */
-  font-weight: 800 !important; /* Extra gras */
+  color: #C1272D !important; 
+  font-weight: 800 !important; 
 }
 
 /* Effet au survol */
 .ticket-type:hover h4 {
-  text-shadow: 0 2px 4px rgba(193, 39, 45, 0.2); /* Ombre de texte */
+  text-shadow: 0 2px 4px rgba(193, 39, 45, 0.2); /* Ombre portée */
 }
 
 .page-title-container {
-  margin-bottom: 2rem; /* Marge en bas */
+  margin-bottom: 2rem; /* Espacement en bas */
 }
 
 .page-main-title {
-  /* Style du titre principal */
-  font-size: 3.5rem; /* Taille de police */
-  font-weight: 900; /* Poids de police */
+  /* Titre principal */
+  font-size: 3.5rem; /* Taille importante */
+  font-weight: 900; /* Police très épaisse */
   line-height: 1; /* Hauteur de ligne */
-  margin-bottom: 0.5rem; /* Marge en bas */
-  text-transform: uppercase; /* Texte en majuscules */
+  margin-bottom: 0.5rem; /* Espacement en bas */
+  text-transform: uppercase; /* Majuscules */
   letter-spacing: 1px; /* Espacement des lettres */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Ombre de texte */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Ombre portée */
 }
 
 .page-subtitle {
-  /* Style du sous-titre */
-  font-size: 1.8rem; /* Taille de police */
-  font-weight: 600; /* Poids de police */
-  color: rgba(255,255,255,0.9); /* Couleur avec transparence */
-  margin-bottom: 0; /* Pas de marge en bas */
+  /* Sous-titre */
+  font-size: 1.8rem; /* Taille */
+  font-weight: 600; /* Épaisseur */
+  color: rgba(255,255,255,0.9); /* Blanc semi-transparent */
+  margin-bottom: 0; /* Pas d'espacement en bas */
   position: relative; /* Position relative */
   display: inline-block; /* Affichage en ligne */
 }
 
 .page-subtitle::after {
-  /* Barre décorative sous le sous-titre */
+  /* Barre décorative */
   content: '';
   position: absolute;
   bottom: -10px;
   left: 0;
   width: 60px;
   height: 3px;
-  background: var(--accent);
+  background: var(--accent); /* Couleur d'accent */
 }
 
-/*3. Cartes de tickets*/
+/* 3. Cartes de billets */
 .ticket-card {
-  /* Style de base des cartes */
-  background: var(--white); /* Fond blanc */
-  border-radius: var(--radius-lg); /* Grand rayon de bordure */
+  /* Style de base */
+  background: var(--white); 
+  border-radius: var(--radius-lg); /* Bords arrondis */
   box-shadow: var(--shadow-sm); /* Ombre légère */
-  overflow: hidden; /* Cache le débordement */
-  transition: var(--transition); /* Animation de transition */
+  overflow: hidden; /* Masquage du débordement */
+  transition: var(--transition); /* Animation */
   height: 100%; /* Hauteur complète */
   border: 1px solid rgba(0,0,0,0.05); /* Bordure subtile */
 }
@@ -186,87 +186,87 @@
 
 .ticket-card-header {
   /* En-tête de carte */
-  padding: 1.5rem; /* Espacement interne */
+  padding: 1.5rem; /* Espacement intérieur */
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); /* Dégradé */
   color: var(--white); /* Texte blanc */
 }
 
 .ticket-card.popular .ticket-card-header {
-  /* En-tête pour carte "populaire" */
+  /* Style spécial pour cartes populaires */
   background: linear-gradient(135deg, var(--accent) 0%, #F9C22E 100%); 
 }
 
 .ticket-card-title {
   /* Titre de la carte */
-  font-size: 1.5rem; /* Taille de police */
-  font-weight: 700; /* Poids de police */
-  margin-bottom: 0.5rem; /* Marge en bas */
+  font-size: 1.5rem; /* Taille */
+  font-weight: 700; /* Épaisseur */
+  margin-bottom: 0.5rem; /* Espacement en bas */
 }
 
 .ticket-card-price {
-  /* Prix dans la carte */
-  font-size: 2.5rem; /* Taille de police */
-  font-weight: 800; /* Poids de police */
+  /* Prix */
+  font-size: 2.5rem; /* Taille importante */
+  font-weight: 800; /* Très épais */
   line-height: 1; /* Hauteur de ligne */
 }
 
 .ticket-card-price span {
   /* Partie secondaire du prix */
-  font-size: 1rem; /* Taille de police */
-  font-weight: 400; /* Poids de police */
+  font-size: 1rem; /* Taille normale */
+  font-weight: 400; /* Épaisseur normale */
   opacity: 0.8; /* Légère transparence */
 }
 
 .popular-badge {
   /* Badge "Populaire" */
   display: inline-block; /* Affichage en ligne */
-  background: var(--white); /* Fond blanc */
-  color: var(--accent); 
-  padding: 0.25rem 1rem; /* Espacement interne */
-  border-radius: 20px; /* Bordure arrondie */
-  font-size: 0.8rem; /* Taille de police */
-  font-weight: 700; /* Poids de police */
-  margin-top: 0.5rem; /* Marge en haut */
+  background: var(--white); 
+  color: var(--accent); /* Couleur d'accent */
+  padding: 0.25rem 1rem; /* Espacement intérieur */
+  border-radius: 20px; /* Bords très arrondis */
+  font-size: 0.8rem; /* Petite taille */
+  font-weight: 700; /* Épais */
+  margin-top: 0.5rem; /* Espacement en haut */
 }
 
 .ticket-card-body {
   /* Corps de la carte */
-  padding: 1.5rem; /* Espacement interne */
+  padding: 1.5rem; /* Espacement intérieur */
 }
 
 .ticket-features {
   /* Liste des caractéristiques */
   list-style: none; /* Pas de puces */
-  padding: 0; /* Pas de padding */
-  margin: 0 0 1.5rem 0; /* Marge en bas */
+  padding: 0; /* Pas d'espacement intérieur */
+  margin: 0 0 1.5rem 0; /* Espacement en bas */
 }
 
 .ticket-features li {
-  /* Élément de la liste */
+  /* Élément de liste */
   padding: 0.5rem 0; /* Espacement vertical */
   position: relative; /* Position relative */
-  padding-left: 1.75rem; /* Espacement à gauche */
+  padding-left: 1.75rem; /* Décallage à gauche */
 }
 
 .ticket-features li::before {
-  /* Icône avant chaque élément */
+  /* Icône de validation */
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--secondary); /* Couleur verte */
+  color: var(--secondary); 
   font-weight: bold; /* Gras */
 }
 
-/*4. Boutons désactivés*/
+/* 4. Boutons */
 .btn-ticket {
-  /* Style de base des boutons */
+  /* Style de base */
   display: block; /* Affichage en bloc */
-  width: 100%; /* Largeur complète */
-  padding: 0.75rem; /* Espacement interne */
+  width: 100%; /* Pleine largeur */
+  padding: 0.75rem; /* Espacement intérieur */
   text-align: center; /* Texte centré */
-  font-weight: 600; /* Poids de police */
-  border-radius: var(--radius-md); /* Rayon de bordure moyen */
-  transition: var(--transition); /* Animation de transition */
+  font-weight: 600; /* Épaisseur */
+  border-radius: var(--radius-md); /* Bords arrondis */
+  transition: var(--transition); /* Animation */
   border: none; /* Pas de bordure */
   cursor: not-allowed; /* Curseur interdit */
 }
@@ -275,110 +275,110 @@
   /* Bouton principal */
   background-color: var(--primary); 
   color: var(--white); /* Texte blanc */
-  opacity: 0.6; /* Légère transparence */
+  opacity: 0.6; /* Transparence */
 }
 
 .btn-ticket-outline {
-  /* Bouton contour */
+  /* Bouton secondaire */
   background-color: transparent; /* Fond transparent */
   color: var(--primary); /* Texte rouge */
   border: 2px solid var(--primary); /* Bordure rouge */
-  opacity: 0.6; /* Légère transparence */
+  opacity: 0.6; /* Transparence */
 }
 
-/*5.SECTION DISPONIBILITÉ DES TICKETS*/
+/* 5. Section disponibilité des billets */
 
-/* Conteneur des contrôles de filtre */
+/* Conteneur des filtres */
 .availability-filters {
-  display: flex; /* Affichage flexible */
+  display: flex; /* Disposition flexible */
   gap: 2rem; /* Espace entre éléments */
-  margin-bottom: 2.5rem; /* Marge en bas */
-  padding: 1.5rem; /* Espacement interne */
+  margin-bottom: 2.5rem; /* Espacement en bas */
+  padding: 1.5rem; /* Espacement intérieur */
   background-color: #f8f9fa; /* Fond gris clair */
-  border-radius: 8px; /* Bordure arrondie */
+  border-radius: 8px; /* Bords arrondis */
 }
 
-/* Groupes de filtres individuels */
+/* Groupes de filtres */
 .filter-group {
   flex: 1; /* Flexibilité */
   min-width: 200px; /* Largeur minimale */
 }
 
 .filter-group label {
-  /* Étiquette du filtre */
+  /* Étiquette */
   display: block; /* Affichage en bloc */
-  font-weight: 600; /* Poids de police */
-  margin-bottom: 0.75rem; /* Marge en bas */
+  font-weight: 600; /* Épaisseur */
+  margin-bottom: 0.75rem; /* Espacement en bas */
   color: #333; /* Couleur de texte */
 }
 
 .filter-group select {
   /* Menu déroulant */
-  width: 100%; /* Largeur complète */
-  padding: 0.75rem; /* Espacement interne */
+  width: 100%; /* Pleine largeur */
+  padding: 0.75rem; /* Espacement intérieur */
   border: 1px solid #ddd; /* Bordure */
-  border-radius: 4px; /* Bordure arrondie */
+  border-radius: 4px; /* Bords arrondis */
   background-color: white; /* Fond blanc */
 }
 
-/* Style du tableau de disponibilité */
+/* Tableau de disponibilité */
 .availability-table {
-  width: 100%; /* Largeur complète */
+  width: 100%; /* Pleine largeur */
   border-collapse: separate; /* Séparation des bordures */
-  border-spacing: 0; /* Espacement des bordures */
+  border-spacing: 0; /* Pas d'espacement */
   background: white; /* Fond blanc */
-  border-radius: 8px; /* Bordure arrondie */
-  overflow: hidden; /* Cache le débordement */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Ombre légère */
+  border-radius: 8px; /* Bords arrondis */
+  overflow: hidden; /* Masquage du débordement */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
 }
 
 .availability-table th {
   /* En-tête du tableau */
-  background-color: #C1272D; /* Rouge AFCON */
+  background-color: #C1272D; 
   color: white; /* Texte blanc */
-  padding: 1rem; /* Espacement interne */
+  padding: 1rem; /* Espacement intérieur */
   text-align: left; /* Alignement à gauche */
 }
 
 .availability-table td {
-  /* Cellule du tableau */
-  padding: 1.25rem 1rem; /* Espacement interne */
+  /* Cellule */
+  padding: 1.25rem 1rem; /* Espacement intérieur */
   border-bottom: 1px solid #eee; /* Bordure en bas */
 }
 
 .availability-table tr:last-child td {
-  /* Dernière ligne sans bordure */
-  border-bottom: none;
+  /* Dernière ligne */
+  border-bottom: none; /* Pas de bordure */
 }
 
-/* Cellule d'information de match */
+/* Information de match */
 .match-info {
-  display: flex; /* Affichage flexible */
+  display: flex; /* Disposition flexible */
   align-items: center; /* Alignement vertical */
   gap: 1rem; /* Espace entre éléments */
 }
 
 .match-teams {
-  font-weight: 600; /* Poids de police */
+  font-weight: 600; /* Épaisseur */
 }
 
 .match-date {
-  color: #666; /* Couleur de texte */
-  font-size: 0.9rem; /* Taille de police */
-  margin-top: 0.25rem; /* Marge en haut */
+  color: #666; 
+  font-size: 0.9rem; /* Petite taille */
+  margin-top: 0.25rem; /* Espacement en haut */
 }
 
-/* Statut de disponibilité */
+/* Statut disponible */
 .available {
-  color: #28a745; /* Vert */
-  font-weight: 600; /* Poids de police */
-  display: inline-flex; /* Affichage flexible en ligne */
+  color: #28a745; 
+  font-weight: 600; /* Épaisseur */
+  display: inline-flex; /* Disposition flexible en ligne */
   align-items: center; /* Alignement vertical */
   gap: 0.5rem; /* Espace entre éléments */
 }
 
 .available::before {
-  /* Point vert avant le texte */
+  /* Point indicateur */
   content: "";
   display: inline-block;
   width: 10px;
@@ -389,30 +389,30 @@
 
 /* Bouton d'achat */
 .btn-buy {
-  background-color: #C1272D; /* Rouge AFCON */
+  background-color: #C1272D; 
   color: white; /* Texte blanc */
   border: none; /* Pas de bordure */
-  padding: 0.5rem 1.25rem; /* Espacement interne */
-  border-radius: 4px; /* Bordure arrondie */
-  font-weight: 600; /* Poids de police */
-  cursor: pointer; /* Curseur pointeur */
-  transition: all 0.2s; /* Animation de transition */
+  padding: 0.5rem 1.25rem; /* Espacement intérieur */
+  border-radius: 4px; /* Bords arrondis */
+  font-weight: 600; /* Épaisseur */
+  cursor: pointer; /* Curseur */
+  transition: all 0.2s; /* Animation */
 }
 
 .btn-buy:hover {
   /* Effet au survol */
-  background-color: #a02026; /* Rouge plus foncé */
+  background-color: #a02026; 
 }
 
-/* Ajustements responsives */
+/* 6. Adaptations responsives */
 @media (max-width: 768px) {
   .availability-filters {
-    flex-direction: column; /* Colonne sur mobile */
+    flex-direction: column; /* Disposition en colonne */
     gap: 1rem; /* Espace réduit */
   }
 
   .availability-table {
-    font-size: 0.9rem; /* Taille de police réduite */
+    font-size: 0.9rem; /* Taille réduite */
   }
 
   .availability-table th,
@@ -421,7 +421,6 @@
   }
 }
 
-/*6. Ajustements responsives */
 @media (max-width: 992px) {
   .page-main-title {
     font-size: 3rem; /* Taille réduite */

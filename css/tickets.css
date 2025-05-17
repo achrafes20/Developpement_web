@@ -1,24 +1,25 @@
-/* STYLE DE LA PAGE TICKETS*/
+/*STYLE DE LA PAGE TICKETS */
 
 /*1. Styles de base*/
 :root {
   /* Variables CSS personnalisées */
-  --primary: #C1272D; /* Rouge AFCON */
-  --secondary: #006233; /* Vert AFCON */
+  --primary: #C1272D; 
+  --secondary: #006233;
   --accent: #F9A01B; 
   --dark: #222222; 
   --medium: #666666; 
   --light: #F5F5F5; 
-  --white: #FFFFFF; 
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1); 
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.15); 
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2); 
-  --radius-sm: 4px;
-  --radius-md: 8px; 
-  --radius-lg: 12px; 
-  --transition: all 0.3s ease; 
+  --white: #FFFFFF;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1); /* Ombre légère */
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15); /* Ombre moyenne */
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2); /* Ombre large */
+  --radius-sm: 4px; /* Petit rayon de bordure */
+  --radius-md: 8px; /* Rayon de bordure moyen */
+  --radius-lg: 12px; /* Grand rayon de bordure */
+  --transition: all 0.3s ease; /* Transition par défaut */
 }
-/*2. Bannière & Titre*/
+
+/*2. Bannière & Titre */
 .tickets-hero {
   /* Style de la bannière principale */
   background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%),
@@ -46,7 +47,7 @@
   z-index: 2; /* Au-dessus des autres éléments */
 }
 
-/* Navigation fil d'Ariane  */
+/* Navigation fil d'Ariane amélioré */
 .breadcrumb-nav {
   margin-bottom: 1rem; /* Marge en bas */
 }
@@ -92,11 +93,11 @@
   font-weight: normal; /* Poids de police normal */
 }
 
-/*TITRES DE TICKETS EN ROUGE*/
+/*TITRES DE TICKETS EN ROUGE */
 .ticket-type h4 {
   /* Style des titres de type de ticket */
   color: #C1272D !important; 
-  font-weight: 800 !important; 
+  font-weight: 800 !important;
   margin-bottom: 0.5rem; /* Marge en bas */
   text-transform: uppercase; /* Texte en majuscules */
   letter-spacing: 0.5px; /* Espacement des lettres */
@@ -105,7 +106,7 @@
   display: inline-block; /* Affichage en ligne */
 }
 
-/* Effet de soulignement rouge */
+/* Effet de soulignement rouge optionnel */
 .ticket-type h4::after {
   content: '';
   position: absolute;
@@ -120,7 +121,7 @@
 .single-match-title,
 .team-series-title,
 .hospitality-title {
-  color: #C1272D !important; 
+  color: #C1272D !important; /* Rouge AFCON */
   font-weight: 800 !important; /* Extra gras */
 }
 
@@ -162,10 +163,10 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background: var(--accent); 
+  background: var(--accent);
 }
 
-/*3. Cartes de tickets */
+/*3. Cartes de tickets*/
 .ticket-card {
   /* Style de base des cartes */
   background: var(--white); /* Fond blanc */
@@ -220,7 +221,7 @@
   /* Badge "Populaire" */
   display: inline-block; /* Affichage en ligne */
   background: var(--white); /* Fond blanc */
-  color: var(--accent); /* Couleur or */
+  color: var(--accent); 
   padding: 0.25rem 1rem; /* Espacement interne */
   border-radius: 20px; /* Bordure arrondie */
   font-size: 0.8rem; /* Taille de police */
@@ -252,11 +253,11 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--secondary); 
+  color: var(--secondary); /* Couleur verte */
   font-weight: bold; /* Gras */
 }
 
-/*4.Boutons */
+/*4. Boutons désactivés*/
 .btn-ticket {
   /* Style de base des boutons */
   display: block; /* Affichage en bloc */
@@ -272,7 +273,7 @@
 
 .btn-ticket-primary {
   /* Bouton principal */
-  background-color: var(--primary); /* Rouge AFCON */
+  background-color: var(--primary); 
   color: var(--white); /* Texte blanc */
   opacity: 0.6; /* Légère transparence */
 }
@@ -285,7 +286,7 @@
   opacity: 0.6; /* Légère transparence */
 }
 
-/* 5.SECTION DISPONIBILITÉ DES TICKETS*/
+/*5.SECTION DISPONIBILITÉ DES TICKETS*/
 
 /* Conteneur des contrôles de filtre */
 .availability-filters {
@@ -333,7 +334,7 @@
 
 .availability-table th {
   /* En-tête du tableau */
-  background-color: #C1272D; 
+  background-color: #C1272D; /* Rouge AFCON */
   color: white; /* Texte blanc */
   padding: 1rem; /* Espacement interne */
   text-align: left; /* Alignement à gauche */
@@ -369,7 +370,7 @@
 
 /* Statut de disponibilité */
 .available {
-  color: #28a745; 
+  color: #28a745; /* Vert */
   font-weight: 600; /* Poids de police */
   display: inline-flex; /* Affichage flexible en ligne */
   align-items: center; /* Alignement vertical */
@@ -388,7 +389,7 @@
 
 /* Bouton d'achat */
 .btn-buy {
-  background-color: #C1272D; 
+  background-color: #C1272D; /* Rouge AFCON */
   color: white; /* Texte blanc */
   border: none; /* Pas de bordure */
   padding: 0.5rem 1.25rem; /* Espacement interne */

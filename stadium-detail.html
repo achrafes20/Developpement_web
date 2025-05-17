@@ -1,365 +1,2967 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Déclaration du type de document : ici HTML5 -->
+
+<html lang="fr">
+<!-- Définition de la langue de la page : français -->
+
 <head>
+  <!-- Début de la section en-tête du document -->
+
   <meta charset="UTF-8">
+  <!-- Définition de l'encodage des caractères en UTF-8 -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stadium Detail - Africa Cup of Nations - Morocco 2025</title>
+  <!-- Permet d'adapter la mise en page à la taille de l'écran pour le responsive -->
+
+  <title>Équipes - Coupe d'Afrique des Nations - Maroc 2025</title>
+  <!-- Titre affiché dans l'onglet du navigateur -->
+
+  <!-- Liens vers les feuilles de style externes -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Intégration de Bootstrap (framework CSS) pour faciliter le design et la mise en page -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Intégration de Font Awesome pour les icônes -->
+
   <link rel="stylesheet" href="css/main.css">
+  <!-- Lien vers la feuille de style principale du site -->
+
+  <link rel="stylesheet" href="css/teams.css">
+  <!-- Lien vers la feuille de style spécifique à la page des équipes -->
+
   <link rel="stylesheet" href="css/animations.css">
+  <!-- Lien vers la feuille de style des animations -->
+
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/stadium-detail.css">
+  <!-- Lien vers la feuille de style qui gère l'affichage sur les différents écrans -->
+
+  <link rel="stylesheet" href="css/teambuilder.css">
+  <!-- Lien vers la feuille de style pour le module de création d'équipe -->
+   <style>
+      /* Styles supplémentaires pour la page de détail du stade */
+      .stadium-header-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .stadium-main-image {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .stadium-thumbnails {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .thumbnail {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .thumbnail:hover {
+        transform: scale(1.05);
+      }
+
+      .stadium-section {
+        margin-bottom: 40px;
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .section-title {
+        color: #1a3e72;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .match-card {
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        transition: all 0.3s;
+      }
+
+      .match-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .match-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .match-teams {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+      }
+
+      .team-flag {
+        width: 50px;
+        height: auto;
+        margin-bottom: 5px;
+      }
+
+      .score {
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 0 15px;
+      }
+
+      .match-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .stadium-map {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      .map-legend {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .legend-color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        margin-right: 8px;
+      }
+
+      .sidebar-section {
+        margin-bottom: 30px;
+      }
+
+      .sidebar-title {
+        color: #1a3e72;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      .facts-list li,
+      .rules-list li {
+        margin-bottom: 10px;
+      }
+
+      .facts-list i,
+      .rules-list i {
+        margin-right: 10px;
+        color: #1a3e72;
+      }
+
+      .transport-option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .transport-option i {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: #1a3e72;
+      }
+
+      .attraction {
+        margin-bottom: 15px;
+      }
+
+      .attraction img {
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .stadium-thumbnails {
+          flex-direction: column;
+        }
+
+        .match-teams {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .team {
+          flex-direction: row;
+          gap: 10px;
+        }
+      }
+    </style>
+
 </head>
+<!-- Fin de la section d'en-tête -->
+
 <body>
-  <!-- Preloader -->
+  <!-- Début du corps du document -->
+
   <div id="preloader">
+    <!-- Écran de chargement avant l'affichage complet de la page -->
+
     <div class="moroccan-loader">
+      <!-- Conteneur de l'animation personnalisée -->
+
       <div class="loader-star"></div>
+      <!-- Élément d'animation (étoile ou autre forme animée) -->
+
     </div>
   </div>
 
-  <!-- Header -->
   <header id="main-header">
+    <!-- Début de l'en-tête principal -->
+
     <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Barre de navigation principale, en mode large (lg) et fixe en haut -->
+
       <div class="container">
+        <!-- Conteneur Bootstrap pour structurer le contenu -->
+
         <a class="navbar-brand" href="index.html">
+          <!-- Lien vers la page d'accueil avec le logo du site -->
+
           <div class="logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
+            <!-- Conteneur pour le logo -->
+
+            <span class="logo-text">CAN <span class="year">2025</span></span>
+            <!-- Texte du logo avec mention de l'année -->
+
+            <span class="host">MAROC</span>
+            <!-- Pays organisateur affiché sous le logo -->
+
           </div>
         </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <!-- Bouton d'ouverture du menu burger pour mobile -->
+
           <span class="navbar-toggler-icon"></span>
+          <!-- Icône du bouton burger -->
+
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Conteneur du menu de navigation qui se replie en mode mobile -->
+
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
-            <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
-            <li class="nav-item"><a class="nav-link active" href="stadiums.html">Stadiums</a></li>
-            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Tickets</a></li>
+            <!-- Liste des liens de navigation alignés à droite -->
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <!-- Lien vers la page d'accueil -->
+
+            <li class="nav-item"><a class="nav-link" href="teams.html">Équipes</a></li>
+            <!-- Lien vers la page des équipes, actif sur cette page -->
+
+            <li class="nav-item"><a class="nav-link" href="matches.html">Matchs</a></li>
+            <!-- Lien vers la page des matchs -->
+
+            <li class="nav-item"><a class="nav-link active" href="stadiums.html">Stades</a></li>
+            <!-- Lien vers la page des stades -->
+
+            <li class="nav-item"><a class="nav-link" href="news.html">Actualités</a></li>
+            <!-- Lien vers la page des actualités -->
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+            <!-- Lien vers la galerie photo/vidéo -->
+
+            <li class="nav-item ticket-btn"><a class="nav-link" href="tickets.html">Billets</a></li>
+            <!-- Lien vers la billetterie -->
+
           </ul>
+
           <div class="language-selector">
+            <!-- Sélecteur de langue -->
+
             <select class="form-select">
+              <!-- Liste déroulante pour choisir la langue -->
               <option value="en">EN</option>
-              <option value="fr">FR</option>
+              <!-- Option anglais -->
+
+              <option value="fr" selected>FR</option>
+              <!-- Option français sélectionnée -->
+
               <option value="ar">AR</option>
+              <!-- Option arabe -->
+
             </select>
           </div>
+
         </div>
       </div>
+
     </nav>
   </header>
 
-  <!-- Page Banner -->
   <section id="page-banner">
+    <!-- Bannière d’en-tête de la page -->
+
     <div class="container">
+      <!-- Conteneur Bootstrap -->
+
       <div class="row">
+        <!-- Ligne pour organiser le contenu -->
+
         <div class="col-lg-12">
-          <h1 class="page-title">Stadium Details</h1>
+          <!-- Colonne prenant toute la largeur -->
+
+          <h1 class="page-title">Détails du Stade</h1>
+          <!-- Titre de la page affiché dans la bannière -->
+
           <nav aria-label="breadcrumb">
+            <!-- Fil d'Ariane pour la navigation -->
+
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item"><a href="stadiums.html">Stadiums</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Mohammed V Stadium</li>
+              <!-- Liste des éléments du fil d'Ariane -->
+
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <!-- Premier élément du fil d'Ariane -->
+
+              <li class="breadcrumb-item active" aria-current="page">Équipes</li>
+              <!-- Élément actif indiquant la page actuelle -->
+
             </ol>
+
           </nav>
         </div>
+
       </div>
     </div>
+
   </section>
 
-  <!-- Stadium Header -->
-  <section id="stadium-header">
-    <div class="container">
-      <div class="stadium-header-container">
-        <h2 class="stadium-name">Mohammed V Stadium</h2>
-        <div class="stadium-location">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Casablanca, Morocco</span>
-        </div>
-        <div class="stadium-capacity">
-          <i class="fas fa-users"></i>
-          <span>Capacity: 45,000</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stadium Gallery -->
-  <section id="stadium-gallery">
-    <div class="container">
-      <div class="stadium-main-image">
-        <img src="assets/images/stadiums/mohammed-v.jpg" alt="Mohammed V Stadium" class="img-fluid">
-      </div>
-      <div class="stadium-thumbnails">
-        <div class="thumbnail">
-          <img src="assets/images/stadiums/mohammed-v-1.jpg" alt="Stadium View 1" class="img-fluid">
-        </div>
-        <div class="thumbnail">
-          <img src="assets/images/stadiums/mohammed-v-2.jpg" alt="Stadium View 2" class="img-fluid">
-        </div>
-        <div class="thumbnail">
-          <img src="assets/images/stadiums/mohammed-v-3.jpg" alt="Stadium View 3" class="img-fluid">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stadium Content -->
-  <section id="stadium-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <!-- Stadium Info -->
-          <div class="stadium-section">
-            <h3 class="section-title">Stadium Information</h3>
-            <p>The Mohammed V Stadium is a multi-purpose stadium in Casablanca, Morocco. It is used mostly for football matches and it also has athletics facilities. The stadium holds 45,000 spectators and was built in 1955.</p>
-            
-            <p>The stadium underwent major renovations in 2024 in preparation for AFCON 2025. The upgrades included new seating, improved facilities for players and spectators, and state-of-the-art media and broadcasting equipment.</p>
-            
-            <h4>Key Features:</h4>
-            <ul>
-              <li>New hybrid pitch meeting FIFA standards</li>
-              <li>Modernized locker rooms and player facilities</li>
-              <li>Enhanced media center with broadcast capabilities</li>
-              <li>Improved accessibility for disabled spectators</li>
-              <li>Upgraded security and surveillance systems</li>
-              <li>New VIP and hospitality areas</li>
-            </ul>
-          </div>
-          
-          <!-- Stadium Matches -->
-          <div class="stadium-section">
-            <h3 class="section-title">Scheduled Matches</h3>
-            <div class="stadium-matches">
-              <div class="match-card">
-                <div class="match-header">
-                  <span class="match-group">Group A</span>
-                  <span class="match-date">13 Jan 2025 • 17:00</span>
-                </div>
-                <div class="match-teams">
-                  <div class="team">
-                    <img src="assets/images/flags/morocco.png" alt="Morocco" class="team-flag">
-                    <span class="team-name">Morocco</span>
-                  </div>
-                  <div class="score">VS</div>
-                  <div class="team">
-                    <img src="assets/images/flags/tanzania.png" alt="Tanzania" class="team-flag">
-                    <span class="team-name">Tanzania</span>
-                  </div>
-                </div>
-                <div class="match-actions">
-                  <a href="match-detail.html" class="btn btn-sm btn-outline-primary">Details</a>
-                  <a href="tickets.html" class="btn btn-sm btn-primary">Tickets</a>
-                </div>
-              </div>
-              <!-- More match cards -->
+    <!-- Stadium Content -->
+    <section id="stadium-content">
+      <div class="container">
+        <!-- Stade Mohammed V (contenu par défaut) -->
+        <div id="casablanca-content" class="stadium-detail-content">
+          <!-- Stadium Header -->
+          <div class="stadium-header-container">
+            <h2 class="stadium-name">Grand Stade Mohammed V</h2>
+            <div class="stadium-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Casablanca, Maroc</span>
+            </div>
+            <div class="stadium-capacity">
+              <i class="fas fa-users"></i>
+              <span>Capacité : 45 000 places</span>
             </div>
           </div>
-          
-          <!-- Stadium Map -->
-          <div class="stadium-section">
-            <h3 class="section-title">Stadium Map</h3>
-            <div class="stadium-map">
-              <img src="assets/images/stadium-map.jpg" alt="Stadium Map" class="img-fluid">
-              <div class="map-legend">
-                <h5>Stadium Sections</h5>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Stadium Gallery -->
+              <div class="stadium-section">
+                <h3 class="section-title">Galerie</h3>
+                <div class="stadium-main-image">
+                  <img
+                    src="https://www.cafonline.com/media/moenx0z3/new_casablanca_complexe-sportif-mohammed-v.jpg?width=1320"
+                    alt="Stade Mohammed V"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="stadium-thumbnails">
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.casa-amenagement.ma/uploads/gallery/travaux-du-complexe-med-v/DJI_0145.JPG"
+                      alt="Vue du stade 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.casa-amenagement.ma/uploads/gallery/travaux-du-complexe-med-v/DJI_0156.JPG"
+                      alt="Vue du stade 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.casa-amenagement.ma/uploads/gallery/travaux-du-complexe-med-v/DJI_0294.JPG"
+                      alt="Vue du stade 3"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Info -->
+              <div class="stadium-section">
+                <h3 class="section-title">Informations sur le stade</h3>
+                <p>
+                  Le Stade Mohammed V est un stade multifonctionnel situé à
+                  Casablanca, au Maroc. Principalement utilisé pour les matchs
+                  de football, il dispose également d'installations
+                  d'athlétisme. D'une capacité de 45 000 spectateurs, il a été
+                  construit en 1955 et porte le nom du roi Mohammed V du Maroc.
+                </p>
+
+                <p>
+                  Le stade a subi d'importantes rénovations en 2024 en
+                  préparation de la CAN 2025. Les améliorations comprennent de
+                  nouveaux sièges, des installations modernisées pour les
+                  joueurs et les spectateurs, ainsi qu'un équipement médiatique
+                  et de diffusion de pointe. La rénovation a préservé la façade
+                  historique du stade tout en modernisant toutes les
+                  installations intérieures.
+                </p>
+
+                <h4>Caractéristiques principales :</h4>
                 <ul>
-                  <li><span class="legend-color" style="background-color: #c1272d;"></span> North Stand</li>
-                  <li><span class="legend-color" style="background-color: #006233;"></span> South Stand</li>
-                  <li><span class="legend-color" style="background-color: #c8a45c;"></span> East Stand</li>
-                  <li><span class="legend-color" style="background-color: #6366F1;"></span> West Stand</li>
-                  <li><span class="legend-color" style="background-color: #8B5CF6;"></span> VIP Areas</li>
+                  <li>Nouvelle pelouse hybride répondant aux normes FIFA</li>
+                  <li>Vestiaires et installations pour joueurs modernisés</li>
+                  <li>
+                    Centre médiatique amélioré avec capacités de diffusion
+                  </li>
+                  <li>
+                    Accessibilité améliorée pour les spectateurs handicapés
+                  </li>
+                  <li>Systèmes de sécurité et de surveillance améliorés</li>
+                  <li>
+                    Nouvelles zones VIP et d'hospitalité avec services premium
+                  </li>
+                  <li>Système d'éclairage LED économe en énergie</li>
+                  <li>Améliorations acoustiques pour une meilleure ambiance</li>
                 </ul>
+
+                <h4>Histoire et importance :</h4>
+                <p>
+                  Le Stade Mohammed V a accueilli de nombreux matchs de football
+                  importants, dont la finale de la Coupe d'Afrique des Nations
+                  1988. C'est le terrain résidentiel de deux des clubs les plus
+                  titrés du Maroc, le Raja Casablanca et le Wydad Casablanca. Le
+                  stade a été témoin de nombreux moments historiques du football
+                  africain et est considéré comme l'un des sites les plus
+                  emblématiques du continent.
+                </p>
+              </div>
+
+              <!-- Stadium Matches -->
+              <div class="stadium-section">
+                <h3 class="section-title">Matchs programmés</h3>
+                <div class="stadium-matches">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe A</span>
+                      <span class="match-date">13 jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Flag_of_Morocco.png"
+                          alt="Maroc"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Maroc</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/2560px-Flag_of_Tanzania.svg.png"
+                          alt="Tanzanie"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Tanzanie</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe A</span>
+                      <span class="match-date">20 jan 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Flag_of_Morocco.png"
+                          alt="Maroc"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Maroc</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg"
+                          alt="Sénégal"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Sénégal</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Finale</span>
+                      <span class="match-date">10 fév 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur Demi 1</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Vainqueur Demi 2</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Map -->
+              <div class="stadium-section">
+                <h3 class="section-title">Plan du stade</h3>
+                <div class="stadium-map">
+                  <img
+                    src="assets/images/morocco map with stadium.png"
+                    alt="Plan du stade"
+                    class="img-fluid"
+                  />
+                  <div class="map-legend">
+                    <h5>Sections du stade</h5>
+                    <ul>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #c1272d"
+                        ></span>
+                        Tribune Nord
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #006233"
+                        ></span>
+                        Tribune Sud
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #c8a45c"
+                        ></span>
+                        Tribune Est
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #6366f1"
+                        ></span>
+                        Tribune Ouest
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #8b5cf6"
+                        ></span>
+                        Zones VIP
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <!-- Stadium Facts -->
+              <div class="stadium-sidebar">
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Anecdotes</h4>
+                  <ul class="facts-list">
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span><strong>Ouverture :</strong> 6 mars 1955</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-redo"></i>
+                      <span><strong>Rénovations :</strong> 2000, 2024</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-expand"></i>
+                      <span><strong>Surface :</strong> Pelouse hybride</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-trophy"></i>
+                      <span
+                        ><strong>Résidents :</strong> Raja CA, Wydad AC</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-road"></i>
+                      <span
+                        ><strong>Adresse :</strong> Boulevard Zerktouni,
+                        Casablanca</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Dimensions :</strong> 105m × 68m</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <span
+                        ><strong>Record d'affluence :</strong> 110 000 (Finale
+                        CAN 1988)</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Transportation -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Transport</h4>
+                  <div class="transportation">
+                    <div class="transport-option">
+                      <i class="fas fa-subway"></i>
+                      <div>
+                        <h5>Tramway</h5>
+                        <p>
+                          Ligne T1 jusqu'à la station "Stade Mohamed V" (5 min à
+                          pied)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-bus"></i>
+                      <div>
+                        <h5>Bus</h5>
+                        <p>
+                          Lignes 10, 33, 38, 60, 65 (Arrêt Place Nations Unies)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-car"></i>
+                      <div>
+                        <h5>Parking</h5>
+                        <p>
+                          3 000 places disponibles à proximité (Réservation
+                          recommandée)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-taxi"></i>
+                      <div>
+                        <h5>Taxi</h5>
+                        <p>Zone de dépôt dédiée à la Porte 4</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stadium Rules -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Règles du stade</h4>
+                  <ul class="rules-list">
+                    <li><i class="fas fa-ban"></i> Interdiction de fumer</li>
+                    <li><i class="fas fa-ban"></i> Interdiction d'alcool</li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de gros sacs (max
+                      20×15×10cm)
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'appareils photo
+                      professionnels
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'armes ou objets dangereux
+                    </li>
+                    <li><i class="fas fa-ban"></i> Pas de pointeurs laser</li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de bannières politiques
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Attractions à proximité</h4>
+                  <div class="attractions">
+                    <div class="attraction">
+                      <img
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/4d/c3/07/ii.jpg?w=900&h=500&s=1"
+                        alt="Mosquée Hassan II"
+                        class="img-fluid"
+                      />
+                      <h5>Mosquée Hassan II</h5>
+                      <p>2,5 km du stade • 2ème plus grande mosquée au monde</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://www.casa-amenagement.ma/uploads/projets/400x400/33d81607c3d763ba1fac44dabd2b91132257bbd0.jpg"
+                        alt="Corniche d'Ain Diab"
+                        class="img-fluid"
+                      />
+                      <h5>Corniche d'Ain Diab</h5>
+                      <p>3 km du stade • Promenade côtière pittoresque</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://media.tacdn.com/media/attractions-splice-spp-360x240/11/27/47/81.jpg"
+                        alt="Ancienne Médina de Casablanca"
+                        class="img-fluid"
+                      />
+                      <h5>Ancienne Médina</h5>
+                      <p>4 km du stade • Quartier du marché traditionnel</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <div class="col-lg-4">
-          <!-- Stadium Facts -->
-          <div class="stadium-sidebar">
-            <div class="sidebar-section">
-              <h4 class="sidebar-title">Stadium Facts</h4>
-              <ul class="facts-list">
-                <li>
-                  <i class="fas fa-calendar-alt"></i>
-                  <span><strong>Opened:</strong> 1955</span>
-                </li>
-                <li>
-                  <i class="fas fa-redo"></i>
-                  <span><strong>Renovated:</strong> 2000, 2024</span>
-                </li>
-                <li>
-                  <i class="fas fa-expand"></i>
-                  <span><strong>Surface:</strong> Hybrid grass</span>
-                </li>
-                <li>
-                  <i class="fas fa-trophy"></i>
-                  <span><strong>Tenants:</strong> Raja CA, Wydad AC</span>
-                </li>
-                <li>
-                  <i class="fas fa-road"></i>
-                  <span><strong>Address:</strong> Boulevard Zerktouni, Casablanca</span>
-                </li>
-              </ul>
+
+        <!-- Grand Stade de Marrakech -->
+        <div
+          id="marrakech-content"
+          class="stadium-detail-content"
+          style="display: none"
+        >
+          <!-- Stadium Header -->
+          <div class="stadium-header-container">
+            <h2 class="stadium-name">Grand Stade de Marrakech</h2>
+            <div class="stadium-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Marrakech, Maroc</span>
             </div>
-            
-            <!-- Transportation -->
-            <div class="sidebar-section">
-              <h4 class="sidebar-title">Transportation</h4>
-              <div class="transportation">
-                <div class="transport-option">
-                  <i class="fas fa-subway"></i>
-                  <div>
-                    <h5>Tramway</h5>
-                    <p>Line T1 to "Stade Mohamed V" station</p>
+            <div class="stadium-capacity">
+              <i class="fas fa-users"></i>
+              <span>Capacité : 41 245 places</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Stadium Gallery -->
+              <div class="stadium-section">
+                <h3 class="section-title">Galerie</h3>
+                <div class="stadium-main-image">
+                  <img
+                    src="https://www-cafonline-com.translate.goog/media/qquavvjf/new_marrakech_grand-stade-de-marrakech.jpg?width=1320&_x_tr_sl=en&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=wa"
+                    alt="Grand Stade de Marrakech"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="stadium-thumbnails">
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.mecreeled.com/wp-content/uploads/2022/04/Grand-stade-de-Marrakech-sports-lights-for-sale-dodger-stadium-lights-entrance-gates.jpg"
+                      alt="Vue du stade 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.mecreeled.com/wp-content/uploads/2022/04/Grand-stade-de-Marrakech-sports-lights-for-sale2-dodger-stadium-lights-entrance-gates.jpg"
+                      alt="Vue du stade 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.mecreeled.com/wp-content/uploads/2022/04/Grand-stade-de-Marrakech-sports-lights-for-sale3-dodger-stadium-lights-entrance-gates.jpg"
+                      alt="Vue du stade 3"
+                      class="img-fluid"
+                    />
                   </div>
                 </div>
-                <div class="transport-option">
-                  <i class="fas fa-bus"></i>
-                  <div>
-                    <h5>Bus</h5>
-                    <p>Lines 10, 33, 38, 60, 65</p>
+              </div>
+
+              <!-- Stadium Info -->
+              <div class="stadium-section">
+                <h3 class="section-title">Informations sur le stade</h3>
+                <p>
+                  Le Grand Stade de Marrakech est un tout nouveau stade de
+                  football achevé en 2024 spécialement pour la CAN 2025. D'une
+                  capacité de 41 245 places, c'est l'un des sites sportifs les
+                  plus modernes du Maroc, doté d'une technologie de pointe et
+                  d'éléments de conception durable.
+                </p>
+
+                <p>
+                  La caractéristique la plus distinctive du stade est son toit
+                  rétractable qui peut s'ouvrir ou se fermer en 15 minutes,
+                  permettant des conditions confortables quelle que soit la
+                  météo. La conception intègre des motifs architecturaux
+                  marocains traditionnels dans un style contemporain, créant une
+                  identité unique.
+                </p>
+
+                <h4>Caractéristiques principales :</h4>
+                <ul>
+                  <li>
+                    Toit rétractable avec panneaux transparents pour la lumière
+                    naturelle
+                  </li>
+                  <li>Pelouse hybride avec système de drainage avancé</li>
+                  <li>Affichage LED à 360° autour de l'intérieur</li>
+                  <li>Système sonore et acoustique de pointe</li>
+                  <li>
+                    Panneaux solaires fournissant 30% des besoins énergétiques
+                  </li>
+                  <li>
+                    Système de récupération d'eau de pluie pour l'irrigation
+                  </li>
+                  <li>40 loges VIP luxueuses avec services premium</li>
+                  <li>Parking souterrain pour 2 000 véhicules</li>
+                </ul>
+
+                <h4>Design et architecture :</h4>
+                <p>
+                  Inspiré par les motifs géométriques traditionnels marocains,
+                  la façade du stade présente un travail de treillis complexe
+                  qui fournit de l'ombre tout en permettant à l'air de circuler.
+                  La palette de couleurs utilise le "rouge Marrakech" iconique
+                  présent dans toute l'architecture de la ville. La structure du
+                  toit ressemble à une formation de rose du désert vue d'en
+                  haut.
+                </p>
+              </div>
+
+              <!-- Stadium Matches -->
+              <div class="stadium-section">
+                <h3 class="section-title">Matchs programmés</h3>
+                <div class="stadium-matches">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe B</span>
+                      <span class="match-date">16 jan 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
+                          alt="Égypte"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Égypte</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg"
+                          alt="Nigeria"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Nigeria</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Quart de finale</span>
+                      <span class="match-date">2 fév 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur Groupe B</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Deuxième Groupe A</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Demi-finale</span>
+                      <span class="match-date">6 fév 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur QF1</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Vainqueur QF2</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
                   </div>
                 </div>
-                <div class="transport-option">
-                  <i class="fas fa-car"></i>
-                  <div>
-                    <h5>Parking</h5>
-                    <p>3,000 spaces available nearby</p>
+              </div>
+
+              <!-- Stadium Map -->
+              <div class="stadium-section">
+                <h3 class="section-title">Plan du stade</h3>
+                <div class="stadium-map">
+                  <img
+                    src="assets/images/morocco map with stadium.png"
+                    alt="Plan du stade"
+                    class="img-fluid"
+                  />
+                  <div class="map-legend">
+                    <h5>Sections du stade</h5>
+                    <ul>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #c1272d"
+                        ></span>
+                        Tribune Atlas (Nord)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #006233"
+                        ></span>
+                        Tribune Palmeraie (Sud)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #c8a45c"
+                        ></span>
+                        Tribune Médina (Est)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #6366f1"
+                        ></span>
+                        Tribune Koutoubia (Ouest)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #8b5cf6"
+                        ></span>
+                        Loges Premium
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <!-- Stadium Rules -->
-            <div class="sidebar-section">
-              <h4 class="sidebar-title">Stadium Rules</h4>
-              <ul class="rules-list">
-                <li><i class="fas fa-ban"></i> No smoking</li>
-                <li><i class="fas fa-ban"></i> No alcohol</li>
-                <li><i class="fas fa-ban"></i> No large bags</li>
-                <li><i class="fas fa-ban"></i> No professional cameras</li>
-                <li><i class="fas fa-ban"></i> No weapons or dangerous items</li>
-              </ul>
-            </div>
-            
-            <!-- Nearby Attractions -->
-            <div class="sidebar-section">
-              <h4 class="sidebar-title">Nearby Attractions</h4>
-              <div class="attractions">
-                <div class="attraction">
-                  <img src="assets/images/attractions/hassan-ii.jpg" alt="Hassan II Mosque" class="img-fluid">
-                  <h5>Hassan II Mosque</h5>
-                  <p>2.5 km from stadium</p>
+
+            <div class="col-lg-4">
+              <!-- Stadium Facts -->
+              <div class="stadium-sidebar">
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Anecdotes</h4>
+                  <ul class="facts-list">
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span><strong>Ouverture :</strong> Janvier 2024</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Dimensions :</strong> 105m × 68m</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-expand"></i>
+                      <span><strong>Surface :</strong> Pelouse hybride</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-trophy"></i>
+                      <span><strong>Résident :</strong> Kawkab Marrakech</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-road"></i>
+                      <span
+                        ><strong>Adresse :</strong> Route de Safi,
+                        Marrakech</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-sun"></i>
+                      <span
+                        ><strong>Opération toit :</strong> 15 min pour
+                        ouvrir/fermer</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-solar-panel"></i>
+                      <span><strong>Capacité solaire :</strong> 1,2 MW</span>
+                    </li>
+                  </ul>
                 </div>
-                <!-- More attractions -->
+
+                <!-- Transportation -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Transport</h4>
+                  <div class="transportation">
+                    <div class="transport-option">
+                      <i class="fas fa-bus"></i>
+                      <div>
+                        <h5>Navettes</h5>
+                        <p>
+                          Navettes gratuites depuis la place Jemaa el-Fnaa les
+                          jours de match
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-taxi"></i>
+                      <div>
+                        <h5>Taxi</h5>
+                        <p>Voies dédiées avec 3 points de dépôt</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-car"></i>
+                      <div>
+                        <h5>Parking</h5>
+                        <p>2 000 places souterraines (réservation requise)</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-bicycle"></i>
+                      <div>
+                        <h5>Vélo</h5>
+                        <p>
+                          500 places de stationnement avec stations de location
+                          à proximité
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stadium Rules -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Règles du stade</h4>
+                  <ul class="rules-list">
+                    <li>
+                      <i class="fas fa-ban"></i> Interdiction de fumer (y
+                      compris cigarettes électroniques)
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de nourriture ou boissons
+                      extérieures
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de sacs plus grands que
+                      format A4
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'appareils photo
+                      professionnels (objectifs > 100mm)
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de drapeaux plus grands que
+                      1m × 1m
+                    </li>
+                    <li><i class="fas fa-ban"></i> Pas de parapluies</li>
+                    <li><i class="fas fa-ban"></i> Pas de drones</li>
+                  </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Attractions à proximité</h4>
+                  <div class="attractions">
+                    <div class="attraction">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZqBPYAbGS6_EsebFkZWlJ18lKr4IOmqez1g&s"
+                        alt="Jemaa el-Fnaa"
+                        class="img-fluid"
+                      />
+                      <h5>Jemaa el-Fnaa</h5>
+                      <p>8 km du stade • Célèbre place de marché</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aHdFsMfSrOMnzoilYGiAlCa0oRgC1k8_hQ&s"
+                        alt="Jardins de la Ménara"
+                        class="img-fluid"
+                      />
+                      <h5>Jardins de la Ménara</h5>
+                      <p>3 km du stade • Jardins historiques avec oliveraies</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://lp-cms-production.imgix.net/2019-06/51cfc4a974e1d8fb50716e9c9cd66437-bahia-palace.jpg"
+                        alt="Palais de la Bahia"
+                        class="img-fluid"
+                      />
+                      <h5>Palais de la Bahia</h5>
+                      <p>7 km du stade • Complexe palatial du 19ème siècle</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Stade Ibn Battouta -->
+        <div
+          id="tangier-content"
+          class="stadium-detail-content"
+          style="display: none"
+        >
+          <!-- Stadium Header -->
+          <div class="stadium-header-container">
+            <h2 class="stadium-name">Stade Ibn Battouta</h2>
+            <div class="stadium-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Tanger, Maroc</span>
+            </div>
+            <div class="stadium-capacity">
+              <i class="fas fa-users"></i>
+              <span>Capacité : 75 600 places</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Stadium Gallery -->
+              <div class="stadium-section">
+                <h3 class="section-title">Galerie</h3>
+                <div class="stadium-main-image">
+                  <img
+                    src="https://www-cafonline-com.translate.goog/media/zxamskfj/new_tangier_grand-stade-de-tanger.jpg?width=1320&_x_tr_sl=en&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=wa"
+                    alt="Stade Ibn Battouta"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="stadium-thumbnails">
+                  <div class="thumbnail">
+                    <img
+                      src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npHGE69_CrxMsN2tXuQWvYeKPJIvWwZffSpnZ-_boIq-WKa6lV2MU3NQU6VqpqVeEi0F0CHQMqFufS3l9s4r4g4ZyAWJKYfxIoi62zzsfs_Wybbv0Km7NtlRu0TOMRjxprFz2ihAQ=s1360-w1360-h1020-rw"
+                      alt="Vue du stade 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4novW99LmJfURgRY5qWFoLmgwnTfKqOgJ9nSWojKQ10l0wxRNo3P8DLIBRV403e89jTEZ9JL8Q5CV3kMX_hFi0TgGwXfNf2_FjKgS85PVofF-4jhYX4FofolaC0r1bIijQzXcWi6dA=s1360-w1360-h1020-rw"
+                      alt="Vue du stade 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://ledesk.ma/wp-content/uploads/2018/07/Ibn-Batouta-tanger.jpg"
+                      alt="Vue du stade 3"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Info -->
+              <div class="stadium-section">
+                <h3 class="section-title">Informations sur le stade</h3>
+                <p>
+                  Le Stade Ibn Battouta, nommé d'après le célèbre explorateur
+                  marocain, est le plus grand stade du Maroc avec une capacité
+                  de 75 600 places. Situé près du détroit de Gibraltar, il offre
+                  une vue imprenable sur la mer Méditerranée depuis ses gradins
+                  supérieurs. Le stade a été entièrement rénové en 2023-2024
+                  pour répondre aux normes les plus élevées de la FIFA pour la
+                  CAN 2025.
+                </p>
+
+                <p>
+                  Le design unique du stade comprend un toit en forme de vague
+                  qui représente l'océan voisin, avec un dégradé de couleur du
+                  bleu au blanc imitant les eaux côtières. La rénovation a
+                  ajouté un nouveau musée de l'histoire du football marocain
+                  dans le complexe du stade, ainsi que des installations
+                  améliorées pour l'hospitalité et les médias.
+                </p>
+
+                <h4>Caractéristiques principales :</h4>
+                <ul>
+                  <li>Plus grand stade du Maroc en capacité</li>
+                  <li>
+                    Vues imprenables sur la mer depuis les niveaux supérieurs
+                  </li>
+                  <li>Nouveau musée de l'histoire du football marocain</li>
+                  <li>50 boutiques et points de restauration</li>
+                  <li>Accès direct depuis la gare Tanger Ville</li>
+                  <li>Zones VIP et d'hospitalité d'entreprise élargies</li>
+                  <li>Système d'éclairage de pointe</li>
+                  <li>Drainage et irrigation améliorés du terrain</li>
+                </ul>
+
+                <h4>Caractéristiques spéciales :</h4>
+                <p>
+                  Le stade dispose d'un système unique de ventilation "brise
+                  marine" qui profite de son emplacement côtier pour fournir un
+                  refroidissement naturel. Les circulations sont conçues avec de
+                  larges allées et de nombreuses commodités pour gérer
+                  efficacement les grandes foules. Une "zone famille" spéciale
+                  propose des équipements et des activités adaptés aux enfants
+                  pendant les matchs.
+                </p>
+              </div>
+
+              <!-- Stadium Matches -->
+              <div class="stadium-section">
+                <h3 class="section-title">Matchs programmés</h3>
+                <div class="stadium-matches">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe C</span>
+                      <span class="match-date">17 jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg"
+                          alt="Algérie"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Algérie</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg"
+                          alt="Cameroun"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Cameroun</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Huitième de finale</span>
+                      <span class="match-date">27 jan 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur Groupe D</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Deuxième Groupe E</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Quart de finale</span>
+                      <span class="match-date">3 fév 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name"
+                          >Vainqueur Huitième (Match 5)</span
+                        >
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name"
+                          >Vainqueur Huitième (Match 6)</span
+                        >
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Map -->
+              <div class="stadium-section">
+                <h3 class="section-title">Plan du stade</h3>
+                <div class="stadium-map">
+                  <img
+                    src="assets/images/morocco map with stadium.png"
+                    alt="Plan du stade"
+                    class="img-fluid"
+                  />
+                  <div class="map-legend">
+                    <h5>Sections du stade</h5>
+                    <ul>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #1e40af"
+                        ></span>
+                        Tribune Méditerranée (Nord)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #1d4ed8"
+                        ></span>
+                        Tribune Atlantique (Sud)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #0369a1"
+                        ></span>
+                        Tribune Gibraltar (Est)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #0ea5e9"
+                        ></span>
+                        Tribune Explorateur (Ouest)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #7dd3fc"
+                        ></span>
+                        Sièges Club
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <!-- Stadium Facts -->
+              <div class="stadium-sidebar">
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Anecdotes</h4>
+                  <ul class="facts-list">
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span><strong>Ouverture :</strong> 26 avril 2011</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-redo"></i>
+                      <span><strong>Rénovation :</strong> 2023-2024</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Dimensions :</strong> 105m × 68m</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-trophy"></i>
+                      <span><strong>Résident :</strong> IR Tanger</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-road"></i>
+                      <span
+                        ><strong>Adresse :</strong> Route de Tétouan,
+                        Tanger</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-water"></i>
+                      <span
+                        ><strong>Distance à la mer :</strong> 800 mètres</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-store"></i>
+                      <span><strong>Commerces :</strong> 50 boutiques</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Transportation -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Transport</h4>
+                  <div class="transportation">
+                    <div class="transport-option">
+                      <i class="fas fa-train"></i>
+                      <div>
+                        <h5>Train</h5>
+                        <p>
+                          Train à grande vitesse Al Boraq jusqu'à la gare Tanger
+                          Ville (5 min à pied)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-bus"></i>
+                      <div>
+                        <h5>Bus</h5>
+                        <p>Lignes 1, 5, 12, 15 (Arrêt Stade Ibn Battouta)</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-car"></i>
+                      <div>
+                        <h5>Parking</h5>
+                        <p>4 500 places dans un parking à plusieurs niveaux</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-ship"></i>
+                      <div>
+                        <h5>Ferry</h5>
+                        <p>
+                          Navette gratuite depuis le port Tanger Med (30 min)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stadium Rules -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Règles du stade</h4>
+                  <ul class="rules-list">
+                    <li>
+                      <i class="fas fa-ban"></i> Interdiction de fumer dans
+                      toutes les zones
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'alcool ou de drogues
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de sacs à dos ou gros sacs
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'appareils photo
+                      professionnels
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'armes ou objets dangereux
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de bannières
+                      politiques/offensantes
+                    </li>
+                    <li><i class="fas fa-ban"></i> Pas de pointeurs laser</li>
+                  </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Attractions à proximité</h4>
+                  <div class="attractions">
+                    <div class="attraction">
+                      <img
+                        src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/16/dd/48.jpg"
+                        alt="Médina de Tanger"
+                        class="img-fluid"
+                      />
+                      <h5>Médina de Tanger</h5>
+                      <p>3 km du stade • Vieille ville historique</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Lighthouse_after_renovation.jpg"
+                        alt="Cap Spartel"
+                        class="img-fluid"
+                      />
+                      <h5>Cap Spartel</h5>
+                      <p>12 km du stade • Phare pittoresque</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/01/7b/db/photo0jpg.jpg?w=1200&h=-1&s=1"
+                        alt="Grottes d'Hercule"
+                        class="img-fluid"
+                      />
+                      <h5>Grottes d'Hercule</h5>
+                      <p>14 km du stade • Grotte marine naturelle</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stade Moulay Abdellah -->
+        <div
+          id="rabat-content"
+          class="stadium-detail-content"
+          style="display: none"
+        >
+          <!-- Stadium Header -->
+          <div class="stadium-header-container">
+            <h2 class="stadium-name">Stade Moulay Abdellah</h2>
+            <div class="stadium-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Rabat, Maroc</span>
+            </div>
+            <div class="stadium-capacity">
+              <i class="fas fa-users"></i>
+              <span>Capacité : 69 500 places</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Stadium Gallery -->
+              <div class="stadium-section">
+                <h3 class="section-title">Galerie</h3>
+                <div class="stadium-main-image">
+                  <img
+                    src="https://www-cafonline-com.translate.goog/media/cowdhbve/new_rabat_complexe-sportif-prince-moulay-abdellah.jpg?width=1320&_x_tr_sl=en&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=wa"
+                    alt="Stade Moulay Abdellah"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="stadium-thumbnails">
+                  <div class="thumbnail">
+                    <img
+                      src="https://mobile.ledesk.ma/wp-content/uploads/2016/04/complexe-moulay-abdellah-photo-FIFA.jpg"
+                      alt="Vue du stade 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://static.medias24.com/content/uploads/2023/06/27/complexe-sportif-Prince-Moulay-Abadallah-Rabat3-e1696262484845.png?x92820"
+                      alt="Vue du stade 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://fr.alyaoum24.com/content/uploads/2022/09/complexe-moulay-abdellah.jpeg"
+                      alt="Vue du stade 3"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Info -->
+              <div class="stadium-section">
+                <h3 class="section-title">Informations sur le stade</h3>
+                <p>
+                  Le Stade Moulay Abdellah est un stade multifonctionnel à
+                  Rabat, principalement utilisé pour les matchs de football et
+                  les compétitions d'athlétisme. Nommé d'après le prince Moulay
+                  Abdellah, oncle du roi Hassan II, ce stade historique a été
+                  entièrement modernisé pour la CAN 2025 tout en préservant son
+                  architecture classique.
+                </p>
+
+                <p>
+                  Le stade dispose d'une piste d'athlétisme aux normes
+                  olympiques entourant le terrain de football, ce qui en fait
+                  l'un des rares sites au Maroc capable d'accueillir des
+                  événements majeurs d'athlétisme. La rénovation de 2024 a
+                  ajouté de nouveaux sièges, des installations modernisées et
+                  une accessibilité améliorée.
+                </p>
+
+                <h4>Caractéristiques principales :</h4>
+                <ul>
+                  <li>Piste d'athlétisme 400m aux normes olympiques</li>
+                  <li>
+                    Nouveau système d'éclairage LED pour les diffusions TV
+                  </li>
+                  <li>Parking souterrain de 5 000 places</li>
+                  <li>Vestiaires et installations médicales modernisés</li>
+                  <li>Centre médiatique amélioré avec 200 postes de travail</li>
+                  <li>Nouvel écran vidéo et système sonore</li>
+                  <li>30 loges d'hospitalité luxueuses</li>
+                  <li>
+                    Points de restauration élargis avec options de cuisine
+                    locale
+                  </li>
+                </ul>
+
+                <h4>Importance historique :</h4>
+                <p>
+                  Construit à l'origine en 1983, le stade a accueilli de
+                  nombreux événements importants dont la Coupe continentale IAAF
+                  2014. Il a été le stade principal des Jeux Africains 2019. Le
+                  design classique en forme de bol offre une excellente
+                  visibilité depuis tous les sièges, tandis que les nouvelles
+                  rénovations ont amélioré le confort et les commodités.
+                </p>
+              </div>
+
+              <!-- Stadium Matches -->
+              <div class="stadium-section">
+                <h3 class="section-title">Matchs programmés</h3>
+                <div class="stadium-matches">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe D</span>
+                      <span class="match-date">18 jan 2025 • 14:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg"
+                          alt="Tunisie"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Tunisie</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali.svg"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Mali</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Huitième de finale</span>
+                      <span class="match-date">28 jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur Groupe E</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Deuxième Groupe D</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Phase de groupes</span>
+                      <span class="match-date">25 jan 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="assets/images/flags/ivory-coast.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Côte d'Ivoire</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="assets/images/flags/guinea.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Guinée</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Map -->
+              <div class="stadium-section">
+                <h3 class="section-title">Plan du stade</h3>
+                <div class="stadium-map">
+                  <img
+                    src="assets/images/morocco map with stadium.png"
+                    alt="Plan du stade"
+                    class="img-fluid"
+                  />
+                  <div class="map-legend">
+                    <h5>Sections du stade</h5>
+                    <ul>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #1e3a8a"
+                        ></span>
+                        Tribune Présidentielle (Ouest)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #1e40af"
+                        ></span>
+                        Tribune Bouregreg (Est)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #1d4ed8"
+                        ></span>
+                        Tribune Tour Hassan (Nord)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #3b82f6"
+                        ></span>
+                        Tribune Chellah (Sud)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #93c5fd"
+                        ></span>
+                        VIP & Hospitality
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <!-- Stadium Facts -->
+              <div class="stadium-sidebar">
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Anecdotes</h4>
+                  <ul class="facts-list">
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span><strong>Ouverture :</strong> 1983</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-redo"></i>
+                      <span><strong>Rénovations :</strong> 2014, 2024</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Dimensions :</strong> 105m × 68m</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-running"></i>
+                      <span><strong>Piste :</strong> 400m certifiée IAAF</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-road"></i>
+                      <span
+                        ><strong>Adresse :</strong> Avenue Ibn Sina, Rabat</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-parking"></i>
+                      <span><strong>Places de parking :</strong> 5 000</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-trophy"></i>
+                      <span
+                        ><strong>Record d'affluence :</strong> 68 000 (Jeux
+                        Africains 2019)</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Transportation -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Transport</h4>
+                  <div class="transportation">
+                    <div class="transport-option">
+                      <i class="fas fa-tram"></i>
+                      <div>
+                        <h5>Tramway</h5>
+                        <p>
+                          Lignes 1 & 2 jusqu'à la station "Stade Moulay
+                          Abdellah"
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-bus"></i>
+                      <div>
+                        <h5>Bus</h5>
+                        <p>Lignes 5, 8, 12, 18, 33, 44 (Arrêt Stade)</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-car"></i>
+                      <div>
+                        <h5>Parking</h5>
+                        <p>5 000 places souterraines (réservation possible)</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-bicycle"></i>
+                      <div>
+                        <h5>Vélo</h5>
+                        <p>
+                          300 places de stationnement avec stations de location
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stadium Rules -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Règles du stade</h4>
+                  <ul class="rules-list">
+                    <li>
+                      <i class="fas fa-ban"></i> Interdiction de fumer dans
+                      toutes les zones
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de nourriture ou boissons
+                      extérieures
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de sacs plus grands que
+                      20×15×10cm
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'appareils photo
+                      professionnels
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'armes ou objets dangereux
+                    </li>
+                    <li><i class="fas fa-ban"></i> Pas de parapluies</li>
+                    <li><i class="fas fa-ban"></i> Pas de drones</li>
+                  </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Attractions à proximité</h4>
+                  <div class="attractions">
+                    <div class="attraction">
+                      <img
+                        src="https://www.visitrabat.com/wp-content/uploads/2019/04/tour_hassan2.jpg"
+                        alt="Tour Hassan"
+                        class="img-fluid"
+                      />
+                      <h5>Tour Hassan</h5>
+                      <p>3 km du stade • Minaret du 12ème siècle</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/9/97/Kasbah_Oudayas_exterior.jpg"
+                        alt="Kasbah des Oudayas"
+                        class="img-fluid"
+                      />
+                      <h5>Kasbah des Oudayas</h5>
+                      <p>4 km du stade • Forteresse historique</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://www.chellah.site/wp-content/uploads/2023/10/chellah-visite-rabat-travel-guide-tourisme-morocco-maroc-vue-complete-scaled.jpg"
+                        alt="Chellah"
+                        class="img-fluid"
+                      />
+                      <h5>Chellah</h5>
+                      <p>2 km du stade • Nécropole médiévale fortifiée</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stade Adrar -->
+        <div
+          id="agadir-content"
+          class="stadium-detail-content"
+          style="display: none"
+        >
+          <!-- Stadium Header -->
+          <div class="stadium-header-container">
+            <h2 class="stadium-name">Stade Adrar</h2>
+            <div class="stadium-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Agadir, Maroc</span>
+            </div>
+            <div class="stadium-capacity">
+              <i class="fas fa-users"></i>
+              <span>Capacité : 41 144 places</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Stadium Gallery -->
+              <div class="stadium-section">
+                <h3 class="section-title">Galerie</h3>
+                <div class="stadium-main-image">
+                  <img
+                    src="https://www-cafonline-com.translate.goog/media/iacdxy0c/new_agadir_grand-stade-d-agadir.jpg?width=1320&_x_tr_sl=en&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=wa"
+                    alt="Stade Adrar"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="stadium-thumbnails">
+                  <div class="thumbnail">
+                    <img
+                      src="https://consonews.ma/wp-content/uploads/2023/10/stade.jpeg"
+                      alt="Vue du stade 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://static.medias24.com/content/uploads/2024/03/15/Stade-d_Agadir-ADRAR-8-2.png?x14209"
+                      alt="Vue du stade 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJ1iCfJUf1pqg8OMcLu-8ghEojF6bTt4YWw&s"
+                      alt="Vue du stade 3"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Info -->
+              <div class="stadium-section">
+                <h3 class="section-title">Informations sur le stade</h3>
+                <p>
+                  Le Stade Adrar, nommé d'après les montagnes de l'Atlas
+                  voisines ("Adrar" signifiant montagne en berbère), est un
+                  stade de football situé à seulement 1 km des célèbres plages
+                  d'Agadir. Le stade a été entièrement reconstruit en 2023 pour
+                  accueillir les matchs de la CAN 2025, avec un système de
+                  refroidissement unique pour lutter contre le climat chaud
+                  d'Agadir tout en maintenant d'excellentes conditions de
+                  terrain.
+                </p>
+
+                <p>
+                  La conception du stade intègre des éléments inspirés de
+                  l'architecture berbère, avec des tons terreux et des motifs
+                  géométriques. Une "zone famille" spéciale propose des
+                  équipements et des activités adaptés aux enfants pendant les
+                  matchs, ce qui le rend populaire auprès des familles locales
+                  et des touristes.
+                </p>
+
+                <h4>Caractéristiques principales :</h4>
+                <ul>
+                  <li>
+                    Système de refroidissement avancé pour le confort des
+                    joueurs et spectateurs
+                  </li>
+                  <li>
+                    Zone famille dédiée avec équipements adaptés aux enfants
+                  </li>
+                  <li>Navette plage vers les resorts voisins</li>
+                  <li>Pelouse hybride avec drainage parfait</li>
+                  <li>40 loges d'hospitalité avec vue sur l'océan</li>
+                  <li>
+                    Éclairage et installations alimentés par énergie solaire
+                  </li>
+                  <li>
+                    Circulations élargies avec vendeurs de nourriture locale
+                  </li>
+                  <li>Sécurité et installations médicales améliorées</li>
+                </ul>
+
+                <h4>Contrôle climatique :</h4>
+                <p>
+                  Le stade dispose d'un système de refroidissement passif
+                  innovant qui utilise l'eau de mer et la ventilation naturelle
+                  pour maintenir des températures confortables. Des stations de
+                  brumisation spéciales autour des circulations fournissent un
+                  refroidissement supplémentaire, tandis que la conception du
+                  toit fournit de l'ombre tout en permettant aux brises de
+                  circuler dans les zones de sièges.
+                </p>
+              </div>
+
+              <!-- Stadium Matches -->
+              <div class="stadium-section">
+                <h3 class="section-title">Matchs programmés</h3>
+                <div class="stadium-matches">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe E</span>
+                      <span class="match-date">19 jan 2025 • 14:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg"
+                          alt="Côte d'Ivoire"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Côte d'Ivoire</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/250px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png"
+                          alt="RD Congo"
+                          class="team-flag"
+                        />
+                        <span class="team-name">RD Congo</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Phase de groupes</span>
+                      <span class="match-date">23 jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="assets/images/flags/senegal.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Sénégal</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="assets/images/flags/tanzania.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Tanzanie</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Huitième de finale</span>
+                      <span class="match-date">30 jan 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur Groupe F</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Deuxième Groupe E</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Map -->
+              <div class="stadium-section">
+                <h3 class="section-title">Plan du stade</h3>
+                <div class="stadium-map">
+                  <img
+                    src="assets/images/morocco map with stadium.png"
+                    alt="Plan du stade"
+                    class="img-fluid"
+                  />
+                  <div class="map-legend">
+                    <h5>Sections du stade</h5>
+                    <ul>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #854d0e"
+                        ></span>
+                        Tribune Atlas (Nord)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #a16207"
+                        ></span>
+                        Tribune Souss (Sud)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #ca8a04"
+                        ></span>
+                        Tribune Océan (Est)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #eab308"
+                        ></span>
+                        Tribune Argan (Ouest)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #fde047"
+                        ></span>
+                        Zone Famille
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <!-- Stadium Facts -->
+              <div class="stadium-sidebar">
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Anecdotes</h4>
+                  <ul class="facts-list">
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span><strong>Ouverture :</strong> 2013</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-redo"></i>
+                      <span><strong>Reconstruction :</strong> 2023</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Dimensions :</strong> 105m × 68m</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-snowflake"></i>
+                      <span
+                        ><strong>Système de refroidissement :</strong> Eau de
+                        mer passive</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-road"></i>
+                      <span
+                        ><strong>Adresse :</strong> Boulevard Mohamed VI,
+                        Agadir</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-umbrella-beach"></i>
+                      <span><strong>Distance à la plage :</strong> 1 km</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-child"></i>
+                      <span
+                        ><strong>Capacité zone famille :</strong> 2 000</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Transportation -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Transport</h4>
+                  <div class="transportation">
+                    <div class="transport-option">
+                      <i class="fas fa-bus"></i>
+                      <div>
+                        <h5>Navettes</h5>
+                        <p>
+                          Navettes gratuites depuis les resorts les jours de
+                          match
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-taxi"></i>
+                      <div>
+                        <h5>Taxi</h5>
+                        <p>Voies dédiées avec 2 points de dépôt</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-car"></i>
+                      <div>
+                        <h5>Parking</h5>
+                        <p>1 500 places (réservation recommandée)</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-walking"></i>
+                      <div>
+                        <h5>Marche</h5>
+                        <p>15 min à pied du centre-ville d'Agadir</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stadium Rules -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Règles du stade</h4>
+                  <ul class="rules-list">
+                    <li>
+                      <i class="fas fa-ban"></i> Interdiction de fumer dans
+                      toutes les zones
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'alcool ou de drogues
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de gros sacs ou sacs à dos
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'appareils photo
+                      professionnels
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'armes ou objets dangereux
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de ballons de plage ou
+                      objets gonflables
+                    </li>
+                    <li><i class="fas fa-ban"></i> Pas de parapluies</li>
+                  </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Attractions à proximité</h4>
+                  <div class="attractions">
+                    <div class="attraction">
+                      <img
+                        src="https://www.barcelo.com/guia-turismo/wp-content/uploads/2024/09/ok-playas-de-agadir.jpg"
+                        alt="Plage d'Agadir"
+                        class="img-fluid"
+                      />
+                      <h5>Plage d'Agadir</h5>
+                      <p>1 km du stade • Plage de sable de 10km</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://www.agadir-oufella.ma/wp-content/uploads/2023/04/9.jpg"
+                        alt="Agadir Oufella"
+                        class="img-fluid"
+                      />
+                      <h5>Agadir Oufella</h5>
+                      <p>
+                        3 km du stade • Ruines en hauteur avec vues panoramiques
+                      </p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://immersi-travel.com/wp-content/uploads/2023/04/Souk-Agadir-mosquee.jpg"
+                        alt="Souk El Had"
+                        class="img-fluid"
+                      />
+                      <h5>Souk El Had</h5>
+                      <p>2 km du stade • Plus grand marché du Maroc</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stade de Fès -->
+        <div
+          id="fez-content"
+          class="stadium-detail-content"
+          style="display: none"
+        >
+          <!-- Stadium Header -->
+          <div class="stadium-header-container">
+            <h2 class="stadium-name">Stade de Fès</h2>
+            <div class="stadium-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Fès, Maroc</span>
+            </div>
+            <div class="stadium-capacity">
+              <i class="fas fa-users"></i>
+              <span>Capacité : 35 468 places</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Stadium Gallery -->
+              <div class="stadium-section">
+                <h3 class="section-title">Galerie</h3>
+                <div class="stadium-main-image">
+                  <img
+                    src="https://www-cafonline-com.translate.goog/media/3rkpmdxq/new_fes_complexe-sportif-de-f%C3%A8s.jpg?width=1320&_x_tr_sl=en&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=wa"
+                    alt="Stade de Fès"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="stadium-thumbnails">
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.tgcc.ma/dataup/2021/10/stade-de-fes_617e88f06bce4.jpeg"
+                      alt="Vue du stade 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://sport.le360.ma/resizer/cEu1N-lfN37KZblw8e05sksLew8=/arc-photo-le360/eu-central-1-prod/public/OZGYHNMWT5DDXGQAHMLEPPLPZA.jpeg"
+                      alt="Vue du stade 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="thumbnail">
+                    <img
+                      src="https://www.lavieeco.com/wp-content/uploads/2024/09/complexe-sportif-de-fes.jpg"
+                      alt="Vue du stade 3"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Info -->
+              <div class="stadium-section">
+                <h3 class="section-title">Informations sur le stade</h3>
+                <p>
+                  Le Stade de Fès est un stade de football à Fès, au Maroc,
+                  connu pour son design unique qui intègre des éléments
+                  architecturaux marocains traditionnels. Le stade a été
+                  entièrement rénové en 2024 pour la CAN 2025, avec une
+                  attention particulière à la préservation de son patrimoine
+                  culturel tout en modernisant toutes les installations.
+                </p>
+
+                <p>
+                  Le stade présente des mosaïques complexes et des motifs
+                  géométriques partout, inspirés par les riches traditions
+                  artistiques de Fès. Plusieurs zones pour les fans autour du
+                  stade mettent en valeur les arts, l'artisanat et la cuisine
+                  marocains, offrant aux visiteurs une expérience culturelle
+                  complète au-delà du match de football.
+                </p>
+
+                <h4>Caractéristiques principales :</h4>
+                <ul>
+                  <li>Design architectural marocain traditionnel</li>
+                  <li>
+                    Plusieurs zones fans mettant en valeur la culture locale
+                  </li>
+                  <li>Navette gratuite depuis la Médina</li>
+                  <li>Pelouse hybride avec drainage parfait</li>
+                  <li>25 loges d'hospitalité avec décoration traditionnelle</li>
+                  <li>Sécurité et installations médicales améliorées</li>
+                  <li>Points de restauration élargis avec cuisine locale</li>
+                  <li>Expositions culturelles interactives</li>
+                </ul>
+
+                <h4>Intégration culturelle :</h4>
+                <p>
+                  La conception du stade rend hommage au statut de Fès comme
+                  capitale culturelle et spirituelle du Maroc. L'entrée
+                  principale présente une réplique de la célèbre porte Bab Bou
+                  Jeloud, tandis que les circulations exposent des artisanats
+                  traditionnels de la Médina. Des "ambassadeurs culturels"
+                  spéciaux sont disponibles pour expliquer l'importance des
+                  détails architecturaux aux visiteurs.
+                </p>
+              </div>
+
+              <!-- Stadium Matches -->
+              <div class="stadium-section">
+                <h3 class="section-title">Matchs programmés</h3>
+                <div class="stadium-matches">
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Groupe F</span>
+                      <span class="match-date">21 jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg"
+                          alt="Ghana"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Ghana</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg"
+                          alt="Afrique du Sud"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Afrique du Sud</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Phase de groupes</span>
+                      <span class="match-date">24 jan 2025 • 20:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <img
+                          src="assets/images/flags/nigeria.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Nigeria</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <img
+                          src="assets/images/flags/guinea.png"
+                          alt="Mali"
+                          class="team-flag"
+                        />
+                        <span class="team-name">Guinée-Bissau</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-header">
+                      <span class="match-group">Huitième de finale</span>
+                      <span class="match-date">29 jan 2025 • 17:00</span>
+                    </div>
+                    <div class="match-teams">
+                      <div class="team">
+                        <span class="team-name">Vainqueur Groupe A</span>
+                      </div>
+                      <div class="score">VS</div>
+                      <div class="team">
+                        <span class="team-name">Deuxième Groupe C</span>
+                      </div>
+                    </div>
+                    <div class="match-actions">
+                      <a
+                        href="match-detail.html"
+                        class="btn btn-sm btn-outline-primary"
+                        >Détails</a
+                      >
+                      <a href="tickets.html" class="btn btn-sm btn-primary"
+                        >Billets</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stadium Map -->
+              <div class="stadium-section">
+                <h3 class="section-title">Plan du stade</h3>
+                <div class="stadium-map">
+                  <img
+                    src="assets/images/morocco map with stadium.png"
+                    alt="Plan du stade"
+                    class="img-fluid"
+                  />
+                  <div class="map-legend">
+                    <h5>Sections du stade</h5>
+                    <ul>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #6b21a8"
+                        ></span>
+                        Tribune Médina (Nord)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #7e22ce"
+                        ></span>
+                        Tribune Fès (Sud)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #9333ea"
+                        ></span>
+                        Tribune Bou Inania (Est)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #a855f7"
+                        ></span>
+                        Tribune Al Quaraouiyine (Ouest)
+                      </li>
+                      <li>
+                        <span
+                          class="legend-color"
+                          style="background-color: #c084fc"
+                        ></span>
+                        Zones Culturelles
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <!-- Stadium Facts -->
+              <div class="stadium-sidebar">
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Anecdotes</h4>
+                  <ul class="facts-list">
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span><strong>Ouverture :</strong> 2007</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-redo"></i>
+                      <span><strong>Rénovation :</strong> 2024</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Dimensions :</strong> 105m × 68m</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-trophy"></i>
+                      <span><strong>Résident :</strong> MAS Fès</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-road"></i>
+                      <span
+                        ><strong>Adresse :</strong> Route d'Imouzzer, Fès</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-mosque"></i>
+                      <span><strong>Zones culturelles :</strong> 5 zones</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-bus"></i>
+                      <span
+                        ><strong>Service de navette :</strong> Depuis la
+                        Médina</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Transportation -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Transport</h4>
+                  <div class="transportation">
+                    <div class="transport-option">
+                      <i class="fas fa-bus"></i>
+                      <div>
+                        <h5>Navettes</h5>
+                        <p>
+                          Navettes gratuites depuis la Médina les jours de match
+                        </p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-taxi"></i>
+                      <div>
+                        <h5>Taxi</h5>
+                        <p>Petits taxis disponibles dans toute la ville</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-car"></i>
+                      <div>
+                        <h5>Parking</h5>
+                        <p>1 200 places (réservation possible)</p>
+                      </div>
+                    </div>
+                    <div class="transport-option">
+                      <i class="fas fa-walking"></i>
+                      <div>
+                        <h5>Marche</h5>
+                        <p>30 min à pied du centre-ville de Fès</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stadium Rules -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Règles du stade</h4>
+                  <ul class="rules-list">
+                    <li>
+                      <i class="fas fa-ban"></i> Interdiction de fumer dans
+                      toutes les zones
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'alcool ou de drogues
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de gros sacs ou sacs à dos
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'appareils photo
+                      professionnels
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas d'armes ou objets dangereux
+                    </li>
+                    <li>
+                      <i class="fas fa-ban"></i> Pas de bannières
+                      politiques/religieuses
+                    </li>
+                    <li><i class="fas fa-ban"></i> Pas de pointeurs laser</li>
+                  </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="sidebar-section">
+                  <h4 class="sidebar-title">Attractions à proximité</h4>
+                  <div class="attractions">
+                    <div class="attraction">
+                      <img
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/86/d2/50/fes-el-bali.jpg?w=1200&h=1200&s=1"
+                        alt="Fès el Bali"
+                        class="img-fluid"
+                      />
+                      <h5>Fès el Bali</h5>
+                      <p>5 km du stade • Vieille ville classée UNESCO</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Al_Quaraouiyine.jpg/330px-Al_Quaraouiyine.jpg"
+                        alt="Al Quaraouiyine"
+                        class="img-fluid"
+                      />
+                      <h5>Al Quaraouiyine</h5>
+                      <p>5 km du stade • Plus ancienne université au monde</p>
+                    </div>
+                    <div class="attraction">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWR9urB7wIo2LWHMrKkCNO9kLtv-2_5m6qzg&s"
+                        alt="Tannerie Chouara"
+                        class="img-fluid"
+                      />
+                      <h5>Tannerie Chouara</h5>
+                      <p>5 km du stade • Tannerie de cuir historique</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter">
+      <div class="container">
+        <div class="newsletter-container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h2>Restez informé</h2>
+              <p>
+                Abonnez-vous à notre newsletter pour recevoir les dernières
+                actualités, les horaires des matchs et du contenu exclusif sur
+                la Coupe d'Afrique des Nations Maroc 2025.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <form class="newsletter-form">
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Votre adresse email"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary">
+                    S'abonner
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <!-- Colonne logo et description -->
+        <div class="footer-logo">
+          <span class="logo-text">CAN <span class="year">2025</span></span>
+          <span class="host">MAROC</span>
+        </div>
+        <p class="footer-about">Le site officiel du tournoi de la Coupe d'Afrique des Nations 2025 organisée au Maroc.</p>
+      </div>
+      
+      <!-- Colonnes de liens -->
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="teams.html">Équipes</a></li>
+          <li><a href="matches.html">Matchs</a></li>
+          <li><a href="stadiums.html">Stades</a></li>
+          <li><a href="news.html">Actualités</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="tickets.html">Billets</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <h4 class="footer-heading">Réseaux sociaux</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/ConfederationAfricaineDeFootball/" class="social-link"><i class="fab fa-facebook-f"></i> </a><br>
+          <a href="https://x.com/CAF_Online" class="social-link"><i class="fab fa-twitter"></i> </a><br>
+          <a href="https://www.instagram.com/caf_online/" class="social-link"><i class="fab fa-instagram"></i> </a><br>
+          <a href="https://www.youtube.com/user/MyAfricanFootball" class="social-link"><i class="fab fa-youtube"></i> </a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section id="newsletter">
-    <div class="container">
-      <div class="newsletter-container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter to receive the latest news, match schedules, and exclusive content about the Africa Cup of Nations Morocco 2025.</p>
-          </div>
-          <div class="col-lg-6">
-            <form class="newsletter-form">
-              <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your Email Address" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+    
+    <div class="footer-bottom">
+      <!-- Bas de pied de page -->
+      <p>&copy;CAN Maroc 2025. Tous droits réservés.</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Footer -->
-  <footer id="main-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="footer-logo">
-            <span class="logo-text">AFCON <span class="year">2025</span></span>
-            <span class="host">MOROCCO</span>
-          </div>
-          <p class="footer-about">The official website for the 2025 Africa Cup of Nations tournament hosted in Morocco.</p>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tournament</h4>
-          <ul class="footer-links">
-            <li><a href="#">About</a></li>
-            <li><a href="teams.html">Teams</a></li>
-            <li><a href="matches.html">Matches</a></li>
-            <li><a href="#">Standings</a></li>
-            <li><a href="#">Statistics</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Venues</h4>
-          <ul class="footer-links">
-            <li><a href="stadiums.html">Stadiums</a></li>
-            <li><a href="#">Host Cities</a></li>
-            <li><a href="#">Training Centers</a></li>
-            <li><a href="#">Fan Zones</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">Tickets</h4>
-          <ul class="footer-links">
-            <li><a href="tickets.html">Buy Tickets</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Packages</a></li>
-            <li><a href="#">Hospitality</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-2 mb-4 mb-lg-0">
-          <h4 class="footer-heading">More</h4>
-          <ul class="footer-links">
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#">Volunteers</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
-        <div class="footer-partners">
-          <span>In partnership with:</span>
-          <a href="https://www.cafonline.com/" target="_blank">CAF</a>
-          <a href="https://www.frmf.ma/" target="_blank">FRMF</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // Gérer la sélection du stade depuis le hash de l'URL
+      document.addEventListener("DOMContentLoaded", function () {
+        // Obtenir l'ID du stade depuis le hash de l'URL
+        const stadiumId = window.location.hash.substring(1);
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/stadium-detail.js"></script>
-</body>
+        // Si pas de hash ou invalide, par défaut casablanca
+        const validStadiums = [
+          "casablanca",
+          "marrakech",
+          "tangier",
+          "rabat",
+          "agadir",
+          "fez",
+        ];
+        const displayStadium = validStadiums.includes(stadiumId)
+          ? stadiumId
+          : "casablanca";
+
+        // Masquer tous les contenus de stade
+        document.querySelectorAll(".stadium-detail-content").forEach((el) => {
+          el.style.display = "none";
+        });
+
+        // Afficher le contenu du stade sélectionné
+        document.getElementById(`${displayStadium}-content`).style.display =
+          "block";
+
+        // Mettre à jour le fil d'Ariane avec le nom du stade
+        const stadiumNames = {
+          casablanca: "Grand Stade Mohammed V",
+          marrakech: "Grand Stade de Marrakech",
+          tangier: "Stade Ibn Battouta",
+          rabat: "Stade Moulay Abdellah",
+          agadir: "Stade Adrar",
+          fez: "Stade de Fès",
+        };
+
+        document.getElementById("dynamic-stadium-name").textContent =
+          stadiumNames[displayStadium];
+
+        // Mettre à jour le titre de la page
+        document.title = `${stadiumNames[displayStadium]} - Coupe d'Afrique des Nations - Maroc 2025`;
+      });
+
+      // Gérer le clic sur les miniatures pour agrandir l'image
+      document.querySelectorAll(".thumbnail img").forEach((thumbnail) => {
+        thumbnail.addEventListener("click", function () {
+          const mainImage = this.closest(".stadium-section").querySelector(
+            ".stadium-main-image img"
+          );
+          const tempSrc = mainImage.src;
+          mainImage.src = this.src;
+          this.src = tempSrc;
+        });
+      });
+
+      // Animation pour les cartes de match
+      document.querySelectorAll(".match-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-5px)";
+        });
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+        });
+      });
+    </script>
+  </body>
 </html>

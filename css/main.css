@@ -191,7 +191,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/images/moroccan-star.svg');
+  background-image: url('../assets/images/moroccan-star.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1055,62 +1055,12 @@ section {
   opacity: 1;
   text-decoration: underline;
 }
-
-
-.map-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: flex-start;
-  justify-content: center;
+/* Ajouter à la fin pour plus de fluidité */
+.navbar-brand {
+  transition: var(--transition-normal);
+  transform-origin: left center;
 }
 
-.map {
-  position: relative;
-  flex: 1;
-  min-width: 300px;
-  max-width: 600px;
-  margin-bottom: 20px;
-}
-
-.map img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.map-legend {
-  flex: 1;
-  min-width: 300px;
-  max-width: 400px;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles pour les marqueurs si vous souhaitez les ajouter */
-.map-marker {
-  position: absolute;
-  color: red;
-  font-size: 24px;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
-.map-marker:hover {
-  color: #ff0000;
-  transform: translate(-50%, -50%) scale(1.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .map-container {
-    flex-direction: column;
-  }
-  
-  .map, .map-legend {
-    max-width: 100%;
-  }
+.navbar-brand:hover {
+  transform: scale(1.05);
 }

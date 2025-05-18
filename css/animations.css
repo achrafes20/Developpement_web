@@ -1,75 +1,81 @@
-/* Animation styles for AFCON Morocco 2025 */
 
-/* Subtle background pattern animation */
+/* Styles d'animation pour la CAN Maroc 2025 */
+
+
+/* Animation subtile d’un motif en arrière-plan */
 @keyframes patternShift {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 0%; /* Position initiale de l’arrière-plan au point (0,0) */
   }
   100% {
-    background-position: 100% 100%;
+    background-position: 100% 100%; /* Position finale de l’arrière-plan au point (100%,100%) pour créer un déplacement */
   }
 }
 
-/* Shine effect for buttons and cards */
+
+/* Effet de brillance pour les boutons et les cartes */
 @keyframes shine {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 0%; /* Position de départ de l’effet de brillance */
   }
   100% {
-    background-position: 200% 0%;
+    background-position: 200% 0%; /* Déplacement horizontal de l’effet pour simuler un éclat */
   }
 }
 
-/* Fade in animation */
+
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; /* Commence avec une opacité de 0 (invisible) */
+    transform: translateY(20px); /* Décale l’élément vers le bas de 20px */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Devient complètement visible */
+    transform: translateY(0); /* Revient à sa position d’origine */
   }
 }
 
-/* Reveal text animation */
+
+/* Animation pour révéler du texte en masquant progressivement un masque */
 @keyframes revealText {
   0% {
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0); /* Masque le texte en ne laissant rien visible */
   }
   100% {
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0); /* Révèle complètement le texte */
   }
 }
 
-/* Moroccan pattern animation */
+
+/* Style pour ajouter un motif marocain animé en arrière-plan */
 .moroccan-pattern {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* Positionne l’élément relativement à son conteneur */
+  overflow: hidden; /* Cache les éléments débordants */
 }
 
 .moroccan-pattern::before {
-  content: '';
-  position: absolute;
+  content: ''; /* Crée un élément décoratif avant le contenu principal */
+  position: absolute; /* Positionne cet élément de manière absolue dans son parent */
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* Double la taille pour un effet de mouvement fluide */
   height: 200%;
-  background-image: url('../assets/images/pattern-bg.png');
-  background-size: 200px;
-  opacity: 0.05;
-  animation: patternShift 40s linear infinite;
-  z-index: -1;
+  background-image: url('../assets/images/pattern-bg.png'); /* Image de fond utilisée pour le motif */
+  background-size: 200px; /* Taille de l’image de fond */
+  opacity: 0.05; /* Rend le motif très subtil */
+  animation: patternShift 40s linear infinite; /* Anime l’arrière-plan en boucle pendant 40 secondes */
+  z-index: -1; /* Place le motif derrière le contenu */
 }
 
-/* Button hover animations */
+
+/* Styles pour les boutons avec effets au survol */
 .btn {
   position: relative;
   overflow: hidden;
 }
 
 .btn::after {
-  content: '';
+  content: ''; /* Crée un effet décoratif par-dessus le bouton */
   position: absolute;
   top: -50%;
   left: -100%;
@@ -80,16 +86,17 @@
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.3) 50%,
     rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(25deg);
-  transition: var(--transition-fast);
+  ); /* Dégradé simulant une brillance qui passe */
+  transform: rotate(25deg); /* Incline l’effet de brillance */
+  transition: var(--transition-fast); /* Transition rapide personnalisée */
 }
 
 .btn:hover::after {
-  animation: shine 1s forwards;
+  animation: shine 1s forwards; /* Lance l’animation de brillance au survol */
 }
 
-/* Card hover effects */
+
+/* Effets au survol des cartes match, news et groupes */
 .match-card,
 .news-card,
 .group-card {
@@ -103,7 +110,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -100%; /* Positionne l’effet hors de l’écran à gauche */
   width: 100%;
   height: 100%;
   background: linear-gradient(
@@ -111,20 +118,21 @@
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.2) 50%,
     rgba(255, 255, 255, 0) 100%
-  );
+  ); /* Dégradé léger pour simuler un passage de lumière */
   transition: var(--transition-normal);
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none; /* Empêche les clics sur cet élément décoratif */
 }
 
 .match-card:hover::before,
 .news-card:hover::before,
 .group-card:hover::before {
-  left: 100%;
+  left: 100%; /* Fait glisser l’effet d’un côté à l’autre au survol */
   transition: all 0.8s ease;
 }
 
-/* Section title animations */
+
+/* Effet d’apparition des titres de section */
 .section-title {
   position: relative;
   overflow: hidden;
@@ -137,22 +145,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--light);
-  transform-origin: left;
-  transform: scaleX(1);
+  background-color: var(--light); /* Couleur claire qui masque le titre au départ */
+  transform-origin: left; /* Point d’origine de la transformation sur la gauche */
+  transform: scaleX(1); /* Masque le titre à 100% au départ */
   transition: transform 0.5s ease-out;
   z-index: 1;
 }
 
 .section-title.animate::before {
-  transform: scaleX(0);
+  transform: scaleX(0); /* Révèle le titre en réduisant le masque à zéro */
 }
 
-/* Page load animations */
+
+/* Effets d’animation à l’arrivée de la page */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 0.8s ease forwards;
+  animation: fadeIn 0.8s ease forwards; /* Anime l’apparition en remontant et en rendant visible */
 }
 
 .fade-in.delay-100 {
@@ -175,10 +184,11 @@
   animation-delay: 0.5s;
 }
 
-/* Text reveal animation */
+
+/* Animation pour révéler le texte en le déroulant */
 .reveal-text {
   position: relative;
-  clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0); /* Masque le texte de la droite vers la gauche */
   animation: revealText 1s cubic-bezier(0.77, 0, 0.18, 1) forwards;
 }
 
@@ -194,7 +204,8 @@
   animation-delay: 0.3s;
 }
 
-/* Hover effects for team flags */
+
+/* Effets au survol des drapeaux d’équipes */
 .team-flag,
 .team-flag-sm {
   transition: transform 0.3s ease;
@@ -202,10 +213,11 @@
 
 .team:hover .team-flag,
 .group-teams li:hover .team-flag-sm {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Agrandit légèrement le drapeau au survol */
 }
 
-/* Map point animations */
+
+/* Animation des points sur la carte */
 .map-point {
   transition: transform 0.3s ease;
 }
@@ -214,26 +226,28 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Trophy animation */
+
+/* Animation flottante pour un trophée */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0); /* Position normale */
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-20px); /* Monte légèrement au milieu de l’animation */
   }
 }
 
-/* News card image hover */
+
+/* Effet au survol des images dans les cartes news */
 .news-card .news-image img {
   transition: transform 0.5s ease;
 }
 
 .news-card:hover .news-image img {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Zoom léger de l’image au survol */
 }
 
-/* Navbar scroll animation */
+/* Changement d’apparence de la barre de navigation au défilement */
 .navbar {
   transition: all 0.3s ease;
 }
@@ -244,7 +258,8 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Sponsor logo hover animation */
+
+/* Zoom au survol des logos sponsors */
 .sponsor-item img {
   transition: all 0.3s ease;
 }
@@ -253,7 +268,8 @@
   transform: scale(1.1);
 }
 
-/* Footer link hover animation */
+
+/* Effet flèche au survol des liens de pied de page */
 .footer-links a {
   transition: all 0.2s ease;
   position: relative;
@@ -279,7 +295,8 @@
   left: -5px;
 }
 
-/* Social media icons animation */
+
+/* Légère élévation des icônes réseaux sociaux au survol */
 .social-link {
   transition: all 0.3s ease;
 }
@@ -288,7 +305,8 @@
   transform: translateY(-3px);
 }
 
-/* Countdown animation */
+
+/* Effet lumineux au survol des éléments de compte à rebours */
 .countdown-item {
   position: relative;
   overflow: hidden;
@@ -314,7 +332,8 @@
   opacity: 1;
 }
 
-/* Newsletter form animation */
+
+/* Effets interactifs sur le formulaire de newsletter */
 .newsletter-form .form-control {
   transition: all 0.3s ease;
 }
@@ -327,7 +346,8 @@
   transition: all 0.3s ease;
 }
 
-/* Logo animation */
+
+/* Animation du logo de navigation au survol */
 .navbar-brand .logo {
   position: relative;
 }
@@ -336,7 +356,8 @@
   animation: pulse 1.5s ease infinite;
 }
 
-/* Hero button animation */
+
+/* Animation des boutons dans le bandeau principal */
 .hero-buttons .btn {
   transition: all 0.3s ease;
 }

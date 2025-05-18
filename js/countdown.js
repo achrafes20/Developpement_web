@@ -1,74 +1,75 @@
-// Countdown Timer for AFCON Morocco 2025
-let countdownInterval;
+// Compte à rebours pour la CAN Maroc 2025
+let countdownInterval; // Variable pour stocker l'intervalle du compte à rebours
 
+// Attendre que le DOM soit entièrement chargé avant d'exécuter le script
 document.addEventListener('DOMContentLoaded', function() {
-  // Set the tournament start date (January 15, 2025)
+  // Définir la date de début du tournoi (21 décembre 2025 à 20h00 UTC)
   const tournamentStartDate = new Date('2025-12-21T20:00:00+00:00').getTime();
   
-  // Get countdown elements
-  const daysElement = document.getElementById('days');
-  const hoursElement = document.getElementById('hours');
-  const minutesElement = document.getElementById('minutes');
-  const secondsElement = document.getElementById('seconds');
+  // Récupérer les éléments du compte à rebours dans le DOM
+  const daysElement = document.getElementById('days'); // Élément pour les jours
+  const hoursElement = document.getElementById('hours'); // Élément pour les heures
+  const minutesElement = document.getElementById('minutes'); // Élément pour les minutes
+  const secondsElement = document.getElementById('seconds'); // Élément pour les secondes
   
-  // Check if all elements exist
+  // Vérifier si tous les éléments existent
   if (!daysElement || !hoursElement || !minutesElement || !secondsElement) {
-    console.warn('Countdown elements not found in the DOM');
-    return;
+    console.warn('Éléments du compte à rebours introuvables dans le DOM');
+    return; // Arrêter l'exécution si des éléments sont manquants
   }
   
-  // Function to update countdown
+  // Fonction pour mettre à jour le compte à rebours
   function updateCountdown() {
-    // Get current time
+    // Obtenir l'heure actuelle
     const now = new Date().getTime();
     
-    // Calculate time remaining
+    // Calculer le temps restant jusqu'au tournoi
     const timeRemaining = tournamentStartDate - now;
     
-    // Calculate days, hours, minutes and seconds
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    // Calculer les jours, heures, minutes et secondes restantes
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24)); // Conversion en jours
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Conversion en heures
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60)); // Conversion en minutes
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000); // Conversion en secondes
     
-    // Check if countdown is over
+    // Vérifier si le compte à rebours est terminé
     if (timeRemaining < 0) {
-      // Tournament has started
-      daysElement.textContent = '000';
-      hoursElement.textContent = '00';
-      minutesElement.textContent = '00';
-      secondsElement.textContent = '00';
+      // Le tournoi a commencé
+      daysElement.textContent = '000'; // Réinitialiser les jours
+      hoursElement.textContent = '00'; // Réinitialiser les heures
+      minutesElement.textContent = '00'; // Réinitialiser les minutes
+      secondsElement.textContent = '00'; // Réinitialiser les secondes
       
-      // Replace countdown with tournament started message
+      // Remplacer le compte à rebours par un message
       const countdownContainer = document.querySelector('.countdown');
       if (countdownContainer) {
-        countdownContainer.innerHTML = '<div class="tournament-started">Tournament Has Started!</div>';
+        countdownContainer.innerHTML = '<div class="tournament-started">Le Tournoi a Commencé!</div>';
       }
       
-      // Clear the interval
+      // Arrêter l'intervalle
       clearInterval(countdownInterval);
       return;
     }
     
-    // Add leading zeros for formatting
-    const formattedDays = String(days).padStart(3, '0');
-    const formattedHours = String(hours).padStart(2, '0');
-    const formattedMinutes = String(minutes).padStart(2, '0');
-    const formattedSeconds = String(seconds).padStart(2, '0');
+    // Formater les nombres avec des zéros initiaux
+    const formattedDays = String(days).padStart(3, '0'); // 3 chiffres pour les jours
+    const formattedHours = String(hours).padStart(2, '0'); // 2 chiffres pour les heures
+    const formattedMinutes = String(minutes).padStart(2, '0'); // 2 chiffres pour les minutes
+    const formattedSeconds = String(seconds).padStart(2, '0'); // 2 chiffres pour les secondes
     
-    // Update the DOM elements
+    // Mettre à jour les éléments du DOM
     daysElement.textContent = formattedDays;
     hoursElement.textContent = formattedHours;
     minutesElement.textContent = formattedMinutes;
     secondsElement.textContent = formattedSeconds;
     
-    // Add animation effect when seconds change
+    // Ajouter un effet d'animation lors du changement des secondes
     secondsElement.classList.add('pulse');
     setTimeout(() => {
       secondsElement.classList.remove('pulse');
     }, 500);
     
-    // Add animation effect when minutes change
+    // Ajouter un effet d'animation lors du changement des minutes
     if (seconds === 0) {
       minutesElement.classList.add('pulse');
       setTimeout(() => {
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 500);
     }
     
-    // Add animation effect when hours change
+    // Ajouter un effet d'animation lors du changement des heures
     if (seconds === 0 && minutes === 0) {
       hoursElement.classList.add('pulse');
       setTimeout(() => {
@@ -84,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 500);
     }
     
-    // Add animation effect when days change
+    // Ajouter un effet d'animation lors du changement des jours
     if (seconds === 0 && minutes === 0 && hours === 0) {
       daysElement.classList.add('pulse');
       setTimeout(() => {
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Add CSS for pulse animation
+  // Créer et ajouter le CSS pour les animations
   const style = document.createElement('style');
   style.textContent = `
     @keyframes pulse {
@@ -125,25 +126,26 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   `;
-  document.head.appendChild(style);
+  document.head.appendChild(style); // Ajouter le style au head du document
   
-  // Update countdown immediately
+  // Mettre à jour le compte à rebours immédiatement
   updateCountdown();
   
-  // Update countdown every second
+  // Mettre à jour le compte à rebours toutes les secondes
   countdownInterval = setInterval(updateCountdown, 1000);
   
-  // Add flip animation to countdown numbers
+  // Ajouter une animation d'apparition aux éléments du compte à rebours
   const countdownItems = document.querySelectorAll('.countdown-item');
   countdownItems.forEach((item, index) => {
-    // Add staggered entrance animation
+    // Initialiser l'état avant l'animation
     item.style.opacity = '0';
     item.style.transform = 'translateY(20px)';
     
+    // Démarrer l'animation avec un délai progressif
     setTimeout(() => {
       item.style.transition = 'all 0.5s ease';
       item.style.opacity = '1';
       item.style.transform = 'translateY(0)';
-    }, 100 * index);
+    }, 100 * index); // Délai basé sur l'index pour un effet "stagger"
   });
 });

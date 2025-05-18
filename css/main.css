@@ -1,158 +1,170 @@
-/* Main Styles for AFCON Morocco 2025 */
+/* Styles principaux pour la CAN Maroc 2025 */
 
-/* --- Fonts --- */
+/* --- Polices --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+/* Importation des polices Google Montserrat et Poppins avec différentes épaisseurs */
 
-/* --- Variables --- */
+/* --- Variables CSS --- */
 :root {
   /* 2.1 Couleurs thématiques */
-  --primary: #c1272d;   /* Rouge vif - Couleur dominante */
+  --primary: #c1272d;   /* Rouge vif - Couleur principale du thème */
   --secondary: #006233; /* Vert profond - Couleur secondaire */
-  --accent: #c8a45c;    /* Or - Pour les accents et highlights */
-  
+  --accent: #c8a45c;    /* Or - Pour les éléments d'accentuation */
+
   /* 2.2 Nuances de gris */
-  --dark: #0F172A;      /* Pour texte principal (presque noir) */
-  --medium: #64748B;    /* Pour texte secondaire */
-  --light: #F1F5F9;     /* Arrière-plan clair */
+  --dark: #0F172A;      /* Couleur sombre pour le texte principal */
+  --medium: #64748B;    /* Couleur moyenne pour texte secondaire */
+  --light: #F1F5F9;     /* Couleur claire pour les arrière-plans */
   --white: #FFFFFF;     /* Blanc pur */
-  
+
   /* 2.3 Couleurs fonctionnelles */
-  --success: #10B981;   /* Validation, succès */
-  --warning: #F59E0B;   /* Avertissements */
-  --error: #EF4444;     /* Erreurs, alertes */
-  
+  --success: #10B981;   /* Couleur pour indiquer un succès */
+  --warning: #F59E0B;   /* Couleur pour les avertissements */
+  --error: #EF4444;     /* Couleur pour les erreurs */
+
   /* 2.4 Typographie */
-  --heading-font: 'Montserrat', sans-serif; /* Hiérarchie visuelle */
-  --body-font: 'Poppins', sans-serif;       /* Lisibilité */
-  
-  /* 2.5 Espacements (système 8px) */
-  --spacing-xs: 0.5rem;  /* 8px / 0.5rem - Espace très serré */
-  --spacing-sm: 1rem;    /* 16px - Petit espace */
-  --spacing-md: 1.5rem;  /* 24px - Espace moyen */
-  --spacing-lg: 2rem;    /* 32px - Grand espace */
-  --spacing-xl: 3rem;    /* 48px - Espace très large */
-  
+  --heading-font: 'Montserrat', sans-serif; /* Police pour les titres */
+  --body-font: 'Poppins', sans-serif;       /* Police pour le corps de texte */
+
+  /* 2.5 Espacements (basé sur un système de 8px) */
+  --spacing-xs: 0.5rem;  /* Petit espacement (8px) */
+  --spacing-sm: 1rem;    /* Petit espacement (16px) */
+  --spacing-md: 1.5rem;  /* Espacement moyen (24px) */
+  --spacing-lg: 2rem;    /* Grand espacement (32px) */
+  --spacing-xl: 3rem;    /* Très grand espacement (48px) */
+
   /* 2.6 Bordures */
-  --radius-sm: 0.25rem;  /* Petit arrondi (boutons) */
-  --radius-md: 0.5rem;   /* Arrondi moyen (cartes) */
-  --radius-lg: 1rem;     /* Grand arrondi (conteneurs) */
-  
-  /* 2.7 Ombres (niveaux d'élévation) */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Niveau 1 */
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);                              /* Niveau 2 */
-  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),                       /* Niveau 3 */
+  --radius-sm: 0.25rem;  /* Petit rayon de bordure */
+  --radius-md: 0.5rem;   /* Rayon de bordure moyen */
+  --radius-lg: 1rem;     /* Grand rayon de bordure */
+
+  /* 2.7 Ombres */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Ombre légère */
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);                              /* Ombre moyenne */
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),                       /* Ombre prononcée */
                0 4px 6px -2px rgba(0,0,0,0.05);
-  
-  /* 2.8 Transitions (timing et easing) */
-  --transition-fast: 0.2s ease;  /* Micro-interactions */
-  --transition-normal: 0.3s ease; /* Animations standards */
-  --transition-slow: 0.5s ease;   /* Animations visibles */
+
+  /* 2.8 Transitions */
+  --transition-fast: 0.2s ease;  /* Transition rapide */
+  --transition-normal: 0.3s ease; /* Transition standard */
+  --transition-slow: 0.5s ease;   /* Transition lente */
 }
 
-/* --- Base Styles --- */
+/* --- Styles de base --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Réinitialisation des marges et padding avec box-sizing pour une gestion cohérente des dimensions */
 }
 
 html {
   scroll-behavior: smooth;
+  /* Défilement doux pour les ancres */
 }
 
 body {
   font-family: var(--body-font);
-  font-size: 16px;         /* Taille de base 1rem = 16px */
-  line-height: 1.6;        /* Interligne confortable */
+  font-size: 16px;         /* Taille de base pour le calcul des rem */
+  line-height: 1.6;        /* Hauteur de ligne confortable */
   color: var(--dark);      /* Couleur de texte principale */
-  background-color: var(--light); /* Arrière-plan global */
-  overflow-x: hidden;      /* Empêche le débordement horizontal */
+  background-color: var(--light); /* Couleur d'arrière-plan */
+  overflow-x: hidden;      /* Empêche le défilement horizontal */
 }
 
+/* Styles pour les titres */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
-  font-weight: 700;        /* Gras pour les titres */
-  line-height: 1.2;        /* Interligne plus serré */
-  margin-bottom: var(--spacing-sm); /* Espace sous les titres */
+  font-weight: 700;        /* Titres en gras */
+  line-height: 1.2;        /* Hauteur de ligne plus serrée */
+  margin-bottom: var(--spacing-sm); /* Marge en bas */
 }
 
+/* Styles pour les liens */
 a {
-  color: var(--primary);   /* Couleur thématique */
+  color: var(--primary);   /* Couleur principale */
   text-decoration: none;   /* Pas de soulignement */
   transition: var(--transition-fast); /* Transition douce */
 }
 
 a:hover {
-  color: var(--secondary);
+  color: var(--secondary); /* Changement de couleur au survol */
 }
 
+/* Styles pour les images */
 img {
-  max-width: 100%;         /* Adapte la largeur au conteneur */
+  max-width: 100%;         /* Limite la largeur au conteneur */
   height: auto;            /* Maintient les proportions */
 }
 
-
+/* Styles pour les sections */
 section {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xl) 0; /* Espacement vertical important */
 }
 
+/* Conteneur principal */
 .container {
   width: 100%;
-  max-width: 1200px;       /* Largeur max du contenu */
+  max-width: 1200px;       /* Largeur maximale du contenu */
   margin: 0 auto;          /* Centrage horizontal */
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);
 }
 
+/* Styles pour les boutons */
 .btn {
   display: inline-block;
   font-family: var(--heading-font);
-  font-weight: 600;        /* Semi-gras */
+  font-weight: 600;        /* Texte semi-gras */
   letter-spacing: 0.5px;   /* Espacement des lettres */
-  padding: 0.75rem 1.5rem; /* Padding confortable */
+  padding: 0.75rem 1.5rem; /* Rembourrage intérieur */
   border-radius: var(--radius-md);
   transition: var(--transition-normal);
   text-transform: uppercase; /* Texte en majuscules */
   box-shadow: var(--shadow-sm);
   border: 2px solid transparent; /* Bordure invisible par défaut */
-  cursor: pointer;         /* Curseur pointer */
+  cursor: pointer;         /* Curseur en forme de main */
 }
 
+/* Variante de bouton primaire */
 .btn-primary {
   background-color: var(--primary);
   border-color: var(--primary);
 }
 
-.btn-primary:hover, 
+.btn-primary:hover,
 .btn-primary:focus {
-   background-color: #a82228; /* Version plus sombre au survol */
-  transform: translateY(-2px); /* Effet de "levée" */
+  background-color: #a82228; /* Couleur plus foncée au survol */
+  transform: translateY(-2px); /* Effet de soulèvement */
   box-shadow: var(--shadow-md); /* Ombre plus prononcée */
 }
 
+/* Variante de bouton avec contour */
 .btn-outline-primary {
   color: var(--primary);
   border-color: var(--primary);
 }
 
-.btn-outline-primary:hover, 
+.btn-outline-primary:hover,
 .btn-outline-primary:focus {
   background-color: var(--primary);
   color: var(--white);
   transform: translateY(-2px);
 }
 
+/* Variante de bouton avec contour clair */
 .btn-outline-light {
   color: var(--white);
   border-color: var(--white);
 }
 
-.btn-outline-light:hover, 
+.btn-outline-light:hover,
 .btn-outline-light:focus {
   background-color: var(--white);
   color: var(--primary);
 }
 
+/* Style pour les titres de section */
 .section-title {
   position: relative;
   display: inline-block;
@@ -162,6 +174,7 @@ section {
   padding-bottom: var(--spacing-xs);
 }
 
+/* Barre décorative sous le titre */
 .section-title::after {
   content: '';
   position: absolute;
@@ -173,20 +186,21 @@ section {
   border-radius: var(--radius-sm);
 }
 
-/* --- Preloader --- */
+/* --- Préchargeur --- */
 #preloader {
-  position: fixed;         /* Fixe par rapport à la fenêtre */
+  position: fixed;         /* Position fixe sur l'écran */
   top: 0;
   left: 0;
   width: 100vw;           /* Pleine largeur */
   height: 100vh;          /* Pleine hauteur */
   background-color: var(--white);
-  display: flex;          /* Centrage flex */
+  display: flex;          /* Centrage avec flexbox */
   justify-content: center;
   align-items: center;
   z-index: 9999;          /* Au-dessus de tout */
 }
 
+/* Animation du préchargeur */
 .moroccan-loader {
   position: relative;
   width: 120px;
@@ -205,13 +219,8 @@ section {
   background-position: center;
   animation: spin 1.5s infinite linear;
 }
-/*
- * Animation:
- * - Durée: 1.5s
- * - Répétition: infinie
- * - Timing: linéaire (vitesse constante)
- */
 
+/* Animation de rotation */
 @keyframes spin {
   0% {
     transform: rotate(0deg); /* Rotation initiale */
@@ -221,7 +230,7 @@ section {
   }
 }
 
-/* --- Header --- */
+/* --- En-tête --- */
 #main-header {
   position: relative;
 }
@@ -237,6 +246,7 @@ section {
   padding: 0.5rem 0;
 }
 
+/* Logo dans la navbar */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -266,6 +276,7 @@ section {
   color: var(--accent);
 }
 
+/* Navigation */
 .navbar-nav {
   margin-left: auto;
 }
@@ -285,6 +296,7 @@ section {
   color: var(--primary) !important;
 }
 
+/* Effet de soulignement animé */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -302,6 +314,7 @@ section {
   width: 100%;
 }
 
+/* Bouton de billetterie */
 .ticket-btn .nav-link {
   color: var(--white) !important;
   background-color: var(--primary);
@@ -318,6 +331,7 @@ section {
   display: none;
 }
 
+/* Sélecteur de langue */
 .language-selector {
   margin-left: var(--spacing-md);
 }
@@ -331,7 +345,7 @@ section {
   cursor: pointer;
 }
 
-/* --- Hero Section --- */
+/* --- Section Hero --- */
 #hero {
   position: relative;
   height: 100vh;
@@ -342,6 +356,7 @@ section {
   color: var(--white);
 }
 
+/* Conteneur vidéo en arrière-plan */
 .video-container {
   position: absolute;
   top: 0;
@@ -357,6 +372,7 @@ section {
   object-fit: cover;
 }
 
+/* Overlay pour améliorer la lisibilité */
 .overlay {
   position: absolute;
   top: 0;
@@ -366,6 +382,7 @@ section {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.5) 100%);
 }
 
+/* Contenu de la section hero */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -393,6 +410,7 @@ section {
   max-width: 600px;
 }
 
+/* Compte à rebours */
 .countdown {
   display: flex;
   gap: var(--spacing-sm);
@@ -424,17 +442,20 @@ section {
   opacity: 0.8;
 }
 
+/* Boutons dans le hero */
 .hero-buttons {
   display: flex;
   gap: var(--spacing-sm);
 }
 
+/* Image du trophée */
 .trophy-image {
   max-height: 500px;
   filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
   animation: float 6s ease-in-out infinite;
 }
 
+/* Animation de flottement */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -444,6 +465,7 @@ section {
   }
 }
 
+/* Indicateur de défilement */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -509,7 +531,7 @@ section {
   }
 }
 
-/* --- Latest Matches Section --- */
+/* --- Section Derniers Matchs --- */
 #latest-matches {
   background-color: var(--white);
 }
@@ -519,6 +541,7 @@ section {
   gap: var(--spacing-md);
 }
 
+/* Carte de match */
 .match-card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
@@ -542,6 +565,7 @@ section {
   margin-bottom: var(--spacing-xs);
 }
 
+/* Affichage des équipes */
 .match-teams {
   display: flex;
   align-items: center;
@@ -585,7 +609,7 @@ section {
   text-align: center;
 }
 
-/* --- Groups Section --- */
+/* --- Section Groupes --- */
 #groups {
   background-color: var(--light);
   position: relative;
@@ -603,6 +627,7 @@ section {
   z-index: 0;
 }
 
+/* Carte de groupe */
 .group-card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
@@ -633,6 +658,7 @@ section {
   border-radius: var(--radius-sm);
 }
 
+/* Liste des équipes dans le groupe */
 .group-teams {
   list-style: none;
   padding: 0;
@@ -659,103 +685,84 @@ section {
 }
 
 #fake-group {
-  opacity : 0;
+  opacity: 0;
 }
 
-/* Host Cities Cards Styles */
-  #host-cities{
-    background-color: var(--secondary);
-  }
+/* --- Cartes des villes hôtes --- */
+#host-cities {
+  background-color: var(--secondary);
+}
 
-  .city-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .city-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  }
-  
-  .city-image {
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .city-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .city-card:hover .city-image img {
-    transform: scale(1.05);
-  }
-  
-  .city-content {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .city-content h3 {
-    color: #c1272d;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-  
-  .city-stadium, .city-capacity {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    color: #555;
-  }
-  
-  .city-stadium i, .city-capacity i {
-    margin-right: 10px;
-    color: #c1272d;
-  }
-  
-  .city-description {
-    color: #666;
-    margin: 1rem 0;
-    flex: 1;
-  }
-  
-  .btn-primary {
-    background-color: #c1272d;
-    border-color: #c1272d;
-    align-self: flex-start;
-  }
-  
-  .btn-primary:hover {
-    background-color: #a02025;
-    border-color: #a02025;
-  }
-  
-  @media (max-width: 767px) {
-    .city-image {
-      height: 180px;
-    }
-    
-    .city-content {
-      padding: 1.25rem;
-    }
-  }
+/* Carte de ville */
+.city-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-/* --- Latest News Section --- */
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.city-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.city-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.city-card:hover .city-image img {
+  transform: scale(1.05);
+}
+
+.city-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-content h3 {
+  color: #c1272d;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.city-stadium, .city-capacity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.city-stadium i, .city-capacity i {
+  margin-right: 10px;
+  color: #c1272d;
+}
+
+.city-description {
+  color: #666;
+  margin: 1rem 0;
+  flex: 1;
+}
+
+/* --- Section Dernières Actualités --- */
 #latest-news {
   background-color: var(--white);
 }
 
+/* Carte d'actualité */
 .news-card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
@@ -839,7 +846,7 @@ section {
   transform: translateX(3px);
 }
 
-/* --- Sponsors Section --- */
+/* --- Section Sponsors --- */
 #sponsors {
   background-color: var(--light);
   padding: var(--spacing-lg) 0;
@@ -853,6 +860,7 @@ section {
   gap: var(--spacing-md);
 }
 
+/* Item de sponsor */
 .sponsor-item {
   background-color: var(--white);
   border-radius: var(--radius-md);
@@ -884,7 +892,7 @@ section {
   opacity: 1;
 }
 
-/* --- Newsletter Section --- */
+/* --- Section Newsletter --- */
 #newsletter {
   background-color: var(--primary);
   color: var(--white);
@@ -904,6 +912,7 @@ section {
   margin-bottom: var(--spacing-xs);
 }
 
+/* Formulaire de newsletter */
 .newsletter-form .form-control {
   height: 50px;
   border-radius: var(--radius-md) 0 0 var(--radius-md);
@@ -925,7 +934,7 @@ section {
   border-color: #b08d48;
 }
 
-/* --- Footer --- */
+/* --- Pied de page --- */
 #main-footer {
   background-color: var(--dark);
   color: var(--light);
@@ -944,6 +953,7 @@ section {
   max-width: 300px;
 }
 
+/* Liens sociaux */
 .social-links {
   display: flex;
   gap: var(--spacing-xs);
@@ -986,6 +996,7 @@ section {
   background-color: var(--primary);
 }
 
+/* Liens du footer */
 .footer-links {
   list-style: none;
   padding: 0;
@@ -1009,6 +1020,7 @@ section {
   padding-left: 5px;
 }
 
+/* Partie inférieure du footer */
 .footer-bottom {
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-md);
@@ -1045,7 +1057,7 @@ section {
   text-decoration: underline;
 }
 
-
+/* Conteneur pour la carte */
 .map-container {
   display: flex;
   flex-wrap: wrap;
@@ -1069,6 +1081,7 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Légende de la carte */
 .map-legend {
   flex: 1;
   min-width: 300px;
@@ -1079,7 +1092,7 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles pour les marqueurs si vous souhaitez les ajouter */
+/* Marqueurs sur la carte */
 .map-marker {
   position: absolute;
   color: red;
@@ -1093,12 +1106,12 @@ section {
   transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* Responsive adjustments */
+/* --- Media Queries pour le responsive --- */
 @media (max-width: 768px) {
   .map-container {
     flex-direction: column;
   }
-  
+
   .map, .map-legend {
     max-width: 100%;
   }
